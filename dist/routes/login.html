@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuiBank-Login</title>
+    <link rel="stylesheet" href="../styles/login.css">
+</head>
+<body>
+    
+    <main>
+        <div class = "login">
+            <h1 class ="nome-empresa">GuiBank</h1>
+            <form class="campos" id ='form' data-id="">
+                <div class = "campo-titulo">
+                    <div class="campo-titulo-esquerdo">
+                        <h2>Entrar</h2>
+                    </div>  
+                    <div class="campo-titulo-direito">
+                        <a href="./sign.html" class="campo-titulo-direito-link">Criar Conta</a>
+                    </div>  
+                </div>
+                <div class="campo">
+                    <label class="campo-nome">CPF</label>
+                    <input type="text" name="cpf" id='cpf' minlength="11" maxlength="11" class="campo-input">
+                </div>
+                <div class="campo">
+                    <div class= "campo-senha">
+                        <label class="campo-nome">Senha</a></label>
+                        <img src="../img/olho-cego.png" alt="Ver Senha" width="25px" id ='1'>
+                    </div>
+                    <input type="password" name='senha' class="campo-input" autocomplete="off" id="campo-senha">
+                </div>
+                <div class="campo">
+                    <button type="submit" class="campo-enviar">Entrar</button>
+                </div>
+            </form>
+        </div>
+
+    </main>
+    <footer></footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type='module' src="../js/controllers/login.js"></script>
+</body>
+</html>

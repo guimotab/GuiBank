@@ -1,0 +1,117 @@
+@import './components/variaveis';
+@import './components/errosCampos';
+
+@mixin reset {
+    margin: 0;
+    padding: 0;
+}
+@mixin camposInput {
+    font-family: $fonte-secundaria;
+            color: $cor-escuro;
+            border-radius: 10px;
+            background-color: transparent;
+            padding: 0.6rem;
+            font-size: 15px;
+            font-weight: 500;
+            &:focus{
+                outline: 0;
+                border-color: $cor-escuro;
+            }
+            &::placeholder{
+                font-family: $fonte-secundaria;
+                font-size: 15px;
+                font-weight: 400;
+                color: $cor-placeholder;
+            }
+}
+
+*{
+    @include reset()
+}
+body {
+    background-color: $cor-principal;
+    font-family: $fonte-principal;
+}
+.campos{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 27vw;
+    padding: 3rem 0;
+    text-align: left;
+    gap: 1.2rem;
+    color: $cor-escuro;
+    .nome-empresa{
+        font-size: 22px;
+        font-weight: 600;
+        border-bottom: 2px solid $cor-terciaria;
+        width: 7rem;
+        padding-bottom: .2rem;
+    }
+    .campo-titulo {
+        display: flex;
+        align-items:end;
+        justify-content: space-between;
+
+    }
+    .campo-titulo-esquerdo {
+        text-transform: uppercase;
+        font-size: 18px;
+        margin-bottom: .2rem;
+
+    }
+    .campo-titulo-direito-link{
+        color: $cor-escuro;
+        font-size: 16px;
+    }
+    .campo{
+        display: flex;
+        flex-direction: column;
+        color: $cor-escuro;
+        font-weight: 400;
+        gap: .25rem;
+        
+        .campo-input-nome{
+            @include camposInput();
+            border: 2px solid $cor-terciaria;
+        }
+        .campo-input-cpf{
+            @include camposInput();
+            border: 2px solid $cor-terciaria;
+        }
+        .campo-input-email{
+            @include camposInput();
+            border: 2px solid $cor-terciaria;
+        }
+        .campo-input-telefone{
+            @include camposInput();
+            border: 2px solid $cor-terciaria;
+        }
+        .campo-input-senha{
+            @include camposInput();
+            border: 2px solid $cor-terciaria;
+        }
+        .campo-input-senha2{
+            @include camposInput();
+            border: 2px solid $cor-terciaria;
+        }
+        .campo-senha{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+        }
+        .campo-enviar{
+            font-family: $fonte-principal;
+            color: $cor-principal;
+            font-size: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: $cor-escuro;
+            width: 8rem;
+            padding: .6rem;
+            &:hover {
+                background-color: #2f4257;
+            }
+        }
+    }
+}

@@ -1,0 +1,1180 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+.menu-lateral {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #003268;
+  width: 230px;
+  gap: 1.5rem;
+}
+.menu-lateral .nome-empresa {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  align-items: center;
+  color: #fff;
+  border-bottom: 2px solid white;
+}
+.menu-lateral .menu-lateral_itens {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.menu-lateral .menu-lateral_itens .menu-lateral_itens_div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.menu-lateral .menu-lateral_itens .menu-lateral_itens_div .menu-lateral-titulo {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  align-items: initial;
+  font-size: 20px;
+}
+.menu-lateral .menu-lateral_itens .menu-lateral_itens_div .menu-lateral_ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.menu-lateral .menu-lateral_itens .menu-lateral_itens_div .menu-lateral_ul .itens-lista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3rem 3rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+.menu-lateral .menu-lateral_itens .menu-lateral_itens_div .menu-lateral_ul .itens-lista:hover {
+  background-color: #004896;
+}
+.menu-lateral .menu-lateral-titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #b7c8da;
+}
+.menu-lateral .deslogar-li {
+  height: -moz-max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  list-style-type: none;
+}
+.menu-lateral .deslogar-li .deslogar {
+  margin: 1vh 3vh 1vh 3vh;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 500;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  padding: 1vh 7vh;
+  cursor: pointer;
+  color: #d8e1e7;
+}
+.menu-lateral .itens-lista {
+  display: flex;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 3.6rem;
+  align-items: center;
+  background-color: #5f88a1;
+}
+
+.cabecalho-esquerdo {
+  display: flex;
+  align-items: end;
+}
+.cabecalho-esquerdo img {
+  display: none;
+}
+
+.cabecalho-direito {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.main {
+  font-family: "Open Sans", sans-serif;
+}
+.main .boas-vindas {
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem 17rem 0.2rem 4.5rem;
+  font-family: "Work Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+.main .primeira-linha {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 3rem;
+  height: 8rem;
+}
+.main .primeira-linha .tela-contas {
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  width: 40%;
+  background-color: rgba(166, 188, 202, 0.4392156863);
+  border: 2px solid #415c7c;
+  border-left: 20px solid #415c7c;
+  border-radius: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #415c7c;
+}
+.main .primeira-linha .tela-contas ::-webkit-scrollbar-track {
+  display: none;
+}
+.main .primeira-linha .tela-contas ::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+.main .primeira-linha .tela-contas ::-webkit-scrollbar-thumb {
+  background: #415c7c;
+  border-radius: 4px;
+}
+.main .primeira-linha .tela-contas ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(30, 101, 177, 0.6862745098);
+}
+.main .primeira-linha .tela-contas .tela-contas_ul {
+  overflow-y: auto;
+  width: 100%;
+}
+.main .primeira-linha .tela-contas .tela-contas_informacoes {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 80%;
+  padding: 0.2rem 2rem;
+}
+.main .primeira-linha .tela-contas .tela-contas_informacoes .tela_informacoes-contas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.main .primeira-linha .tela-contas .tela-contas_informacoes .tela_informacoes-contas .botao-transferir-contas button {
+  display: flex;
+  font-family: "Work Sans", sans-serif;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #415c7c;
+  border: none;
+  border-radius: 8px;
+  padding: 0.3rem 0.5rem;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+.main .primeira-linha .tela-contas .tela-contas_informacoes .tela_informacoes-contas .botao-transferir-contas button:hover {
+  background-color: rgba(30, 101, 177, 0.6862745098);
+}
+.main .primeira-linha .tela-contas .tela-contas_informacoes .tela_informacoes-contas h4 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: black;
+}
+.main .primeira-linha .tela-contas .tela-contas_informacoes .tela_informacoes-contas p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+.main .primeira-linha .tela-contas .tela-contas_informacoes .barra-separacao {
+  margin-top: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.164);
+  height: 0.1rem;
+  width: 100%;
+}
+.main .tela {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 3rem;
+  gap: 2rem;
+  height: 100%;
+  width: 60%;
+}
+.main .tela .tela-perfil {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: rgba(166, 188, 202, 0.4392156863);
+  border: 2px solid #415c7c;
+  border-left: 20px solid #415c7c;
+  border-radius: 20px;
+  padding: 1rem 3rem;
+  justify-content: space-between;
+}
+.main .tela .tela-perfil .tela-perfil_informacoes {
+  display: flex;
+  gap: 0.6rem;
+}
+.main .tela .tela-perfil .tela-perfil_informacoes img {
+  width: 90px;
+  height: 90px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+}
+.main .tela .tela-perfil .tela-perfil_informacoes .tela_informacoes-esquerdo {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  padding-top: 0.5rem;
+  width: -moz-max-content;
+  width: max-content;
+}
+.main .tela .tela-perfil .tela-perfil_informacoes .tela_informacoes-esquerdo h3 {
+  font-size: 19px;
+}
+.main .tela .tela-perfil .tela-perfil_informacoes .tela_informacoes-esquerdo p {
+  font-size: 15px;
+  font-weight: 500;
+}
+.main .tela .tela-perfil .tela_informacoes-direito {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+.main .tela .tela-perfil .tela_informacoes-direito .tela_informacoes-direito-itens {
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+.main .tela .tela-perfil .tela_informacoes-direito .tela_informacoes-direito-itens .tela_informacoes-direito-saldo {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+.main .tela .tela-perfil .tela_informacoes-direito .tela_informacoes-direito-itens .tela_informacoes-direito-saldo p {
+  display: none;
+  font-size: 18px;
+}
+.main .tela .tela-perfil .tela_informacoes-direito .tela_informacoes-direito-itens .tela_informacoes-direito-saldo .quadrado-senha {
+  display: block;
+  width: 6.2rem;
+  height: 0.6rem;
+  margin: 7px 0;
+  background-color: rgba(85, 115, 146, 0.6862745098);
+}
+.main .tela .tela-perfil .tela_informacoes-direito .tela_informacoes-direito-itens img {
+  width: 35px;
+  height: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.main {
+  font-family: "Open Sans", sans-serif;
+}
+.main .titulos-extratos {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 17rem 0.2rem 16rem;
+  font-family: "Work Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+.main .segunda-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 15rem;
+  height: 14rem;
+}
+.main .segunda-section .extrato-depositos {
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  background-color: rgba(166, 188, 202, 0.4392156863);
+  border: 2px solid #415c7c;
+  border-left: 20px solid #415c7c;
+  border-radius: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #415c7c;
+}
+.main .segunda-section .extrato-depositos ::-webkit-scrollbar-track {
+  display: none;
+}
+.main .segunda-section .extrato-depositos ::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+.main .segunda-section .extrato-depositos ::-webkit-scrollbar-thumb {
+  background: #415c7c;
+  border-radius: 4px;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-numeros h4 {
+  font-family: "Work Sans", sans-serif;
+  color: rgba(0, 0, 0, 0.8274509804);
+  margin-left: 1rem;
+  font-size: 18px;
+  font-weight: 700;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 90%;
+  padding: 0.2rem 2rem;
+  gap: 0.3rem;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes {
+  display: flex;
+  justify-content: space-between;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_tipo-deposito {
+  display: flex;
+  color: #095816;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_tipo-deposito h4#dep {
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #095816;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_tipo-deposito h3 {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_tipo-recebido {
+  display: flex;
+  color: #095816;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_tipo-recebido h4#recebido {
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #095816;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_tipo-recebido h3 {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_tipo-enviado {
+  display: flex;
+  color: #580909;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_tipo-enviado h4#enviado {
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #580909;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_tipo-enviado h3 {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_tipo-saque {
+  display: flex;
+  color: #580909;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_tipo-saque h4#saq {
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #580909;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_tipo-saque h3 {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_informacoes_contas {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_informacoes_contas .barra-serapacao_valor {
+  background-color: rgba(0, 0, 0, 0.822);
+  height: 2px;
+  width: 4rem;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .extrato-depositos_dias-li .extrato-depositos_li .extrato-depositos_informacoes .extrato-depositos_informacoes_contas p {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+.main .segunda-section .extrato-depositos .extrato-depositos_ul .extrato-depositos_dias .barra-separacao {
+  margin-top: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.164);
+  height: 0.1rem;
+  width: 100%;
+  margin-bottom: 0.6rem;
+}
+
+.main .depositar {
+  display: flex;
+  flex-direction: column;
+  margin: 8rem 10rem 0 8rem;
+  font-family: "Work Sans", sans-serif;
+  gap: 2rem;
+}
+.main .depositar label {
+  font-size: 35px;
+  font-weight: 600;
+}
+.main .depositar .erro-valor {
+  display: none;
+  color: #b92626;
+}
+.main .depositar .depositar-input {
+  display: flex;
+  font-size: 27px;
+  font-weight: 600;
+  gap: 0.5rem;
+  align-items: center;
+}
+.main .depositar .depositar-input input {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: transparent;
+  border: 2px solid rgba(27, 89, 156, 0.6862745098);
+  border-radius: 8px;
+  padding: 0.5rem 0.5rem;
+}
+.main .depositar .depositar-input input::-moz-placeholder {
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+}
+.main .depositar .depositar-input input::placeholder {
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+}
+.main .depositar .depositar-input input:focus {
+  outline: 0;
+  border-color: rgba(27, 89, 156, 0.6862745098);
+}
+.main .depositar button {
+  display: flex;
+  font-family: "Work Sans", sans-serif;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #003268;
+  border: none;
+  border-radius: 8px;
+}
+.main .depositar button a {
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+}
+.main .depositar button:hover {
+  background-color: #004da0;
+}
+
+.main .texto-deposito-sucesso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Work Sans", sans-serif;
+  margin-top: 10rem;
+  gap: 1rem;
+}
+.main .texto-deposito-sucesso h3 {
+  font-size: 35px;
+  font-weight: 600;
+}
+.main .texto-deposito-sucesso .depositar_texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.main .texto-deposito-sucesso .depositar_texto .depositar-input {
+  display: flex;
+  flex-direction: column;
+  font-size: 27px;
+  font-weight: 600;
+  align-items: center;
+  gap: 0.5rem;
+}
+.main .texto-deposito-sucesso .depositar_texto .depositar-input p {
+  font-weight: 500;
+}
+.main .texto-deposito-sucesso .depositar_texto .depositar-input p2 {
+  font-weight: 500;
+}
+.main .texto-deposito-sucesso .depositar_texto .depositar-input input {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: transparent;
+  border: 2px solid rgba(27, 89, 156, 0.6862745098);
+  border-radius: 8px;
+  padding: 0.5rem 0.5rem;
+}
+.main .texto-deposito-sucesso .depositar_texto .depositar-input input::-moz-placeholder {
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+.main .texto-deposito-sucesso .depositar_texto .depositar-input input::placeholder {
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+.main .texto-deposito-sucesso .depositar_texto .depositar-input input:focus {
+  outline: 0;
+  border-color: rgba(27, 89, 156, 0.6862745098);
+}
+.main .texto-deposito-sucesso .depositar_texto .concluir-deposito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .texto-deposito-sucesso .depositar_texto .concluir-deposito button {
+  display: flex;
+  font-family: "Work Sans", sans-serif;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #003268;
+  border: none;
+  border-radius: 8px;
+}
+.main .texto-deposito-sucesso .depositar_texto .concluir-deposito button a {
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+}
+.main .texto-deposito-sucesso .depositar_texto .concluir-deposito button:hover {
+  background-color: #004da0;
+}
+
+.main .principal {
+  margin: 8rem 10rem 0 10rem;
+}
+.main .principal .cabecalho-saca {
+  display: flex;
+  flex-direction: column;
+  font-family: "Work Sans", sans-serif;
+}
+.main .principal .cabecalho-saca label {
+  font-size: 35px;
+  font-weight: 600;
+}
+.main .principal .cabecalho-saca p {
+  margin-bottom: 2rem;
+}
+.main .principal .sacar {
+  display: flex;
+  flex-direction: column;
+  font-family: "Work Sans", sans-serif;
+  gap: 2rem;
+}
+.main .principal .sacar .erro-valor {
+  display: none;
+  color: #b92626;
+}
+.main .principal .sacar .erro-insuficiente {
+  display: none;
+  color: #b92626;
+}
+.main .principal .sacar .sacar-input {
+  display: flex;
+  font-size: 27px;
+  font-weight: 600;
+  gap: 0.5rem;
+  align-items: center;
+}
+.main .principal .sacar .sacar-input input {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: transparent;
+  border: 2px solid rgba(27, 89, 156, 0.6862745098);
+  border-radius: 8px;
+  padding: 0.5rem 0.5rem;
+}
+.main .principal .sacar .sacar-input input::-moz-placeholder {
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+}
+.main .principal .sacar .sacar-input input::placeholder {
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+}
+.main .principal .sacar .sacar-input input:focus {
+  outline: 0;
+  border-color: rgba(27, 89, 156, 0.6862745098);
+}
+.main .principal .sacar button {
+  display: flex;
+  font-family: "Work Sans", sans-serif;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #003268;
+  border: none;
+  border-radius: 8px;
+}
+.main .principal .sacar button a {
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+}
+.main .principal .sacar button:hover {
+  background-color: #004da0;
+}
+
+.main .principal-transferir {
+  margin: 8rem 10rem 0 8rem;
+}
+.main .principal-transferir .cabecalho-transfere {
+  display: flex;
+  flex-direction: column;
+  font-family: "Work Sans", sans-serif;
+}
+.main .principal-transferir .cabecalho-transfere label {
+  font-size: 30px;
+  font-weight: 600;
+}
+.main .principal-transferir .cabecalho-transfere p {
+  margin-bottom: 2rem;
+}
+.main .principal-transferir .transferir {
+  display: flex;
+  flex-direction: column;
+  font-family: "Work Sans", sans-serif;
+  gap: 2rem;
+}
+.main .principal-transferir .transferir .erro-valor {
+  display: none;
+  color: #b92626;
+}
+.main .principal-transferir .transferir .erro-insuficiente {
+  display: none;
+  color: #b92626;
+}
+.main .principal-transferir .transferir .transferir-input {
+  display: flex;
+  font-size: 27px;
+  font-weight: 600;
+  gap: 0.5rem;
+  align-items: center;
+}
+.main .principal-transferir .transferir .transferir-input input {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: transparent;
+  border: 2px solid rgba(27, 89, 156, 0.6862745098);
+  border-radius: 8px;
+  padding: 0.5rem 0.5rem;
+}
+.main .principal-transferir .transferir .transferir-input input::-moz-placeholder {
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+}
+.main .principal-transferir .transferir .transferir-input input::placeholder {
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+}
+.main .principal-transferir .transferir .transferir-input input:focus {
+  outline: 0;
+  border-color: rgba(27, 89, 156, 0.6862745098);
+}
+.main .principal-transferir .transferir button {
+  display: flex;
+  font-family: "Work Sans", sans-serif;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #003268;
+  border: none;
+  border-radius: 8px;
+}
+.main .principal-transferir .transferir button a {
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+}
+.main .principal-transferir .transferir button:hover {
+  background-color: #004da0;
+}
+
+.main {
+  font-family: "Open Sans", sans-serif;
+}
+.main .principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 8rem 25rem 0 8rem;
+  width: 50%;
+  gap: 0.5rem;
+}
+.main .principal h3 {
+  font-size: 25px;
+  margin-left: 1rem;
+}
+.main .principal .tela-contas {
+  height: 23rem;
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  background-color: rgba(166, 202, 169, 0.2588235294);
+  border: 2px solid #415c7c;
+  border-left: 20px solid #415c7c;
+  border-radius: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #415c7c;
+}
+.main .principal .tela-contas ::-webkit-scrollbar-track {
+  display: none;
+}
+.main .principal .tela-contas ::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+.main .principal .tela-contas ::-webkit-scrollbar-thumb {
+  background: #415c7c;
+  border-radius: 4px;
+}
+.main .principal .tela-contas ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(30, 101, 177, 0.6862745098);
+}
+.main .principal .tela-contas .tela-contas_ul {
+  overflow-y: auto;
+  width: 100%;
+}
+.main .principal .tela-contas .tela-contas_informacoes {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0.2rem 2rem;
+}
+.main .principal .tela-contas .tela-contas_informacoes .tela_informacoes-contas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.main .principal .tela-contas .tela-contas_informacoes .tela_informacoes-contas .botao-transferir-contas button {
+  display: flex;
+  font-family: "Work Sans", sans-serif;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #415c7c;
+  border: none;
+  border-radius: 8px;
+  padding: 0.3rem 0.5rem;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+.main .principal .tela-contas .tela-contas_informacoes .tela_informacoes-contas .botao-transferir-contas button:hover {
+  background-color: rgba(30, 101, 177, 0.6862745098);
+}
+.main .principal .tela-contas .tela-contas_informacoes .tela_informacoes-contas h4 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: black;
+}
+.main .principal .tela-contas .tela-contas_informacoes .tela_informacoes-contas p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+.main .principal .tela-contas .tela-contas_informacoes .barra-separacao {
+  margin-top: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.164);
+  height: 0.1rem;
+  width: 100%;
+}
+
+.erro-primeiroNome-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-primeiroNome-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-primeiroNome-length {
+  display: none;
+  color: #b92626;
+}
+
+.erro-segundoNome-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-segundoNome-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-segundoNome-length {
+  display: none;
+  color: #b92626;
+}
+
+.erro-cpf-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-cpf-invalido {
+  display: none;
+  color: #b92626;
+}
+
+.erro-cpf-existe {
+  display: none;
+  color: #b92626;
+}
+
+.erro-cpf-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-email-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-email-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-telefone-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-telefone-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-telefone-invalido {
+  display: none;
+  color: #b92626;
+}
+
+.erro-senha-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-senha-invalido {
+  display: none;
+  color: #b92626;
+}
+
+.erro-senha-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-senhas-diferentes {
+  display: none;
+  color: #b92626;
+}
+
+.campo-nome {
+  font-size: 18px;
+}
+
+.main {
+  font-family: "Open Sans", sans-serif;
+}
+.main .principal-conta {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3.5rem;
+  gap: 0.5rem;
+}
+.main .informacoes {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 17rem 0.2rem 4.5rem;
+  font-family: "Work Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+.main .conta {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 7rem 4rem 7rem;
+}
+.main .conta .tela {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 3rem;
+  gap: 2rem;
+  width: 100%;
+}
+.main .conta .tela .conta-perfil {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: rgba(166, 188, 202, 0.4392156863);
+  border: 2px solid #415c7c;
+  border-radius: 20px;
+  padding: 1rem 3rem 4rem 3rem;
+  justify-content: space-between;
+}
+.main .conta .tela .conta-perfil .conta-perfil_informacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.main .conta .tela .conta-perfil .conta-perfil_informacoes .botao-enviar-foto input[type=file] {
+  display: none;
+}
+.main .conta .tela .conta-perfil .conta-perfil_informacoes .botao-enviar-foto label {
+  padding: 0.5rem 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #415c7c;
+  color: #FFF;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+}
+.main .conta .tela .conta-perfil .conta-perfil_informacoes .botao-enviar-foto label:hover {
+  background-color: rgba(30, 101, 177, 0.6862745098);
+}
+.main .conta .tela .conta-perfil .conta-perfil_informacoes .conta-perfil_dados-proibido input {
+  cursor: not-allowed;
+}
+.main .conta .tela .conta-perfil .conta-perfil_informacoes .conta-perfil_dados {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.main .conta .tela .conta-perfil .conta-perfil_informacoes .conta-perfil_dados .botao-dados-enviar {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  background-color: #415c7c;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.6rem;
+  text-transform: uppercase;
+}
+.main .conta .tela .conta-perfil .conta-perfil_informacoes .conta-perfil_dados .botao-dados-enviar:hover {
+  background-color: rgba(30, 101, 177, 0.6862745098);
+}
+.main .conta .tela .conta-perfil .conta-perfil_informacoes .conta-perfil_dados input {
+  font-family: "Work Sans", sans-serif;
+  font-size: 17px;
+  background-color: transparent;
+  padding: 0.5rem 20rem 0.5rem 0.5rem;
+  border: 2px solid #415c7c;
+  border-radius: 10px;
+}
+.main .conta .tela .conta-perfil .conta-perfil_informacoes .conta-perfil_dados input:focus {
+  outline: 0;
+  border-color: #132131;
+}
+.main .conta .tela .conta-perfil .conta-perfil_informacoes img {
+  width: 120px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+}
+
+.erro-primeiroNome-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-primeiroNome-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-primeiroNome-length {
+  display: none;
+  color: #b92626;
+}
+
+.erro-segundoNome-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-segundoNome-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-segundoNome-length {
+  display: none;
+  color: #b92626;
+}
+
+.erro-cpf-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-cpf-invalido {
+  display: none;
+  color: #b92626;
+}
+
+.erro-cpf-existe {
+  display: none;
+  color: #b92626;
+}
+
+.erro-cpf-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-email-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-email-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-telefone-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-telefone-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-telefone-invalido {
+  display: none;
+  color: #b92626;
+}
+
+.erro-senha-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-senha-invalido {
+  display: none;
+  color: #b92626;
+}
+
+.erro-senha-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-senhas-diferentes {
+  display: none;
+  color: #b92626;
+}
+
+.campo-nome {
+  font-size: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  grid-template-areas: "lado principal" "lado principal";
+  grid-template-columns: 17.8% auto;
+  /* duas linhas | 2 colunas */
+  /* 1fr é a fração da tela */
+  background-color: #d8e1e7;
+  font-family: "Work Sans", sans-serif;
+}
+
+.menu-lateral {
+  grid-area: lado;
+}
+
+.cabecalho {
+  display: none;
+}
+
+.main {
+  grid-area: principal;
+}/*# sourceMappingURL=main.css.map */

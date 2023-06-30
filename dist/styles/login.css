@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #d8e1e7;
+  font-family: "Work Sans", sans-serif;
+}
+
+.nome-empresa {
+  font-size: 40px;
+  font-weight: 600;
+  width: 35%;
+  margin: 0 0 2rem 0.5rem;
+  border-bottom: 2px solid #526D82;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 23vw;
+  color: #132131;
+}
+.login .campos {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #526D82;
+  border-radius: 15px;
+  padding: 2rem 3rem;
+  gap: 1.5rem;
+}
+.login .campos .campo-titulo {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+.login .campos .campo-titulo-esquerdo {
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 0.2rem;
+}
+.login .campos .campo-titulo-direito-link {
+  color: #132131;
+  font-size: 16px;
+}
+.login .campos .campo {
+  display: flex;
+  flex-direction: column;
+  color: #132131;
+  font-weight: 400;
+  gap: 0.25rem;
+}
+.login .campos .campo .campo-nome {
+  font-size: 18px;
+}
+.login .campos .campo .campo-input {
+  font-family: "Open Sans", sans-serif;
+  color: #132131;
+  border: 2px solid #526D82;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 0.6rem;
+  font-size: 15px;
+  font-weight: 500;
+}
+.login .campos .campo .campo-input:focus {
+  outline: 0;
+  border-color: #132131;
+}
+.login .campos .campo .campo-input::-moz-placeholder {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #576270;
+}
+.login .campos .campo .campo-input::placeholder {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #576270;
+}
+.login .campos .campo .campo-senha {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+.login .campos .campo .campo-enviar {
+  font-family: "Work Sans", sans-serif;
+  color: #d8e1e7;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: #132131;
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+.login .campos .campo .campo-enviar:hover {
+  background-color: #2f4257;
+}/*# sourceMappingURL=login.css.map */

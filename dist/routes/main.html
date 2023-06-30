@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+    <script type="module">
+        import {verificaLogin} from "../js/utils/verificaLogin.js";
+        
+        (async ()=>{
+            if(!await verificaLogin()){
+            window.location.href = './login.html'
+        }})()
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <title>GuiBank</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class = 'cabecalho-esquerdo'>
+            <img src="../img/fotoMinha.png" alt="Foto-de-perfil">
+        </div>
+        <div class = 'cabecalho-direito'>
+            <img src="../img/olho-cego.png" alt="olho" width="28">
+        </div>
+    </header>
+    <aside class="menu-lateral">
+        <div class="nome-empresa">
+            <h1>GuiBank</h1>
+        </div>
+        <div class="deslogar-li">
+            <li class="deslogar" id="deslogar">Deslogar</li>
+        </div>
+        <div class="menu-lateral_itens">
+            <div class="menu-lateral_itens_div">
+                <h2 class="menu-lateral-titulo">Janelas</h1>
+                <nav>
+                    <ul class="menu-lateral_ul">
+                        <li class="itens-lista" data-lista-iguais="main" ><a>Home</a></li>
+                        <li class="itens-lista" data-lista-iguais="conta" ><a>Conta</a></li>
+                        <li class="itens-lista" data-lista="depositar" ><a>Depositar</a></li>
+                        <li class="itens-lista" data-lista="sacar" ><a>Sacar</a></li>
+                        <li class="itens-lista" data-lista="transferirEscolha" ><a>Transferir</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>   
+    </aside>
+    <main class="main">
+        <section>
+            <div class="boas-vindas">
+                <p>Seja bem-vindo!</p>
+                <p>Outras Contas</p>
+            </div>
+            <div class="primeira-linha">
+                <div class = 'tela'>
+                    <div class = tela-perfil>
+                        <div class="tela-perfil_informacoes">
+                            <img src="" alt=" " width="100" height="100" id="foto-perfil">
+                            <div class="tela_informacoes-esquerdo">
+                                <h3 id="nome"></h3>
+                                <p id="usuario"></p>
+                            </div>
+                        </div>
+                        <div class="tela_informacoes-direito">
+                            <div class="tela_informacoes-direito-itens">
+                                <p>Saldo disponível:</p>
+                                <div class="tela_informacoes-direito-saldo">
+                                    <img id='olhoSaldo' src="../img/olho-cego.png" alt="olho">
+                                    <div id="esconde-saldo" class="quadrado-senha"></div>
+                                    <p id="saldo"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = tela-contas>
+                    <ul class = tela-contas_ul id="contas-ul">
+                        <!-- <li class="tela-contas_informacoes">
+                            <div class="tela_informacoes-contas">
+                                <div>
+                                    <h4 id="nome">${indexAmigos.nome}</h4>
+                                    <p id="nome-pessoal">@guilhermemota</p>
+                                </div>
+                                <div class="botao-transferir-contas">
+                                    <button>Transferir</button>
+                                </div>
+                            </div>
+                            <div class="barra-separacao"></div>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="titulos-extratos">
+                <p>Extratos</p>
+            </div>
+            <div class="segunda-section">
+                <div class = extrato-depositos>
+                    <ul class = extrato-depositos_ul id="depositos-ul">
+                        <!-- <div class="extrato-depositos_dias" id="dias-extratos">
+                            <div class="extrato-depositos_dias-numeros">
+                                <h4>07 Jun</h4>
+                            </div>
+                            <div class="extrato-depositos_dias-li">
+                                <li class="extrato-depositos_li" id="li-extratos">
+                                    <div class="extrato-depositos_informacoes">
+                                        <div class="extrato-depositos_tipo">
+                                            <h3 id="nome">Transferencia</h3>
+                                        </div>
+                                        <div class="extrato-depositos_informacoes_contas">
+                                            <h4 id="nome">$34,54</h4>
+                                            <div class="barra-serapacao_valor"></div>
+                                            <p id="nome-pessoal">15/04/2004</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="barra-separacao"></div>
+                        </div> -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type='module'src="../js/controllers/main.js"></script>
+</body>
+</html>

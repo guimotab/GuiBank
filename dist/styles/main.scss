@@ -1,0 +1,40 @@
+@import './components/aside';
+@import './components/header';
+@import './components/primeiraSection';
+@import './components/segundaSection';
+@import './telas/depositar';
+@import './telas/depositoConcluido';
+@import './telas/saca';
+@import './telas/transfere';
+@import './telas/escolheTransfere';
+@import './telas/conta';
+@import './components/errosCampos';
+
+*{
+    margin:0;
+    padding:0
+}
+
+body{
+    display: grid;
+    grid-template-areas: 
+    
+    "lado principal"
+    "lado principal";
+    grid-template-columns: 17.8% auto;
+    /* duas linhas | 2 colunas */
+    /* 1fr é a fração da tela */
+    
+    background-color: $cor-principal;
+    font-family: $fonte-principal;
+}
+
+.menu-lateral{
+    grid-area: lado;
+}
+.cabecalho{
+    display: none;
+}
+.main{
+    grid-area: principal;
+}

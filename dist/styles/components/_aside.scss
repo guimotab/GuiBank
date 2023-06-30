@@ -1,0 +1,89 @@
+@import './variaveis';
+
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+    position:fixed;
+    height: 100%;
+    width: 100%;
+    background-color: $cor-aside;
+    width: 230px;
+    gap: 1.5rem;
+    .nome-empresa{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0;
+        align-items: center;
+        color: $cor-branco;
+        border-bottom: 2px solid white;
+    }
+    .menu-lateral_itens{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        .menu-lateral_itens_div{
+            display: flex;
+            flex-direction: column;
+            gap:.3rem;
+            .menu-lateral-titulo{
+                display: flex;
+                flex-direction: column;
+                font-weight: 600;
+                align-items: initial;
+                font-size: 20px;
+            }
+            .menu-lateral_ul{
+                display: flex;
+                flex-direction: column;
+                gap: .3rem;
+                .itens-lista{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: .3rem 3rem;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    color: $cor-branco;
+                    cursor:pointer; 
+                    &:hover{
+                        background-color:#004896;
+                    }
+                }
+            }
+        }
+    }
+    .menu-lateral-titulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $cor-aside-titulo;
+    }
+    .deslogar-li{
+        height:max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        list-style-type: none;
+        .deslogar{
+            margin: 1vh 3vh 1vh 3vh;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight:500;
+            border: 2px solid $cor-branco;
+            border-radius: 15px;
+            padding: 1vh 7vh;
+            cursor:pointer; 
+            color: $cor-principal;
+            
+        }
+    }
+    .itens-lista{
+        display: flex;
+        font-size: 20px;
+        font-weight: 400;
+        color: $cor-branco;
+        
+    }
+}

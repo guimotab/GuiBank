@@ -1,0 +1,64 @@
+@import '../components/variaveis';
+
+.main{
+    .depositar{
+        display: flex;
+        flex-direction: column;
+        margin: 8rem 10rem 0 8rem;
+        font-family: $fonte-principal;
+        gap: 2rem;
+        label{
+            font-size: 35px;
+            font-weight: 600;
+        }
+        .erro-valor{
+            display: none;
+            color: $cor-erro;
+        }
+        .depositar-input{
+            display: flex;
+            font-size: 27px;
+            font-weight: 600;
+            gap: .5rem;
+            align-items: center;
+            input{
+                font-family: $fonte-secundaria;
+                font-size: 15px;
+                font-weight: 500;
+                background-color: transparent;
+                border: 2px solid #1b599caf;
+                border-radius: 8px;
+                padding: .5rem .5rem;
+                &::placeholder{
+                    font-family: $fonte-secundaria;
+                    align-items: center;
+                    font-size: 17px;
+                    font-weight: 600;
+                }
+                &:focus{
+                    outline: 0;
+                    border-color: #1b599caf;
+                }
+            }
+        }
+        button{
+            display: flex;
+            font-family: $fonte-principal;
+            width: fit-content;
+            background-color: $cor-aside;
+            border: none;
+            border-radius: 8px;
+            a{
+                padding: .5rem 1.5rem;
+                text-decoration: none;
+                color: white;
+                font-size: 22px;
+                font-weight: 500;
+            }
+            &:hover{
+            background-color: #004da0;   
+            }
+            
+        }
+    }
+}

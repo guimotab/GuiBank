@@ -1,0 +1,158 @@
+@import './variaveis';
+.main{
+    font-family: $fonte-secundaria;
+    .titulos-extratos{
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem 17rem .2rem 16rem;
+        font-family: $fonte-principal;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .segunda-section{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 15rem;
+        height: 14rem;
+        .extrato-depositos{
+            display: flex;
+            flex-direction: column;
+            padding-right: .5rem;
+            width: 100%;
+            padding: .5rem .5rem .5rem 0 ;
+            background-color: #a6bcca70;
+            border: 2px solid $cor-cartao-bordas-botao;
+            border-left: 20px solid $cor-cartao-bordas-botao;
+            border-radius: 20px;
+            //funciona no edge chrome safari
+            & ::-webkit-scrollbar-track {
+                display: none;
+            }
+            & ::-webkit-scrollbar {
+                width: 8px;
+                height: 6px;
+            }
+            & ::-webkit-scrollbar-thumb {
+                background: $cor-cartao-bordas-botao;
+                border-radius: 4px;
+            }
+            //funciona no firefox
+            scrollbar-width: thin;
+            scrollbar-color: $cor-cartao-bordas-botao;
+            .extrato-depositos_ul{
+                overflow-y:auto;
+                overflow-x: hidden;
+                width: 100%;
+                .extrato-depositos_dias{
+                    .extrato-depositos_dias-numeros{
+                        h4{
+                            font-family: $fonte-principal;
+                            color: #000000d3;
+                            margin-left: 1rem;
+                            font-size: 18px;
+                            font-weight: 700;
+                        }
+                    }
+                    .extrato-depositos_dias-li{
+
+                        .extrato-depositos_li{
+                            display: flex;
+                            flex-direction: column;
+                            list-style: none;
+                            width: 90%;
+                            padding: .2rem 2rem;
+                            gap: .3rem;
+                            .extrato-depositos_informacoes{
+                                display: flex;
+                                justify-content: space-between;
+                                .extrato-depositos_tipo-deposito{
+                                    display: flex;
+                                    color: #095816;
+                                    h4#dep{
+                                        font-family: $fonte-secundaria;
+                                        font-size: 17px;
+                                        font-weight: 600;
+                                        color: #095816;
+                                    }
+                                    h3{
+                                        font-family: $fonte-principal;
+                                        font-weight: 600;
+                                        font-size: 19px;
+                                    }
+                                }
+                                .extrato-depositos_tipo-recebido{
+                                    display: flex;
+                                    color: #095816;
+                                    h4#recebido{
+                                        font-family: $fonte-secundaria;
+                                        font-size: 17px;
+                                        font-weight: 600;
+                                        color: #095816;
+                                    }
+                                    h3{
+                                        font-family: $fonte-principal;
+                                        font-weight: 600;
+                                        font-size: 19px;
+                                    }
+                                }
+                                .extrato-depositos_tipo-enviado{
+                                    display: flex;
+                                    color: #580909;
+                                    h4#enviado{
+                                        font-family: $fonte-secundaria;
+                                        font-size: 17px;
+                                        font-weight: 600;
+                                        color: #580909;
+                                    }
+                                    h3{
+                                        font-family: $fonte-principal;
+                                        font-weight: 600;
+                                        font-size: 19px;
+                                    }
+                                }
+                                .extrato-depositos_tipo-saque{
+                                    display: flex;
+                                    color: #580909;
+                                    h4#saq{
+                                        font-family: $fonte-secundaria;
+                                        font-size: 17px;
+                                        font-weight: 600;
+                                        color: #580909;
+                                    }
+                                    h3{
+                                        font-family: $fonte-principal;
+                                        font-weight: 600;
+                                        font-size: 19px;
+                                    }
+                                }
+                                .extrato-depositos_informacoes_contas{
+                                    display: flex;
+                                    align-items: center;
+                                    gap: .5rem;
+                                    .barra-serapacao_valor{
+                                        background-color: rgba(0, 0, 0, 0.822);
+                                        height: 2px;
+                                        width: 4rem;
+                                    }
+                                    p{
+                                        color: black;
+                                        font-family: $fonte-secundaria;
+                                        font-size: 15px;
+                                        font-weight: 500;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .barra-separacao{
+                        margin-top: .5rem;
+                        background-color: rgba(0, 0, 0, 0.164);
+                        height: .1rem;
+                        width: 100%;
+                        margin-bottom: .6rem;
+                    }
+                }
+            }
+        }
+    }
+}
