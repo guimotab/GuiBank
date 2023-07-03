@@ -81,7 +81,7 @@ import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
             if(!verificaCampos.verificaCamposErros([campoPrimeiroNome, campoSegundoNome, campoCPF, campoEmail, campoSenha1, campoSenha2])){ 
                 await cadastraUsuario(conta.devolveInformacoes())
                 const usuario = new InformacoesUsuario(await verificaSign(campoCPF.value))
-                window.location.href = `./routes/main.html?id=${usuario.id}`
+                window.location.href = `./main.html?id=${usuario.id}`
             }
     })
 })()

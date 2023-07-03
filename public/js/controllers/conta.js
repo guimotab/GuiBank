@@ -125,7 +125,9 @@ botaoSair.addEventListener("click", async ()=>{
 })
 for(let i = 0; i < botoesRedirecionarIguais.length; i++){
     botoesRedirecionarIguais[i].addEventListener('click' , evento =>{
-        window.location.href = `./${botoesRedirecionarIguais[i].attributes[1].value}.html?id=${usuario.id}`
+        if (botoesRedirecionarIguais[i].attributes[1].value != "conta"){
+            window.location.href = `./${botoesRedirecionarIguais[i].attributes[1].value}.html?id=${usuario.id}`
+        }
     })
 }
 for(let i = 0; i < botoesRedirecionar.length; i++){

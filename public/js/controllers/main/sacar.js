@@ -54,6 +54,8 @@ import { verificaLogin } from "../../utils/verificaLogin.js"
     }
     for(let i = 0; i < botoesRedirecionar.length; i++){
         botoesRedirecionar[i].addEventListener('click' , evento =>{
-            window.location.href = `./${botoesRedirecionar[i].attributes[1].value}.html?id=${usuario.id}`
+            if (botoesRedirecionar[i].attributes[1].value != "sacar"){
+                window.location.href = `./${botoesRedirecionar[i].attributes[1].value}.html?id=${usuario.id}`
+            }
         })
 }})()
