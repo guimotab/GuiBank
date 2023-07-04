@@ -2,11 +2,12 @@
 @import './components/header';
 @import './components/primeiraSection';
 @import './components/segundaSection';
-@import './telas/depositar';
 @import './telas/depositoConcluido';
 @import './telas/escolheTransfere';
 @import './telas/conta';
 @import './components/errosCampos';
+@import './telas/operacaoConcluida';
+@import './telas/operacao';
 
 *{
     margin:0;

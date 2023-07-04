@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
+
+<head>
     <script type='module'>
-        import {verificaLogin} from "../js/utils/verificaLogin.js";
-        (async ()=>{
-            if(!await verificaLogin()){
-            window.location.href = '../login.html'
-        }})()
+        import { verificaLogin } from "../js/utils/verificaLogin.js";
+        (async () => {
+            if (!await verificaLogin()) {
+                window.location.href = '../login.html'
+            }
+        })()
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +16,12 @@
     <link rel="stylesheet" href="../styles/main.css">
     <title>GuiBank</title>
 </head>
+
 <body>
     <header class="cabecalho">
     </header>
     <aside class="menu-lateral">
-        
+
         <div class="nome-empresa">
             <h1>GuiBank</h1>
         </div>
@@ -28,34 +31,34 @@
         <div class="menu-lateral_itens">
             <div class="menu-lateral_itens_itens">
                 <!-- <div class="menu-lateral_itens_div"> -->
-                    <!-- <h2 class="menu-lateral-titulo">Minha Conta</h2> -->
-                    <!-- <ul class="menu-lateral_ul" id = "lista-ul" data-menuLateral="">
+                <!-- <h2 class="menu-lateral-titulo">Minha Conta</h2> -->
+                <!-- <ul class="menu-lateral_ul" id = "lista-ul" data-menuLateral="">
                         <li class="itens-lista" id="agencia">Agência: 12</li>
                         <li class="itens-lista" id="numero">Numero: 22</li> -->
-                    <!-- </ul>
+                <!-- </ul>
                 </div> -->
                 <div class="menu-lateral_itens_div">
                     <h2 class="menu-lateral-titulo">Janelas</h1>
-                    <nav>
-                        <ul id="ul">
-                            <div class="menu-lateral_ul">
-                                <li class="itens-lista" data-lista="main" ><a>Home</a></li>
-                                <li class="itens-lista" data-lista="conta" ><a>Conta</a></li>
-                                <li class="itens-lista" data-lista="depositar" ><a>Depositar</a></li>
-                                <li class="itens-lista" data-lista="sacar" ><a>Sacar</a></li>
-                                <li class="itens-lista" data-lista="transferirEscolha" ><a>Transferir</a></li>
-                            </div>
-                        </ul>
-                    </nav>
+                        <nav>
+                            <ul id="ul">
+                                <div class="menu-lateral_ul">
+                                    <li class="itens-lista" data-lista="main"><a>Home</a></li>
+                                    <li class="itens-lista" data-lista="conta"><a>Conta</a></li>
+                                    <li class="itens-lista" data-lista="depositar"><a>Depositar</a></li>
+                                    <li class="itens-lista" data-lista="sacar"><a>Sacar</a></li>
+                                    <li class="itens-lista" data-lista="transferirEscolha"><a>Transferir</a></li>
+                                </div>
+                            </ul>
+                        </nav>
                 </div>
             </div>
-        </div>   
+        </div>
     </aside>
     <main class="main">
         <div class="principal">
             <h3>Escolha uma conta para quem transferir:</h3>
-            <div class = tela-contas>
-                <ul class = tela-contas_ul id="contas-ul">
+            <div class=tela-contas>
+                <ul class=tela-contas_ul id="contas-ul">
                     <!-- <li class="tela-contas_informacoes">
                         <div class="tela_informacoes-contas">
                             <div>
@@ -74,6 +77,7 @@
     </main>
     <footer></footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script type='module'src="../js/controllers/transferirEscolha.js"></script>
+    <script type='module' src="../js/controllers/transferirEscolha.js"></script>
 </body>
+
 </html>

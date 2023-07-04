@@ -1,8 +1,8 @@
 import mostraSenha from "../utils/mostraSenha.js"
-import { formataCPF } from "../utils/formataCPF.js"
-import { hashSenha } from "../utils/formataSenha.js"
+import { hashSenha } from "../utils/criptografaSenha.js"
 import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
 import { editaUsuario, getUsuariosApi } from "../services/usuarios.js"
+import { verificaCampos } from "../utils/verificaCampos.js"
 (async () => {
     const contas = await getUsuariosApi()
     const login = document.getElementById('form')
@@ -21,7 +21,17 @@ import { editaUsuario, getUsuariosApi } from "../services/usuarios.js"
     })
 
     CPF.addEventListener('blur', (evento) => {
-        formataCPF(CPF)
+        const erroCpfObg = document.querySelector(".erro-cpf-obrigatorio")
+        const erroCpfInv = document.querySelector(".erro-cpf-invalido")
+        const erroCpfExi = document.querySelector(".erro-cpf-existe")
+        const erroCpfEsc = document.querySelector(".erro-cpf-escrita")
+        verificaCampos.verificaCamposLogin(CPF, erroCpfObg, erroCpfInv, erroCpfExi, erroCpfEsc, contas)
+    })
+    campoSenha.addEventListener('blur', (evento) => {
+        const erroSenhaObg = document.querySelector(".erro-senha-obrigatorio")
+        const erroSenhaEsc = document.querySelector(".erro-senha-escrita")
+        const erroSenhaInv = document.querySelector(".erro-senha-invalido")
+        verificaCampos.verificaCampoSenha(campoSenha, erroSenhaObg, erroSenhaEsc, erroSenhaInv)
     })
 
     login.addEventListener('submit', async (evento) => {
@@ -35,7 +45,6 @@ import { editaUsuario, getUsuariosApi } from "../services/usuarios.js"
             if (hashSenha.verificaSenha(usuario.senha) == senha) {
                 usuario.logado = true
                 await editaUsuario(usuario.id, usuario.devolveInformacoes())
-                console.log(await getUsuariosApi());
 
                 window.location.href = `main.html?id=${usuario.id}`
 

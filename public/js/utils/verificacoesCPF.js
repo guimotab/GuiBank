@@ -26,7 +26,7 @@ export class verificacoesCPF {
 
     static validaCPF(campoCpf) {
         const cpf = campoCpf.replace(/\.|-/g, "")
-        if (validaPrimeiroDigito(cpf) || validaSegundoDigito(cpf)) {
+        if (this.validaPrimeiroDigito(cpf) || this.validaSegundoDigito(cpf)) {
             // campo.setCustomValidity("Esse cpf não é válido")
             return false
         }

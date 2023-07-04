@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
+
+<head>
     <script type="module">
-        import {verificaLogin} from "../js/utils/verificaLogin.js";
-        
-        (async ()=>{
-            if(!await verificaLogin()){
-            window.location.href = './login.html'
-        }})()
+        import { verificaLogin } from "../js/utils/verificaLogin.js";
+
+        (async () => {
+            if (!await verificaLogin()) {
+                window.location.href = './login.html'
+            }
+        })()
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,12 +17,13 @@
     <link rel="stylesheet" href="../styles/main.css">
     <title>GuiBank</title>
 </head>
+
 <body>
     <header class="cabecalho">
-        <div class = 'cabecalho-esquerdo'>
+        <div class='cabecalho-esquerdo'>
             <img src="../img/fotoMinha.png" alt="Foto-de-perfil">
         </div>
-        <div class = 'cabecalho-direito'>
+        <div class='cabecalho-direito'>
             <img src="../img/olho-cego.png" alt="olho" width="28">
         </div>
     </header>
@@ -34,17 +37,17 @@
         <div class="menu-lateral_itens">
             <div class="menu-lateral_itens_div">
                 <h2 class="menu-lateral-titulo">Janelas</h1>
-                <nav>
-                    <ul class="menu-lateral_ul">
-                        <li class="itens-lista" data-lista="main" ><a>Home</a></li>
-                        <li class="itens-lista" data-lista="conta" ><a>Conta</a></li>
-                        <li class="itens-lista" data-lista="depositar" ><a>Depositar</a></li>
-                        <li class="itens-lista" data-lista="sacar" ><a>Sacar</a></li>
-                        <li class="itens-lista" data-lista="transferirEscolha" ><a>Transferir</a></li>
-                    </ul>
-                </nav>
+                    <nav>
+                        <ul class="menu-lateral_ul">
+                            <li class="itens-lista" data-lista="main"><a>Home</a></li>
+                            <li class="itens-lista" data-lista="conta"><a>Conta</a></li>
+                            <li class="itens-lista" data-lista="depositar"><a>Depositar</a></li>
+                            <li class="itens-lista" data-lista="sacar"><a>Sacar</a></li>
+                            <li class="itens-lista" data-lista="transferirEscolha"><a>Transferir</a></li>
+                        </ul>
+                    </nav>
             </div>
-        </div>   
+        </div>
     </aside>
     <main class="main">
         <section>
@@ -53,8 +56,8 @@
                 <p>Outras Contas</p>
             </div>
             <div class="primeira-linha">
-                <div class = 'tela'>
-                    <div class = tela-perfil>
+                <div class='tela'>
+                    <div class=tela-perfil>
                         <div class="tela-perfil_informacoes">
                             <img src="" alt=" " width="100" height="100" id="foto-perfil">
                             <div class="tela_informacoes-esquerdo">
@@ -74,8 +77,8 @@
                         </div>
                     </div>
                 </div>
-                <div class = tela-contas>
-                    <ul class = tela-contas_ul id="contas-ul">
+                <div class=tela-contas>
+                    <ul class=tela-contas_ul id="contas-ul">
                         <!-- <li class="tela-contas_informacoes">
                             <div class="tela_informacoes-contas">
                                 <div>
@@ -97,8 +100,8 @@
                 <p>Extratos</p>
             </div>
             <div class="segunda-section">
-                <div class = extrato-depositos>
-                    <ul class = extrato-depositos_ul id="extrato-ul">
+                <div class=extrato-depositos>
+                    <ul class=extrato-depositos_ul id="extrato-ul">
                         <!-- <div class="extrato-depositos_dias" id="dias-extratos">
                             <div class="extrato-depositos_dias-numeros">
                                 <h4>07 Jun</h4>
@@ -126,6 +129,7 @@
     </main>
     <footer></footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script type='module'src="../js/controllers/main.js"></script>
+    <script type='module' src="../js/controllers/main.js"></script>
 </body>
+
 </html>

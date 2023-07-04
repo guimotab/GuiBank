@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
+
+<head>
     <script type='module'>
-        import {verificaLogin} from "../js/utils/verificaLogin.js";
-        (async ()=>{
-            if(!await verificaLogin()){
-            window.location.href = '../login.html'
-        }})()
+        import { verificaLogin } from "../js/utils/verificaLogin.js";
+        (async () => {
+            if (!await verificaLogin()) {
+                window.location.href = '../login.html'
+            }
+        })()
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +16,12 @@
     <link rel="stylesheet" href="../styles/main.css">
     <title>GuiBank</title>
 </head>
+
 <body>
     <header class="cabecalho">
     </header>
     <aside class="menu-lateral">
-        
+
         <div class="nome-empresa">
             <h1>GuiBank</h1>
         </div>
@@ -28,46 +31,52 @@
         <div class="menu-lateral_itens">
             <div class="menu-lateral_itens_itens">
                 <!-- <div class="menu-lateral_itens_div"> -->
-                    <!-- <h2 class="menu-lateral-titulo">Minha Conta</h2> -->
-                    <!-- <ul class="menu-lateral_ul" id = "lista-ul" data-menuLateral="">
+                <!-- <h2 class="menu-lateral-titulo">Minha Conta</h2> -->
+                <!-- <ul class="menu-lateral_ul" id = "lista-ul" data-menuLateral="">
                         <li class="itens-lista" id="agencia">Agência: 12</li>
                         <li class="itens-lista" id="numero">Numero: 22</li> -->
-                    <!-- </ul>
+                <!-- </ul>
                 </div> -->
                 <div class="menu-lateral_itens_div">
                     <h2 class="menu-lateral-titulo">Janelas</h1>
-                    <nav>
-                        <ul id="ul">
-                            <div class="menu-lateral_ul">
-                                <li class="itens-lista" data-lista="main" ><a>Home</a></li>
-                                <li class="itens-lista" data-lista="conta" ><a>Conta</a></li>
-                                <li class="itens-lista" data-lista="depositar" ><a>Depositar</a></li>
-                                <li class="itens-lista" data-lista="sacar" ><a>Sacar</a></li>
-                                <li class="itens-lista" data-lista="transferirEscolha" ><a>Transferir</a></li>
-                            </div>
-                        </ul>
-                    </nav>
+                        <nav>
+                            <ul id="ul">
+                                <div class="menu-lateral_ul">
+                                    <li class="itens-lista" data-lista="main"><a>Home</a></li>
+                                    <li class="itens-lista" data-lista="conta"><a>Conta</a></li>
+                                    <li class="itens-lista" data-lista="depositar"><a>Depositar</a></li>
+                                    <li class="itens-lista" data-lista="sacar"><a>Sacar</a></li>
+                                    <li class="itens-lista" data-lista="transferirEscolha"><a>Transferir</a></li>
+                                </div>
+                            </ul>
+                        </nav>
                 </div>
             </div>
-        </div>   
+        </div>
     </aside>
     <main class="main">
         <form id="formulario">
-            <div class="depositar">
-                <label>Quanto você deseja depositar? </label>
+            <div class="operacao">
+                <div class="texto-operacao">
+                    <label id="titulo-operacao"></label>
+                    <p id="texto-taxa"></p>
+                </div>
                 <div>
-                    <div class="depositar-input">
+                    <div class="operacao-input">
                         <p>R$</p>
-                        <input type="text" placeholder="100,00" id="valor" pattern="^(((\d+)(\.\d{2})*(|.\d{2}))|(\d*))$" required>
+                        <input type="text" placeholder="100,00" id="input-valor"
+                            pattern="^(((\d+)(\.\d{2})*(|.\d{2}))|(\d*))$" required>
                     </div>
                     <p class="erro-valor">*Valor Inválido!</p>
+                    <p class="erro-insuficiente">*Saldo Insuficiente!</p>
                 </div>
-                <button id="botao-depositar"><a>Depositar</a></button>
+                <button type="submit" id="botao-operacao"></button>
             </div>
         </form>
     </main>
     <footer></footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script type='module'src="../js/controllers/depositar.js"></script>
+    <script type='module' src="../js/controllers/inicioOperacao.js"></script>
 </body>
+
 </html>

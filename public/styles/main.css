@@ -7,6 +7,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
 .menu-lateral {
   display: flex;
   flex-direction: column;
@@ -441,73 +442,6 @@
   margin-bottom: 0.6rem;
 }
 
-.main .depositar {
-  display: flex;
-  flex-direction: column;
-  margin: 8rem 10rem 0 8rem;
-  font-family: "Work Sans", sans-serif;
-  gap: 2rem;
-}
-.main .depositar label {
-  font-size: 35px;
-  font-weight: 600;
-}
-.main .depositar .erro-valor {
-  display: none;
-  color: #b92626;
-}
-.main .depositar .depositar-input {
-  display: flex;
-  font-size: 27px;
-  font-weight: 600;
-  gap: 0.5rem;
-  align-items: center;
-}
-.main .depositar .depositar-input input {
-  font-family: "Open Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  background-color: transparent;
-  border: 2px solid rgba(27, 89, 156, 0.6862745098);
-  border-radius: 8px;
-  padding: 0.5rem 0.5rem;
-}
-.main .depositar .depositar-input input::-moz-placeholder {
-  font-family: "Open Sans", sans-serif;
-  align-items: center;
-  font-size: 17px;
-  font-weight: 600;
-}
-.main .depositar .depositar-input input::placeholder {
-  font-family: "Open Sans", sans-serif;
-  align-items: center;
-  font-size: 17px;
-  font-weight: 600;
-}
-.main .depositar .depositar-input input:focus {
-  outline: 0;
-  border-color: rgba(27, 89, 156, 0.6862745098);
-}
-.main .depositar button {
-  display: flex;
-  font-family: "Work Sans", sans-serif;
-  width: -moz-fit-content;
-  width: fit-content;
-  background-color: #003268;
-  border: none;
-  border-radius: 8px;
-}
-.main .depositar button a {
-  padding: 0.5rem 1.5rem;
-  text-decoration: none;
-  color: white;
-  font-size: 22px;
-  font-weight: 500;
-}
-.main .depositar button:hover {
-  background-color: #004da0;
-}
-
 .main .texto-deposito-sucesso {
   display: flex;
   flex-direction: column;
@@ -777,6 +711,16 @@
   color: #b92626;
 }
 
+.erro-valor {
+  display: none;
+  color: #b92626;
+}
+
+.erro-insuficiente {
+  display: none;
+  color: #b92626;
+}
+
 .campo-nome {
   font-size: 18px;
 }
@@ -984,8 +928,170 @@
   color: #b92626;
 }
 
+.erro-valor {
+  display: none;
+  color: #b92626;
+}
+
+.erro-insuficiente {
+  display: none;
+  color: #b92626;
+}
+
 .campo-nome {
   font-size: 18px;
+}
+
+.main .texto-operacao-sucesso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Work Sans", sans-serif;
+  margin-top: 10rem;
+  gap: 1rem;
+}
+.main .texto-operacao-sucesso h3 {
+  font-size: 35px;
+  font-weight: 600;
+}
+.main .texto-operacao-sucesso .operacao_texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.main .texto-operacao-sucesso .operacao_texto .operacao-input {
+  display: flex;
+  flex-direction: column;
+  font-size: 27px;
+  font-weight: 600;
+  align-items: center;
+  gap: 0.5rem;
+}
+.main .texto-operacao-sucesso .operacao_texto .operacao-input p {
+  font-weight: 500;
+}
+.main .texto-operacao-sucesso .operacao_texto .operacao-input p2 {
+  font-weight: 500;
+}
+.main .texto-operacao-sucesso .operacao_texto .operacao-input input {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: transparent;
+  border: 2px solid rgba(27, 89, 156, 0.6862745098);
+  border-radius: 8px;
+  padding: 0.5rem 0.5rem;
+}
+.main .texto-operacao-sucesso .operacao_texto .operacao-input input::-moz-placeholder {
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+.main .texto-operacao-sucesso .operacao_texto .operacao-input input::placeholder {
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+.main .texto-operacao-sucesso .operacao_texto .operacao-input input:focus {
+  outline: 0;
+  border-color: rgba(27, 89, 156, 0.6862745098);
+}
+.main .texto-operacao-sucesso .operacao_texto .concluir-operacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .texto-operacao-sucesso .operacao_texto .concluir-operacao button {
+  display: flex;
+  font-family: "Work Sans", sans-serif;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #003268;
+  border: none;
+  border-radius: 8px;
+}
+.main .texto-operacao-sucesso .operacao_texto .concluir-operacao button a {
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+}
+.main .texto-operacao-sucesso .operacao_texto .concluir-operacao button:hover {
+  background-color: #004da0;
+}
+
+.main .operacao {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  font-family: "Work Sans", sans-serif;
+  margin: 10rem 0 0 10rem;
+  gap: 1.5rem;
+}
+.main .operacao .texto-operacao {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.main .operacao .texto-operacao label {
+  font-size: 35px;
+  font-weight: 600;
+}
+.main .operacao .texto-operacao p {
+  font-weight: 500;
+}
+.main .operacao .operacao-input {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.3rem;
+}
+.main .operacao .operacao-input input {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: transparent;
+  border: 2px solid rgba(27, 89, 156, 0.6862745098);
+  border-radius: 8px;
+  padding: 0.5rem 0.5rem;
+}
+.main .operacao .operacao-input input::-moz-placeholder {
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+.main .operacao .operacao-input input::placeholder {
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+.main .operacao .operacao-input input:focus {
+  outline: 0;
+  border-color: rgba(27, 89, 156, 0.6862745098);
+}
+.main .operacao button {
+  display: flex;
+  font-family: "Work Sans", sans-serif;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #003268;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.main .operacao button:hover {
+  background-color: #004da0;
 }
 
 * {

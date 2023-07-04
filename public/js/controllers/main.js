@@ -40,6 +40,7 @@ import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
     const extratoUl = document.getElementById("extrato-ul")
     ExtratoMain.constroiExtrato(usuario, extratoUl)
 
+    let cliqueSaldo;
     verSaldo.addEventListener("click", () => {
         if (saldoInnerHTML.style.display == "none") {
             mostraSenha.mostraSaldo(verSaldo, saldoInnerHTML)

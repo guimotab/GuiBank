@@ -59,6 +59,7 @@ function verificaCampoCPF(campo, erroClassObrigatorio, erroClassInvalido, erroCl
                 campo.style.border = '2px solid #526D82'
                 erroClassInvalido.style.display = "none"
                 if(!verificacoesCPF.verificaCPF(array, campo.value)){
+                    console.log();
                     //existe
                     campo.style.border = '2px solid #e45e5e'
                     erroClassExiste.style.display = "block"
@@ -203,20 +204,88 @@ function comparaSenha(campoSenha1, campoSenha2, erroSenhaDif, erroClassInvalido)
         }
     }
 }
-function inputsOperacoes(campo){
+function inputsOperacoes(campo, usuario, taxa = 0){
+    const valor = parseFloat(campo.value)
+    const saldo = usuario.saldo
+    const classErroInsuficiente = document.querySelector('.erro-insuficiente')
     const classErroValor = document.querySelector('.erro-valor')
-    if(!campo.validity.valid || campo.value == ""){
-        campo.style.border = '2px solid #e45e5e'
-        classErroValor.style.display = "block"
+    if(taxa == 0){
+        if(campo.value == ""){
+            campo.style.border = '2px solid #526D82'
+            classErroValor.style.display = "none"
+            return false
+        } else {
+            if(!campo.validity.valid){
+                campo.style.border = '2px solid #e45e5e'
+                classErroValor.style.display = "block"
+                return false
+            } else {
+                campo.style.border = '2px solid #526D82'
+                classErroValor.style.display = "none"
+                return true
+            }
+        }
+    }
+    if(campo.value == ""){
+        campo.style.border = '2px solid #526D82'
+        classErroInsuficiente.style.display = "none"
+        classErroValor.style.display = "none"
         return false
     } else {
-        campo.style.border = '2px solid #526D82'
-        classErroValor.style.display = "none"
-        return true
+        if(!campo.validity.valid){
+            campo.style.border = '2px solid #e45e5e'
+            classErroInsuficiente.style.display = "none"
+            classErroValor.style.display = "block"
+            return false
+        } else if(valor + taxa > saldo) {
+            campo.style.border = '2px solid #e45e5e'
+            classErroInsuficiente.style.display = "block"
+            classErroValor.style.display = "none"
+            return false
+        } else {
+            campo.style.border = '2px solid #526D82'
+            classErroInsuficiente.style.display = "none"
+            classErroValor.style.display = "none"
+            return true
+        }
     }
 }
 function verificaCamposErros(arrayDosCampos){
     return arrayDosCampos.find(elemento => elemento.style.border == '2px solid rgb(228, 94, 94)' )
+}
+function verificaCamposLogin(campo, erroClassObrigatorio, erroClassInvalido, erroClassExiste, erroClassEscrita, contasApi){
+    if(campo.value == ""){
+        //Obrigatório
+        campo.style.border = '2px solid #e45e5e'
+        erroClassObrigatorio.style.display = "block"
+        erroClassEscrita.style.display = "none"
+        erroClassInvalido.style.display = "none"
+        erroClassExiste.style.display = "none"
+        return false
+    } else {
+        campo.style.border = '2px solid #526D82'
+        erroClassObrigatorio.style.display = "none"
+        verificacoesCPF.formataCPF(campo)
+        if(!campo.validity.patternMismatch && campo.value.length == 11){
+            //escrita
+            campo.style.border = '2px solid #e45e5e'
+            erroClassEscrita.style.display = "block"
+            return false
+        } else {
+            campo.style.border = '2px solid #526D82'
+            erroClassEscrita.style.display = "none"
+            if(!verificacoesCPF.verificaCPF(contasApi, campo.value)){
+                //existe
+                campo.style.border = '2px solid #e45e5e'
+                erroClassExiste.style.display = "block"
+                return false
+            } else {
+                campo.style.border = '2px solid #526D82'
+                erroClassExiste.style.display = "none"
+                return true
+            }
+        }
+    }
 }
 export const verificaCampos = {
     verificaCampoCPF,
@@ -227,5 +296,6 @@ export const verificaCampos = {
     verificaCampoTelefone,
     comparaSenha,
     inputsOperacoes,
-    verificaCamposErros
+    verificaCamposErros,
+    verificaCamposLogin
 }

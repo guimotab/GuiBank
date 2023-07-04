@@ -1,9 +1,9 @@
 import { verificaCampos } from "../utils/verificaCampos.js"
 import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
 import { verificaLogin } from "../utils/verificaLogin.js"
-import { editaUsuario } from "../services/usuarios.js"
-import { InsereExtratos } from "../utils/InsereExtratos.js"
 import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
+import { RealizaOperacao } from "./RealizaOperacao.js"
+import { verificaExtratoExiste } from "../utils/criaExtratoUsuario.js"
 (async()=>{
     const usuario = new InformacoesUsuario(await verificaLogin())
 
@@ -22,20 +22,8 @@ import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
     form.addEventListener('submit', async evento =>{
         evento.preventDefault()
         verificaExtratoExiste(usuario)
-        if(verificaCampos.inputsOperacoes(inputValor)){
-            if(parseFloat(inputValor.value) > 8000){
-                let saldo = parseFloat(inputValor.value.replace(',', '.'))*0.001
-                saldo = (saldo + usuario.saldo)
-                InsereExtratos.extratoDepositar(usuario, parseFloat(inputValor.value.replace(',', '.')).toFixed(2))
-                usuario.saldo = saldo
-            } else {
-                saldo = (parseFloat(inputValor.value.replace(',', '.')) + usuario.saldo)
-                usuario.saldo = saldo
-                InsereExtratos.extratoDepositar(usuario, parseFloat(inputValor.value.replace(',', '.')).toFixed(2))
-                
-            }
-            await editaUsuario(usuario.id, usuario.devolveInformacoes())
-            window.location.href = `./operacaoConcluida.html?id=${usuario.id}`
+        if(verificaCampos.inputsOperacoes(inputValor, usuario)){
+            await RealizaOperacao.adicionaValores(inputValor, usuario, "Depósito")
         }
     })
     redirecionaBotoesAside(botaoSair, usuario, botoesRedirecionar)

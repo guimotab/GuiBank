@@ -1,4 +1,113 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+.erro-primeiroNome-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-primeiroNome-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-primeiroNome-length {
+  display: none;
+  color: #b92626;
+}
+
+.erro-segundoNome-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-segundoNome-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-segundoNome-length {
+  display: none;
+  color: #b92626;
+}
+
+.erro-cpf-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-cpf-invalido {
+  display: none;
+  color: #b92626;
+}
+
+.erro-cpf-existe {
+  display: none;
+  color: #b92626;
+}
+
+.erro-cpf-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-email-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-email-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-telefone-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-telefone-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-telefone-invalido {
+  display: none;
+  color: #b92626;
+}
+
+.erro-senha-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-senha-invalido {
+  display: none;
+  color: #b92626;
+}
+
+.erro-senha-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-senhas-diferentes {
+  display: none;
+  color: #b92626;
+}
+
+.erro-valor {
+  display: none;
+  color: #b92626;
+}
+
+.erro-insuficiente {
+  display: none;
+  color: #b92626;
+}
+
+.campo-nome {
+  font-size: 18px;
+}
+
 * {
   margin: 0;
   padding: 0;
