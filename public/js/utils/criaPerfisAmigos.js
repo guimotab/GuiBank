@@ -4,20 +4,22 @@ export class ListaAmigos {
             throw new Error()
         }
         contasApi.forEach( (elemento) => {
-            if (elemento._id != contasAmigosLi.id){
-                ListaAmigos.criaLiExistePerfis(listaAmigosUl, elemento._id, elemento )
+            if (elemento._id != contaUsuario.id){
+                this.criaLiExistePerfis(listaAmigosUl, elemento._id, elemento )
+                contasAmigosLi = document.querySelectorAll('#contas-li')
             }
         })
+
         for(let i = 0; i < contasAmigosLi.length; i++){
             contasAmigosLi[i].addEventListener('click' , evento =>{
                 const target = evento.target
-                window.location.href = `./main/transferir.html?id=${contaUsuario.id}&remetente=${target.id}`
+                window.location.href = `./transferir.html?id=${contaUsuario.id}&remetente=${target.id}`
             })
         }
     }
 
     static criaLiSemPerfis(listaAmigosUl){
-        return listaAmigosUl.innerHTML = `<li class="tela-contas_informacoes" id="contas-li">
+        listaAmigosUl.innerHTML = `<li class="tela-contas_informacoes" id="contas-li">
         <div class="tela_informacoes-contas">
         <h4>Não há perfis no momento...</h4>
         </div>
@@ -37,7 +39,6 @@ export class ListaAmigos {
             </div>
             <div class="barra-separacao"></div>
         </li>`
-    
-        return listaAmigosUl.innerHTML += AdicionaPerfilAmigos 
+        listaAmigosUl.innerHTML += AdicionaPerfilAmigos 
     }
 }

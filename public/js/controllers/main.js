@@ -3,12 +3,12 @@ import { ListaAmigos } from "../utils/criaPerfisAmigos.js"
 import { ExtratoMain } from "../utils/ExtratoMain.js"
 import { editaUsuario } from "../services/usuarios.js"
 import { InformacoesApi } from "../utils/InformacoesApi.js"
+import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
 //guardo o usário para poder alterar
 (async () => {
     const [contasApi, usuario] = await InformacoesApi.pegaInformacoes()
 
     const botoesRedirecionar = document.querySelectorAll('[data-lista]')
-    const botoesRedirecionarIguais = document.querySelectorAll('[data-lista-iguais]')
 
     const fotoPerfil = document.getElementById('foto-perfil')
     const primeiroNomeInnerHTML = document.getElementById('nome')
@@ -50,22 +50,5 @@ import { InformacoesApi } from "../utils/InformacoesApi.js"
         }
     })
 
-    botaoSair.addEventListener("click", async () => {
-        usuario.logado = false
-        await editaUsuario(usuario.id, usuario.devolveInformacoes())
-
-        window.location.href = "./login.html"
-    })
-    for (let i = 0; i < botoesRedirecionarIguais.length; i++) {
-        botoesRedirecionarIguais[i].addEventListener('click', evento => {
-            if (botoesRedirecionarIguais[i].attributes[1].value != "main") {
-                window.location.href = `./${botoesRedirecionarIguais[i].attributes[1].value}.html?id=${usuario.id}`
-            }
-        })
-    }
-    for (let i = 0; i < botoesRedirecionar.length; i++) {
-        botoesRedirecionar[i].addEventListener('click', evento => {
-            window.location.href = `./main/${botoesRedirecionar[i].attributes[1].value}.html?id=${usuario.id}`
-        })
-    }
+    redirecionaBotoesAside(botaoSair, usuario, botoesRedirecionar)
 })()

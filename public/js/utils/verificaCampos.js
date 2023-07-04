@@ -1,6 +1,4 @@
-import { formataCPF } from "./formataCPF.js"
-import { validaCPF } from "./validaCPF.js"
-import { verificaCPF } from "./verificaCPF.js"
+import { verificacoesCPF } from "./verificacoesCPF.js"
 
 function verificaCampoNome(campo, erroClassObrigatorio, erroClassLength, erroClassEscrita){
     if(campo.value == ""){
@@ -43,7 +41,7 @@ function verificaCampoCPF(campo, erroClassObrigatorio, erroClassInvalido, erroCl
     } else {
         campo.style.border = '2px solid #526D82'
         erroClassObrigatorio.style.display = "none"
-        formataCPF(campo)
+        verificacoesCPF.formataCPF(campo)
         if(!campo.validity.patternMismatch && campo.value.length == 11){
             //escrita
             campo.style.border = '2px solid #e45e5e'
@@ -52,7 +50,7 @@ function verificaCampoCPF(campo, erroClassObrigatorio, erroClassInvalido, erroCl
         } else {
             campo.style.border = '2px solid #526D82'
             erroClassEscrita.style.display = "none"
-            if(!validaCPF(campo.value)){
+            if(!verificacoesCPF.validaCPF(campo.value)){
                 //invalido
                 campo.style.border = '2px solid #e45e5e'
                 erroClassInvalido.style.display = "block"
@@ -60,7 +58,7 @@ function verificaCampoCPF(campo, erroClassObrigatorio, erroClassInvalido, erroCl
             } else {
                 campo.style.border = '2px solid #526D82'
                 erroClassInvalido.style.display = "none"
-                if(!verificaCPF(array, campo.value)){
+                if(!verificacoesCPF.verificaCPF(array, campo.value)){
                     //existe
                     campo.style.border = '2px solid #e45e5e'
                     erroClassExiste.style.display = "block"
@@ -205,7 +203,7 @@ function comparaSenha(campoSenha1, campoSenha2, erroSenhaDif, erroClassInvalido)
         }
     }
 }
-function funcoesMain(campo){
+function inputsOperacoes(campo){
     const classErroValor = document.querySelector('.erro-valor')
     if(!campo.validity.valid || campo.value == ""){
         campo.style.border = '2px solid #e45e5e'
@@ -228,6 +226,6 @@ export const verificaCampos = {
     verificaCampoSenhaConta,
     verificaCampoTelefone,
     comparaSenha,
-    funcoesMain,
+    inputsOperacoes,
     verificaCamposErros
 }

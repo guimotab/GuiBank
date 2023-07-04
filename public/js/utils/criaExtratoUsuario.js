@@ -1,6 +1,5 @@
 import { Horario } from "./criaHorario.js"
 const mesDia = Horario.criaMesDia()
-
 export function verificaExtratoExiste(indexId) {
     //verifica se existe algum objeto de transacao
     function verificaExisteObjeto() {

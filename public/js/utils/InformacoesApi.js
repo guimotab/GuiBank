@@ -4,14 +4,18 @@ import { verificaLogin } from "./verificaLogin.js"
 
 export class InformacoesApi {
     static async pegaInformacoes(){
-        const [
-            contasUsuariosApi, 
-            usuarioLogado
-        ] = await Promise.all([
-            this.chamaContasApi(),
-            this.chamaContaUsuario()
-        ]);
-        return [contasUsuariosApi, usuarioLogado]
+        try{
+            const [
+                contasUsuariosApi, 
+                usuarioLogado
+            ] = await Promise.all([
+                this.chamaContasApi(),
+                this.chamaContaUsuario()
+            ]);
+            return [contasUsuariosApi, usuarioLogado]
+        } catch {
+            console.log("Houve um erro ao tentar se comunicar com o servidor (lembrar de fazer uma página para esse erro");
+        }
     }
 
     static usuariosDaApi
