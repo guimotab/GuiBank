@@ -88,7 +88,12 @@
                             </div>
                             <div class="conta-perfil_dados">
                                 <label>Usuario</label>
-                                <input type="name" id="usuario">
+                                <input id="usuario" maxlength="14" pattern="[@]\w+">
+                                <p class="erro-usuario-escrita">
+                                    *Este campo só pode conter letras, números e "_"!
+                                </p>
+                                <p class="erro-usuario-obrigatorio">*Esse campo é obrigatório!</p>
+                                <p class="erro-usuario-usado">*Esse usuário já está sendo usado!</p>
                             </div>
                             <div class="conta-perfil_dados conta-perfil_dados-proibido">
                                 <label>CPF</label>

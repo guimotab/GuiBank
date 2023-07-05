@@ -16,113 +16,124 @@ export class Usuario {
     #logado
     #transacoes
     itemAtual
-    
-    constructor(usuariosApi, primeiroNome, segundoNome,
-         cpf, email, 
-         telefone, senha, id){
 
-            this.itemAtual = usuariosApi[usuariosApi.length - 1] ? usuariosApi[usuariosApi.length-1].numeroBanco + 1 : 1
-            this.#primeiroNome = primeiroNome;
-            this.#segundoNome = segundoNome;
-            this.#cpf = cpf;
-            this.#email =email;
-            this.#telefone = telefone;
-            this.#senha = senha;
-            this.#numeroBanco = this.itemAtual;
-            this.#agencia = this.itemAtual + 100;
-            this.#id = id;
-            this.#saldo = 100;
-            this.#foto = "../img/semFoto.jpg";
-            this.#logado = true;
-            this.#usuario = `@${(primeiroNome.toLowerCase() + segundoNome.toLowerCase())
-                .normalize("NFD")
-                .replace(/[^a-zA-Z\s]/g, "")}`
+    constructor(usuariosApi, primeiroNome, segundoNome, cpf, email, telefone, senha, id) {
+
+        this.itemAtual = usuariosApi[usuariosApi.length - 1] ? usuariosApi[usuariosApi.length - 1].numeroBanco + 1 : 1
+        this.#primeiroNome = primeiroNome;
+        this.#segundoNome = segundoNome;
+        this.#cpf = cpf;
+        this.#email = email;
+        this.#telefone = telefone;
+        this.#senha = senha;
+        this.#numeroBanco = this.itemAtual + 10;
+        this.#agencia = this.itemAtual + 100;
+        this.#id = id;
+        this.#saldo = 100;
+        this.#foto = "../img/semFoto.jpg";
+        this.#logado = true;
+        this.#usuario = constroiArrobaUsuario(primeiroNome, segundoNome, itemAtual, usuariosApi)
     }
-    devolveInformacoes(){
+    devolveInformacoes() {
         const conta = {
-            "primeiroNome" : this.#primeiroNome,
-            "segundoNome" : this.#segundoNome,
+            "primeiroNome": this.#primeiroNome,
+            "segundoNome": this.#segundoNome,
             "usuario": this.#usuario,
-            "cpf" : this.#cpf,
-            "email" : this.#email,
-            "telefone" : this.#telefone,
-            "senha" : this.#senha,
-            "numeroBanco" : this.#numeroBanco,
-            "agencia" : this.#agencia,
+            "cpf": this.#cpf,
+            "email": this.#email,
+            "telefone": this.#telefone,
+            "senha": this.#senha,
+            "numeroBanco": this.#numeroBanco,
+            "agencia": this.#agencia,
             "saldo": this.#saldo,
             "foto": this.#foto,
-            "logado" : this.#logado,
-            "transacoes" : []
+            "logado": this.#logado,
+            "transacoes": []
         }
         return conta
+    }
+    static constroiArrobaUsuario(primeiroNome, segundoNome, itemAtual, usuariosApi){
+        let arrobaUsuario = `@${(primeiroNome.toLowerCase() + segundoNome.toLowerCase())
+            .normalize("NFD")
+            .replace(/[^a-zA-Z\s]/g, "")}`
+            try{
+                const existe = usuariosApi.find(usuario => usuario.usuario == arrobaUsuario)
+                if (existe){
+                    return arrobaUsuario += itemAtual
+                } else {
+                    return arrobaUsuario
+                }
+            } catch {
+                return arrobaUsuario
+            }
     }
     get id() {
         return this.#id
     }
-    get foto(){
+    get foto() {
         return this.#foto
     }
-    get primeiroNome(){
+    get primeiroNome() {
         return this.#primeiroNome
     }
-    get segundoNome(){
+    get segundoNome() {
         return this.#segundoNome
     }
-    get usuario(){
+    get usuario() {
         return this.#usuario
     }
-    get cpf(){
+    get cpf() {
         return this.#cpf
     }
-    get email(){
+    get email() {
         return this.#email
     }
-    get telefone(){
+    get telefone() {
         return this.#telefone
     }
-    get numeroBanco(){
+    get numeroBanco() {
         return this.#numeroBanco
     }
-    get agencia(){
+    get agencia() {
         return this.#agencia
     }
-    get saldo(){
+    get saldo() {
         return this.#saldo
     }
-    get senha(){
+    get senha() {
         return this.#senha
     }
-    get transacoes(){
+    get transacoes() {
         return this.#transacoes
     }
-    set logado(status){
-       this.#logado = status
+    set logado(status) {
+        this.#logado = status
     }
-    set foto(novaFoto){
+    set foto(novaFoto) {
         this.#foto = novaFoto
     }
-    set primeiroNome(novoPrimeiroNome){
+    set primeiroNome(novoPrimeiroNome) {
         this.#primeiroNome = novoPrimeiroNome
     }
-    set segundoNome(novoSegundoNome){
+    set segundoNome(novoSegundoNome) {
         this.#segundoNome = novoSegundoNome
     }
-    set usuario(novoUsuario){
+    set usuario(novoUsuario) {
         this.#usuario = novoUsuario
     }
-    set email(novoEmail){
+    set email(novoEmail) {
         this.#email = novoEmail
     }
-    set telefone(novoTelefone){
+    set telefone(novoTelefone) {
         this.#telefone = novoTelefone
     }
-    set senha(novaSenha){
+    set senha(novaSenha) {
         this.#senha = novaSenha
     }
-    set saldo(novoSaldo){
+    set saldo(novoSaldo) {
         this.#saldo = novoSaldo
     }
-    set transacoes(array){
+    set transacoes(array) {
         this.#transacoes = array
-    }    
+    }
 }

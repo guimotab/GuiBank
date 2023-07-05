@@ -13,9 +13,8 @@
   flex-direction: column;
   position: fixed;
   height: 100%;
-  width: 100%;
   background-color: #003268;
-  width: 230px;
+  width: 13rem;
   gap: 1.5rem;
 }
 .menu-lateral .nome-empresa {
@@ -53,7 +52,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.3rem 3rem;
+  padding: 0.5rem 3rem;
   border-radius: 10px;
   text-decoration: none;
   color: #fff;
@@ -69,8 +68,6 @@
   color: #b7c8da;
 }
 .menu-lateral .deslogar-li {
-  height: -moz-max-content;
-  height: max-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,15 +75,17 @@
   list-style-type: none;
 }
 .menu-lateral .deslogar-li .deslogar {
-  margin: 1vh 3vh 1vh 3vh;
   text-decoration: none;
   font-size: 22px;
   font-weight: 500;
   border: 2px solid #fff;
   border-radius: 15px;
-  padding: 1vh 7vh;
+  padding: 0.4rem 2.3rem;
   cursor: pointer;
-  color: #d8e1e7;
+  color: #fff;
+}
+.menu-lateral .deslogar-li .deslogar:hover {
+  background-color: #004896;
 }
 .menu-lateral .itens-lista {
   display: flex;
@@ -135,9 +134,7 @@
 }
 .main .primeira-linha .tela-contas {
   display: flex;
-  flex-direction: column;
-  padding-right: 0.5rem;
-  padding: 0.5rem 0.5rem 0.5rem 0;
+  padding: 0.5rem 1rem 0.5rem 0;
   width: 40%;
   background-color: rgba(166, 188, 202, 0.4392156863);
   border: 2px solid #415c7c;
@@ -216,7 +213,6 @@
   justify-content: space-between;
   margin-right: 3rem;
   gap: 2rem;
-  height: 100%;
   width: 60%;
 }
 .main .tela .tela-perfil {
@@ -293,6 +289,12 @@
      object-fit: contain;
 }
 
+@media (max-width: 1300px) {
+  .primeira-linha {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
 .main {
   font-family: "Open Sans", sans-serif;
 }
@@ -646,6 +648,21 @@
   color: #b92626;
 }
 
+.erro-usuario-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-usuario-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-usuario-usado {
+  display: none;
+  color: #b92626;
+}
+
 .erro-cpf-obrigatorio {
   display: none;
   color: #b92626;
@@ -859,6 +876,21 @@
 }
 
 .erro-segundoNome-length {
+  display: none;
+  color: #b92626;
+}
+
+.erro-usuario-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-usuario-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-usuario-usado {
   display: none;
   color: #b92626;
 }
@@ -1101,8 +1133,8 @@
 
 body {
   display: grid;
-  grid-template-areas: "lado principal" "lado principal";
-  grid-template-columns: 17.8% auto;
+  grid-template-areas: "lado principal";
+  grid-template-columns: 13rem auto;
   /* duas linhas | 2 colunas */
   /* 1fr é a fração da tela */
   background-color: #d8e1e7;

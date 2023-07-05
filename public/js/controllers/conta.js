@@ -1,12 +1,11 @@
 import { verificaCampos } from "../utils/verificaCampos.js"
 import { hashSenha } from "../utils/criptografaSenha.js"
-import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
 import { editaUsuario } from "../services/usuarios.js"
-import { verificaLogin } from "../utils/verificaLogin.js"
 import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
+import { InformacoesApi } from "../utils/InformacoesApi.js"
 
 (async()=>{
-    const usuario = new InformacoesUsuario(await verificaLogin())
+    const [contasApi, usuario] = await InformacoesApi.pegaInformacoes()
 
     const botoesRedirecionar = document.querySelectorAll('[data-lista]')
     const botaoSair = document.getElementById('deslogar')
@@ -88,11 +87,10 @@ import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
 
     })
     campoUsuario.addEventListener("blur", evento =>{
-        // const erroCpfObg = document.querySelector(".erro-cpf-obrigatorio")
-        // const erroCpfInv = document.querySelector(".erro-cpf-invalido")
-        // const erroCpfExi = document.querySelector(".erro-cpf-existe")
-        // const erroCpfEsc = document.querySelector(".erro-cpf-escrita")
-        // campoCorreteo = verificaCampos.verificaCampoCPF(campoCPF, erroCpfObg, erroCpfInv, erroCpfExi, erroCpfEsc, contas)
+        const erroCpfObg = document.querySelector(".erro-usuario-obrigatorio")
+        const erroCpfEsc = document.querySelector(".erro-usuario-escrita")
+        const erroCpfUsa = document.querySelector(".erro-usuario-usado")
+        verificaCampos.verificaCampoUsuario(campoUsuario, erroCpfObg, erroCpfEsc, erroCpfUsa, contasApi, usuario)
     })
     campoEmail.addEventListener("blur", evento =>{
         const erroEmailObg = document.querySelector(".erro-email-obrigatorio")

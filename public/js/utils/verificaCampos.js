@@ -1,3 +1,4 @@
+import { VerificacoesUsuario } from "./VerificacoesUsuario.js"
 import { verificacoesCPF } from "./verificacoesCPF.js"
 
 function verificaCampoNome(campo, erroClassObrigatorio, erroClassLength, erroClassEscrita){
@@ -26,6 +27,40 @@ function verificaCampoNome(campo, erroClassObrigatorio, erroClassLength, erroCla
             campo.style.border = '2px solid #e45e5e'
             erroClassLength.style.display = "block"
             return false
+        }
+    }
+}
+function verificaCampoUsuario(campo, erroClassObrigatorio, erroClassEscrita, erroClassUsado, contasAPI, contaUsuario){
+    if(campo.value == ""){
+        //Obrigatório
+        campo.style.border = '2px solid #e45e5e'
+        erroClassObrigatorio.style.display = "block"
+        erroClassEscrita.style.display = "none"
+        erroClassUsado.style.display = "none"
+        return false
+    } else {
+        campo.style.border = '2px solid #526D82'
+        erroClassObrigatorio.style.display = "none"
+        VerificacoesUsuario.corrigeUsuario(campo)
+        if(campo.validity.patternMismatch){
+            //escrita
+            campo.style.border = '2px solid #e45e5e'
+            erroClassEscrita.style.display = "block"
+            return false
+        } else {
+            campo.style.border = '2px solid #526D82'
+            erroClassEscrita.style.display = "none"
+            if(VerificacoesUsuario.existeUsuario(contasAPI, campo, contaUsuario)){
+                //existe
+                campo.style.border = '2px solid #e45e5e'
+                erroClassEscrita.style.display = "none"
+                erroClassUsado.style.display = "block"
+                return false
+            } else {
+                campo.style.border = '2px solid #526D82'
+                erroClassUsado.style.display = "none"
+                return true
+            }
         }
     }
 }
@@ -73,7 +108,6 @@ function verificaCampoCPF(campo, erroClassObrigatorio, erroClassInvalido, erroCl
         }
     }
 }
-
 function verificaCampoEmail(campo, erroClassObrigatorio, erroClassEscrita){
     if(campo.value == ""){
         campo.style.border = '2px solid #e45e5e'
@@ -182,11 +216,8 @@ function verificaCampoSenhaConta(campo, erroClassEscrita, erroClassInvalido){
         }
     }
 }
-
-function comparaSenha(campoSenha1, campoSenha2, erroSenhaDif, erroClassInvalido){
-    if(campoSenha1.validity.patternMismatch){
-        
-    } else {
+function comparaSenha(campoSenha1, campoSenha2, erroSenhaDif){
+    if(!campoSenha1.validity.patternMismatch){
         if(!(campoSenha1.value.length < 4)){
             if(campoSenha1.value == campoSenha2.value){
                 campoSenha2.style.border = '2px solid #526D82'
@@ -250,9 +281,6 @@ function inputsOperacoes(campo, usuario, taxa = 0){
         }
     }
 }
-function verificaCamposErros(arrayDosCampos){
-    return arrayDosCampos.find(elemento => elemento.style.border == '2px solid rgb(228, 94, 94)' )
-}
 function verificaCamposLogin(campo, erroClassObrigatorio, erroClassInvalido, erroClassExiste, erroClassEscrita, contasApi){
     if(campo.value == ""){
         //Obrigatório
@@ -287,13 +315,17 @@ function verificaCamposLogin(campo, erroClassObrigatorio, erroClassInvalido, err
         }
     }
 }
+function verificaCamposErros(arrayDosCampos){
+    return arrayDosCampos.find(elemento => elemento.style.border == '2px solid rgb(228, 94, 94)' )
+}
 export const verificaCampos = {
+    verificaCampoNome,
+    verificaCampoUsuario,
     verificaCampoCPF,
     verificaCampoEmail,
-    verificaCampoNome,
+    verificaCampoTelefone,
     verificaCampoSenha,
     verificaCampoSenhaConta,
-    verificaCampoTelefone,
     comparaSenha,
     inputsOperacoes,
     verificaCamposErros,

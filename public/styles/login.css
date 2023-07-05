@@ -29,6 +29,21 @@
   color: #b92626;
 }
 
+.erro-usuario-obrigatorio {
+  display: none;
+  color: #b92626;
+}
+
+.erro-usuario-escrita {
+  display: none;
+  color: #b92626;
+}
+
+.erro-usuario-usado {
+  display: none;
+  color: #b92626;
+}
+
 .erro-cpf-obrigatorio {
   display: none;
   color: #b92626;

@@ -18,9 +18,9 @@ body{
     display: grid;
     grid-template-areas: 
     
-    "lado principal"
     "lado principal";
-    grid-template-columns: 17.8% auto;
+    
+    grid-template-columns: 13rem auto;
     /* duas linhas | 2 colunas */
     /* 1fr é a fração da tela */
     
@@ -30,6 +30,7 @@ body{
 
 .menu-lateral{
     grid-area: lado;
+
 }
 .cabecalho{
     display: none;

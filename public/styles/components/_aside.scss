@@ -5,9 +5,8 @@
     flex-direction: column;
     position:fixed;
     height: 100%;
-    width: 100%;
     background-color: $cor-aside;
-    width: 230px;
+    width: 13rem;
     gap: 1.5rem;
     .nome-empresa{
         display: flex;
@@ -41,7 +40,7 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    padding: .3rem 3rem;
+                    padding: .5rem 3rem;
                     border-radius: 10px;
                     text-decoration: none;
                     color: $cor-branco;
@@ -60,22 +59,23 @@
         color: $cor-aside-titulo;
     }
     .deslogar-li{
-        height:max-content;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-decoration: none;
         list-style-type: none;
         .deslogar{
-            margin: 1vh 3vh 1vh 3vh;
             text-decoration: none;
             font-size: 22px;
             font-weight:500;
             border: 2px solid $cor-branco;
             border-radius: 15px;
-            padding: 1vh 7vh;
+            padding: .4rem 2.3rem;
             cursor:pointer; 
-            color: $cor-principal;
+            color: $cor-branco;
+            &:hover{
+                background-color:#004896;
+            }
             
         }
     }
