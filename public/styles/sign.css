@@ -129,7 +129,7 @@
 }
 
 body {
-  background-color: #d8e1e7;
+  background-color: #DBE2EF;
   font-family: "Work Sans", sans-serif;
 }
 
@@ -140,12 +140,12 @@ body {
   padding: 3rem 0;
   text-align: left;
   gap: 1.2rem;
-  color: #132131;
+  color: #112D4E;
 }
 .campos .nome-empresa {
   font-size: 22px;
   font-weight: 600;
-  border-bottom: 2px solid #526D82;
+  border-bottom: 2px solid #112D4E;
   width: 7rem;
   padding-bottom: 0.2rem;
 }
@@ -160,29 +160,29 @@ body {
   margin-bottom: 0.2rem;
 }
 .campos .campo-titulo-direito-link {
-  color: #132131;
+  color: #112D4E;
   font-size: 16px;
 }
 .campos .campo {
   display: flex;
   flex-direction: column;
-  color: #132131;
+  color: #112D4E;
   font-weight: 400;
   gap: 0.25rem;
 }
 .campos .campo .campo-input-nome {
   font-family: "Open Sans", sans-serif;
-  color: #132131;
+  color: #112D4E;
   border-radius: 10px;
   background-color: transparent;
   padding: 0.6rem;
   font-size: 15px;
   font-weight: 500;
-  border: 2px solid #526D82;
+  border: 2px solid #112D4E;
 }
 .campos .campo .campo-input-nome:focus {
   outline: 0;
-  border-color: #132131;
+  border-color: #112D4E;
 }
 .campos .campo .campo-input-nome::-moz-placeholder {
   font-family: "Open Sans", sans-serif;
@@ -198,17 +198,17 @@ body {
 }
 .campos .campo .campo-input-cpf {
   font-family: "Open Sans", sans-serif;
-  color: #132131;
+  color: #112D4E;
   border-radius: 10px;
   background-color: transparent;
   padding: 0.6rem;
   font-size: 15px;
   font-weight: 500;
-  border: 2px solid #526D82;
+  border: 2px solid #112D4E;
 }
 .campos .campo .campo-input-cpf:focus {
   outline: 0;
-  border-color: #132131;
+  border-color: #112D4E;
 }
 .campos .campo .campo-input-cpf::-moz-placeholder {
   font-family: "Open Sans", sans-serif;
@@ -224,17 +224,17 @@ body {
 }
 .campos .campo .campo-input-email {
   font-family: "Open Sans", sans-serif;
-  color: #132131;
+  color: #112D4E;
   border-radius: 10px;
   background-color: transparent;
   padding: 0.6rem;
   font-size: 15px;
   font-weight: 500;
-  border: 2px solid #526D82;
+  border: 2px solid #112D4E;
 }
 .campos .campo .campo-input-email:focus {
   outline: 0;
-  border-color: #132131;
+  border-color: #112D4E;
 }
 .campos .campo .campo-input-email::-moz-placeholder {
   font-family: "Open Sans", sans-serif;
@@ -250,17 +250,17 @@ body {
 }
 .campos .campo .campo-input-telefone {
   font-family: "Open Sans", sans-serif;
-  color: #132131;
+  color: #112D4E;
   border-radius: 10px;
   background-color: transparent;
   padding: 0.6rem;
   font-size: 15px;
   font-weight: 500;
-  border: 2px solid #526D82;
+  border: 2px solid #112D4E;
 }
 .campos .campo .campo-input-telefone:focus {
   outline: 0;
-  border-color: #132131;
+  border-color: #112D4E;
 }
 .campos .campo .campo-input-telefone::-moz-placeholder {
   font-family: "Open Sans", sans-serif;
@@ -276,17 +276,17 @@ body {
 }
 .campos .campo .campo-input-senha {
   font-family: "Open Sans", sans-serif;
-  color: #132131;
+  color: #112D4E;
   border-radius: 10px;
   background-color: transparent;
   padding: 0.6rem;
   font-size: 15px;
   font-weight: 500;
-  border: 2px solid #526D82;
+  border: 2px solid #112D4E;
 }
 .campos .campo .campo-input-senha:focus {
   outline: 0;
-  border-color: #132131;
+  border-color: #112D4E;
 }
 .campos .campo .campo-input-senha::-moz-placeholder {
   font-family: "Open Sans", sans-serif;
@@ -302,17 +302,17 @@ body {
 }
 .campos .campo .campo-input-senha2 {
   font-family: "Open Sans", sans-serif;
-  color: #132131;
+  color: #112D4E;
   border-radius: 10px;
   background-color: transparent;
   padding: 0.6rem;
   font-size: 15px;
   font-weight: 500;
-  border: 2px solid #526D82;
+  border: 2px solid #112D4E;
 }
 .campos .campo .campo-input-senha2:focus {
   outline: 0;
-  border-color: #132131;
+  border-color: #112D4E;
 }
 .campos .campo .campo-input-senha2::-moz-placeholder {
   font-family: "Open Sans", sans-serif;
@@ -334,11 +334,11 @@ body {
 }
 .campos .campo .campo-enviar {
   font-family: "Work Sans", sans-serif;
-  color: #d8e1e7;
+  color: #DBE2EF;
   font-size: 15px;
   border: none;
   border-radius: 10px;
-  background-color: #132131;
+  background-color: #112D4E;
   width: 8rem;
   padding: 0.6rem;
 }

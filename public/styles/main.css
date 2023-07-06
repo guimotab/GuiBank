@@ -7,13 +7,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&display=swap");
 .menu-lateral {
   display: flex;
   flex-direction: column;
   position: fixed;
   height: 100%;
-  background-color: #003268;
+  background-color: #EEEEEE;
   width: 13rem;
   gap: 1.5rem;
 }
@@ -99,7 +98,7 @@
   justify-content: space-between;
   padding: 1.5rem 3.6rem;
   align-items: center;
-  background-color: #5f88a1;
+  background-color: #3F72AF;
 }
 
 .cabecalho-esquerdo {
@@ -115,186 +114,6 @@
   gap: 0.5rem;
 }
 
-.main {
-  font-family: "Open Sans", sans-serif;
-}
-.main .boas-vindas {
-  display: flex;
-  justify-content: space-between;
-  margin: 4rem 17rem 0.2rem 4.5rem;
-  font-family: "Work Sans", sans-serif;
-  font-size: 25px;
-  font-weight: 600;
-}
-.main .primeira-linha {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 3rem;
-  height: 8rem;
-}
-.main .primeira-linha .tela-contas {
-  display: flex;
-  padding: 0.5rem 1rem 0.5rem 0;
-  width: 40%;
-  background-color: rgba(166, 188, 202, 0.4392156863);
-  border: 2px solid #415c7c;
-  border-left: 20px solid #415c7c;
-  border-radius: 20px;
-  scrollbar-width: thin;
-  scrollbar-color: #415c7c;
-}
-.main .primeira-linha .tela-contas ::-webkit-scrollbar-track {
-  display: none;
-}
-.main .primeira-linha .tela-contas ::-webkit-scrollbar {
-  width: 8px;
-  height: 6px;
-}
-.main .primeira-linha .tela-contas ::-webkit-scrollbar-thumb {
-  background: #415c7c;
-  border-radius: 4px;
-}
-.main .primeira-linha .tela-contas ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(30, 101, 177, 0.6862745098);
-}
-.main .primeira-linha .tela-contas .tela-contas_ul {
-  overflow-y: auto;
-  width: 100%;
-}
-.main .primeira-linha .tela-contas .tela-contas_informacoes {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  width: 80%;
-  padding: 0.2rem 2rem;
-}
-.main .primeira-linha .tela-contas .tela-contas_informacoes .tela_informacoes-contas {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 10px;
-}
-.main .primeira-linha .tela-contas .tela-contas_informacoes .tela_informacoes-contas .botao-transferir-contas button {
-  display: flex;
-  font-family: "Work Sans", sans-serif;
-  width: -moz-fit-content;
-  width: fit-content;
-  background-color: #415c7c;
-  border: none;
-  border-radius: 8px;
-  padding: 0.3rem 0.5rem;
-  color: white;
-  font-size: 16px;
-  font-weight: 500;
-}
-.main .primeira-linha .tela-contas .tela-contas_informacoes .tela_informacoes-contas .botao-transferir-contas button:hover {
-  background-color: rgba(30, 101, 177, 0.6862745098);
-}
-.main .primeira-linha .tela-contas .tela-contas_informacoes .tela_informacoes-contas h4 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 17px;
-  font-weight: 600;
-  color: black;
-}
-.main .primeira-linha .tela-contas .tela-contas_informacoes .tela_informacoes-contas p {
-  font-family: "Open Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-}
-.main .primeira-linha .tela-contas .tela-contas_informacoes .barra-separacao {
-  margin-top: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.164);
-  height: 0.1rem;
-  width: 100%;
-}
-.main .tela {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 3rem;
-  gap: 2rem;
-  width: 60%;
-}
-.main .tela .tela-perfil {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  background-color: rgba(166, 188, 202, 0.4392156863);
-  border: 2px solid #415c7c;
-  border-left: 20px solid #415c7c;
-  border-radius: 20px;
-  padding: 1rem 3rem;
-  justify-content: space-between;
-}
-.main .tela .tela-perfil .tela-perfil_informacoes {
-  display: flex;
-  gap: 0.6rem;
-}
-.main .tela .tela-perfil .tela-perfil_informacoes img {
-  width: 90px;
-  height: 90px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 100%;
-}
-.main .tela .tela-perfil .tela-perfil_informacoes .tela_informacoes-esquerdo {
-  display: flex;
-  flex-direction: column;
-  justify-content: baseline;
-  padding-top: 0.5rem;
-  width: -moz-max-content;
-  width: max-content;
-}
-.main .tela .tela-perfil .tela-perfil_informacoes .tela_informacoes-esquerdo h3 {
-  font-size: 19px;
-}
-.main .tela .tela-perfil .tela-perfil_informacoes .tela_informacoes-esquerdo p {
-  font-size: 15px;
-  font-weight: 500;
-}
-.main .tela .tela-perfil .tela_informacoes-direito {
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  font-weight: 600;
-}
-.main .tela .tela-perfil .tela_informacoes-direito .tela_informacoes-direito-itens {
-  width: -moz-max-content;
-  width: max-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-}
-.main .tela .tela-perfil .tela_informacoes-direito .tela_informacoes-direito-itens .tela_informacoes-direito-saldo {
-  display: flex;
-  gap: 0.3rem;
-  align-items: center;
-}
-.main .tela .tela-perfil .tela_informacoes-direito .tela_informacoes-direito-itens .tela_informacoes-direito-saldo p {
-  display: none;
-  font-size: 18px;
-}
-.main .tela .tela-perfil .tela_informacoes-direito .tela_informacoes-direito-itens .tela_informacoes-direito-saldo .quadrado-senha {
-  display: block;
-  width: 6.2rem;
-  height: 0.6rem;
-  margin: 7px 0;
-  background-color: rgba(85, 115, 146, 0.6862745098);
-}
-.main .tela .tela-perfil .tela_informacoes-direito .tela_informacoes-direito-itens img {
-  width: 35px;
-  height: 20px;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-@media (max-width: 1300px) {
-  .primeira-linha {
-    flex-direction: column;
-    gap: 2rem;
-  }
-}
 .main {
   font-family: "Open Sans", sans-serif;
 }
@@ -510,7 +329,7 @@
   font-family: "Work Sans", sans-serif;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: #003268;
+  background-color: #EEEEEE;
   border: none;
   border-radius: 8px;
 }
@@ -840,7 +659,7 @@
 }
 .main .conta .tela .conta-perfil .conta-perfil_informacoes .conta-perfil_dados input:focus {
   outline: 0;
-  border-color: #132131;
+  border-color: #112D4E;
 }
 .main .conta .tela .conta-perfil .conta-perfil_informacoes img {
   width: 120px;
@@ -1040,7 +859,7 @@
   font-family: "Work Sans", sans-serif;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: #003268;
+  background-color: #EEEEEE;
   border: none;
   border-radius: 8px;
 }
@@ -1112,7 +931,7 @@
   font-family: "Work Sans", sans-serif;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: #003268;
+  background-color: #EEEEEE;
   border: none;
   border-radius: 8px;
   padding: 0.5rem 1.5rem;
@@ -1133,22 +952,27 @@
 
 body {
   display: grid;
-  grid-template-areas: "lado principal";
-  grid-template-columns: 13rem auto;
+  grid-template-areas: "lado cabecalho cabecalho" "lado saldo amigos" "lado extrato amigos";
+  grid-template-columns: 13rem auto 15rem;
+  grid-template-rows: 4rem auto auto;
   /* duas linhas | 2 colunas */
   /* 1fr é a fração da tela */
-  background-color: #d8e1e7;
+  background-color: #DBE2EF;
   font-family: "Work Sans", sans-serif;
 }
 
-.menu-lateral {
+aside {
   grid-area: lado;
 }
 
-.cabecalho {
-  display: none;
+header {
+  grid-area: cabecalho;
 }
 
-.main {
-  grid-area: principal;
+#informacoes-saldo {
+  grid-area: saldo;
+}
+
+#informacoes-amigos {
+  grid-area: amigos;
 }/*# sourceMappingURL=main.css.map */

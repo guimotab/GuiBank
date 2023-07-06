@@ -18,9 +18,12 @@ body{
     display: grid;
     grid-template-areas: 
     
-    "lado principal";
+    "lado cabecalho cabecalho"
+    "lado saldo amigos"
+    "lado extrato amigos";
     
-    grid-template-columns: 13rem auto;
+    grid-template-columns: 13rem auto 15rem;
+    grid-template-rows: 4rem auto auto;
     /* duas linhas | 2 colunas */
     /* 1fr é a fração da tela */
     
@@ -28,13 +31,15 @@ body{
     font-family: $fonte-principal;
 }
 
-.menu-lateral{
+aside{
     grid-area: lado;
-
 }
-.cabecalho{
-    display: none;
+header{
+    grid-area: cabecalho;
 }
-.main{
-    grid-area: principal;
+#informacoes-saldo{
+    grid-area: saldo;
+}
+#informacoes-amigos{
+    grid-area: amigos;
 }

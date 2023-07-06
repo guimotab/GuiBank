@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn-exit {
+      @apply px-8 py-1.5 rounded-xl cursor-pointer hover:bg-cor-secundaria
+    }
+    .btn-operacoes {
+      @apply w-fit px-4 py-2 bg-cor-terciaria rounded-xl
+    }
+}

@@ -129,7 +129,7 @@
 }
 
 body {
-  background-color: #d8e1e7;
+  background-color: #DBE2EF;
   font-family: "Work Sans", sans-serif;
 }
 
@@ -138,19 +138,19 @@ body {
   font-weight: 600;
   width: 35%;
   margin: 0 0 2rem 0.5rem;
-  border-bottom: 2px solid #526D82;
+  border-bottom: 2px solid #112D4E;
 }
 
 .login {
   display: flex;
   flex-direction: column;
   margin: 5rem 23vw;
-  color: #132131;
+  color: #112D4E;
 }
 .login .campos {
   display: flex;
   flex-direction: column;
-  border: 2px solid #526D82;
+  border: 2px solid #112D4E;
   border-radius: 15px;
   padding: 2rem 3rem;
   gap: 1.5rem;
@@ -166,13 +166,13 @@ body {
   margin-bottom: 0.2rem;
 }
 .login .campos .campo-titulo-direito-link {
-  color: #132131;
+  color: #112D4E;
   font-size: 16px;
 }
 .login .campos .campo {
   display: flex;
   flex-direction: column;
-  color: #132131;
+  color: #112D4E;
   font-weight: 400;
   gap: 0.25rem;
 }
@@ -181,8 +181,8 @@ body {
 }
 .login .campos .campo .campo-input {
   font-family: "Open Sans", sans-serif;
-  color: #132131;
-  border: 2px solid #526D82;
+  color: #112D4E;
+  border: 2px solid #112D4E;
   border-radius: 10px;
   background-color: transparent;
   padding: 0.6rem;
@@ -191,7 +191,7 @@ body {
 }
 .login .campos .campo .campo-input:focus {
   outline: 0;
-  border-color: #132131;
+  border-color: #112D4E;
 }
 .login .campos .campo .campo-input::-moz-placeholder {
   font-family: "Open Sans", sans-serif;
@@ -213,11 +213,11 @@ body {
 }
 .login .campos .campo .campo-enviar {
   font-family: "Work Sans", sans-serif;
-  color: #d8e1e7;
+  color: #DBE2EF;
   font-size: 18px;
   border: none;
   border-radius: 10px;
-  background-color: #132131;
+  background-color: #112D4E;
   width: 100%;
   padding: 0.6rem;
   margin-bottom: 0.5rem;

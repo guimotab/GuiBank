@@ -14,117 +14,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/main.css">
+    <!-- <link rel="stylesheet" href="../styles/main.css"> -->
+    <link rel="stylesheet" href="../styles/dist/style.css">
     <title>GuiBank</title>
 </head>
 
-<body>
-    <header class="cabecalho">
-        <div class='cabecalho-esquerdo'>
-            <img src="../img/fotoMinha.png" alt="Foto-de-perfil">
+<body class="grid grid-rows-2 grid-rows-[4rem_auto] grid-cols-2 grid-cols-[13rem_auto]">
+    <aside class="grid row-start-1 row-span-2 bg-cor-terciaria justify-between text-white text-lg px-4 py-5 h-screen">
+        <div>
+            <h1 class='text-center mb-7 mt-3 text-2xl font-semibold'>GuiBank</h1>
+            <nav>
+                <ul class="flex flex-col gap-1.5 font-normal">
+                    <li class="btn-exit" data-lista="main">Home</li>
+                    <li class="btn-exit" data-lista="conta">Conta</li>
+                    <li class="btn-exit" data-lista="depositar">Depositar</li>
+                    <li class="btn-exit" data-lista="sacar">Sacar</li>
+                    <li class="btn-exit" data-lista="transferirEscolha">Transferir</li>
+                </ul>
+            </nav>
         </div>
-        <div class='cabecalho-direito'>
-            <img src="../img/olho-cego.png" alt="olho" width="28">
+        <h3 class="my-4 text-xl font-medium text-center btn-exit" id="deslogar">Deslogar</h3>
+    </aside>
+    <header class="grid col-start-2">
+        <div class="flex justify-between items-center bg-cor-clara px-7 py-2 h-16 text-cor-terciaria">
+            <div>
+                <h2 class="text-xl font-semibold">Olá, Guilherme</h2>
+            </div>
+            <div class="flex gap-3">
+                <img class="object-cover h-12 w-12 rounded-full" src="" id="foto-perfil">
+                <div class="flex flex-col justify-center items-start">
+                    <h3 id="nome" class="font-semibold text-lg"></h3>
+                    <p id="usuario" class="text-sm"></p>
+                </div>
+            </div>
         </div>
     </header>
-    <aside class="menu-lateral">
-        <div class="nome-empresa">
-            <h1>GuiBank</h1>
-        </div>
-        <div class="deslogar-li">
-            <li class="deslogar" id="deslogar">Deslogar</li>
-        </div>
-        <div class="menu-lateral_itens">
-            <div class="menu-lateral_itens_div">
-                <h2 class="menu-lateral-titulo">Janelas</h1>
-                    <nav>
-                        <ul class="menu-lateral_ul">
-                            <li class="itens-lista" data-lista="main"><a>Home</a></li>
-                            <li class="itens-lista" data-lista="conta"><a>Conta</a></li>
-                            <li class="itens-lista" data-lista="depositar"><a>Depositar</a></li>
-                            <li class="itens-lista" data-lista="sacar"><a>Sacar</a></li>
-                            <li class="itens-lista" data-lista="transferirEscolha"><a>Transferir</a></li>
-                        </ul>
-                    </nav>
-            </div>
-        </div>
-    </aside>
-    <main class="main">
-        <section class="section1">
-            <div class="boas-vindas">
-                <p>Seja bem-vindo!</p>
-                <p>Outras Contas</p>
-            </div>
-            <div class="primeira-linha">
-                <div class='tela'>
-                    <div class=tela-perfil>
-                        <div class="tela-perfil_informacoes">
-                            <img src="" alt=" " width="100" height="100" id="foto-perfil">
-                            <div class="tela_informacoes-esquerdo">
-                                <h3 id="nome"></h3>
-                                <p id="usuario"></p>
-                            </div>
-                        </div>
-                        <div class="tela_informacoes-direito">
-                            <div class="tela_informacoes-direito-itens">
-                                <p>Saldo disponível:</p>
-                                <div class="tela_informacoes-direito-saldo">
-                                    <img id='olhoSaldo' src="../img/olho-cego.png" alt="olho">
-                                    <div id="esconde-saldo" class="quadrado-senha"></div>
-                                    <p id="saldo"></p>
-                                </div>
-                            </div>
-                        </div>
+    <main class="grid grid-rows-2 grid-cols-2 mx-7 my-5">
+        <section class="">
+            <div id="informacoes-saldo" class="flex flex-col gap-5">
+                <div>
+                    <p class="font-medium text-lg">Saldo disponível:</p>
+                    <div class="flex items-center gap-1.5">
+                        <img id='olhoSaldo' src="../img/olho-cego.png" alt="olho" class="w-8 h-5">
+                        <div id="esconde-saldo" class="w-20 h-2.5 mx-2 bg-cor-terciaria"></div>
+                        <p id="saldo" class="hidden font-medium text-lg"></p>
                     </div>
                 </div>
-                <div class=tela-contas>
-                    <ul class=tela-contas_ul id="contas-ul">
-                        <!-- <li class="tela-contas_informacoes">
-                            <div class="tela_informacoes-contas">
-                                <div>
-                                    <h4 id="nome">${indexAmigos.nome}</h4>
-                                    <p id="nome-pessoal">@guilhermemota</p>
-                                </div>
-                                <div class="botao-transferir-contas">
-                                    <button>Transferir</button>
-                                </div>
-                            </div>
-                            <div class="barra-separacao"></div>
-                        </li>-->
-                    </ul>
+                <div class="flex gap-7">
+                    <img src="" alt="  " class="btn-operacoes">
+                    <img src="" alt="  " class="btn-operacoes">
+                    <img src="" alt="  " class="btn-operacoes">
+                    <img src="" alt="  " class="btn-operacoes">
                 </div>
             </div>
         </section>
-        <section>
-            <div class="titulos-extratos">
-                <p>Extratos</p>
+        <section class="grid col-start-2 row-start-1 row-end-3">
+            <div id="informacoes-amigos">
+                <p class="font-medium text-lg">Amigos:</p>
+                <ul class=tela-contas_ul id="contas-ul">
+                </ul>
             </div>
-            <div class="segunda-section">
-                <div class=extrato-depositos>
-                    <ul class=extrato-depositos_ul id="extrato-ul">
-                        <!-- <div class="extrato-depositos_dias" id="dias-extratos">
-                            <div class="extrato-depositos_dias-numeros">
-                                <h4>07 Jun</h4>
-                            </div>
-                            <div class="extrato-depositos_dias-li">
-                                <li class="extrato-depositos_li" id="li-extratos">
-                                    <div class="extrato-depositos_informacoes">
-                                        <div class="extrato-depositos_tipo">
-                                            <h3 id="nome">Transferencia</h3>
-                                        </div>
-                                        <div class="extrato-depositos_informacoes_contas">
-                                            <h4 id="nome">$34,54</h4>
-                                            <div class="barra-serapacao_valor"></div>
-                                            <p id="nome-pessoal">15/04/2004</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </div>
-                            <div class="barra-separacao"></div>
-                        </div> -->
-                    </ul>
-                </div>
-            </div>
+        </section>
+        <section class="grid col-start-1 row-end-3">
+            <p>Extratos</p>
         </section>
     </main>
     <footer></footer>
