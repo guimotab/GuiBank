@@ -74,9 +74,10 @@ import { InformacoesApi } from "../utils/InformacoesApi.js"
     })
 
     campoPrimeiroNome.addEventListener("blur", evento =>{
-        const erroPrimeiroNomeObg = document.querySelector(".erro-primeiroNome-obrigatorio")
-        const erroPrimeiroNomeLen = document.querySelector(".erro-primeiroNome-length")
-        const erroPrimeiroNomeEsc = document.querySelector(".erro-primeiroNome-escrita")
+        console.log(campoPrimeiroNome.className)
+        const erroPrimeiroNomeObg = document.getElementById("erroPrimeiroNome-obrigatorio")
+        const erroPrimeiroNomeLen = document.getElementById("erroPrimeiroNome-length")
+        const erroPrimeiroNomeEsc = document.getElementById("erroPrimeiroNome-invalido")
         verificaCampos.verificaCampoNome(campoPrimeiroNome, erroPrimeiroNomeObg, erroPrimeiroNomeLen, erroPrimeiroNomeEsc)
     })
     campoSegundoNome.addEventListener("blur", evento =>{

@@ -54,7 +54,7 @@ export class ExtratoMain {
             imgExtrato = "../img/transferenciaEnviada-icone.svg"
             altExtrato = "transferenciaEnviada-ícone"
         } else if(tipoExtrato == "Saque"){
-            imgExtrato = "../img/sacar-icone.svg"
+            imgExtrato = "../img/saqueRealizado.svg"
             altExtrato = "saque-ícone"
         } else if(tipoExtrato == "Depósito"){
             imgExtrato = "../img/depositoRealizado-icone.svg"

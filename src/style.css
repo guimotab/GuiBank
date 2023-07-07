@@ -4,13 +4,16 @@
 
 @layer components {
     .btn-exit {
-      @apply px-8 py-1.5 rounded-xl cursor-pointer hover:bg-cor-hover
+      @apply flex items-center gap-5 px-8 py-1.5 rounded-xl cursor-pointer hover:bg-cor-hover
     }
     .btn-operacoes {
-      @apply w-14 h-14 px-4 py-2 bg-cor-terciaria rounded-full hover:bg-cor-hover
+      @apply w-14 h-14 px-4 py-2 bg-cor-terciaria rounded-full cursor-pointer hover:bg-cor-hover
     }
     .estilo-blocos-informacoes {
       @apply bg-cor-branco px-8 py-5 h-max rounded-xl
+    }
+    .titulo-informacoes-conta{
+      @apply font-medium text-lg
     }
 }
 

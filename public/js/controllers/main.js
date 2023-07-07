@@ -43,7 +43,6 @@ import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
     ExtratoMain.constroiExtrato(usuario, extratoUl)
 
     verSaldo.addEventListener("click", () => {
-        console.log(saldoInnerHTML.style.display);
         if (saldoInnerHTML.style.display == "none" || saldoInnerHTML.style.display == "" ) {
             mostraSenha.mostraSaldo(verSaldo, saldoInnerHTML)
         } else {

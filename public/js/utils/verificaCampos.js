@@ -1,30 +1,31 @@
 import { VerificacoesUsuario } from "./VerificacoesUsuario.js"
 import { verificacoesCPF } from "./verificacoesCPF.js"
-
+const classCorreto = " border-2 border-cor-outline rounded-lg px-2 py-1 focus:outline-none focus:border-cor-hover border-cor-outline"
+const classErro = " border-2 border-cor-erro rounded-lg px-2 py-1 focus:outline-none focus:border-cor-erro border-cor-erro"
 function verificaCampoNome(campo, erroClassObrigatorio, erroClassLength, erroClassEscrita){
     if(campo.value == ""){
-        campo.style.border = '2px solid #e45e5e'
+        campo.className = classErro
         erroClassObrigatorio.style.display = "block"
         erroClassEscrita.style.display = "none"
         erroClassLength.style.display = "none"
         return false
     } else {
-        campo.style.border = '2px solid #526D82'
+        campo.className = classCorreto
         erroClassObrigatorio.style.display = "none"
         if(campo.value.length >= 3){
-            campo.style.border = '2px solid #526D82'
+            campo.className = classCorreto
             erroClassLength.style.display = "none"
             if(!campo.validity.valid){
-                campo.style.border = '2px solid #e45e5e'
+                campo.className = classErro
                 erroClassEscrita.style.display = "block"
                 return false
             } else {
-                campo.style.border = '2px solid #526D82'
+                campo.className = classCorreto
                 erroClassEscrita.style.display = "none"
                 return true
             }
         } else {
-            campo.style.border = '2px solid #e45e5e'
+            campo.className = classErro
             erroClassLength.style.display = "block"
             return false
         }
@@ -33,13 +34,13 @@ function verificaCampoNome(campo, erroClassObrigatorio, erroClassLength, erroCla
 function verificaCampoUsuario(campo, erroClassObrigatorio, erroClassEscrita, erroClassUsado, contasAPI, contaUsuario){
     if(campo.value == ""){
         //Obrigatório
-        campo.style.border = '2px solid #e45e5e'
+        campo.className = '2px solid #e45e5e'
         erroClassObrigatorio.style.display = "block"
         erroClassEscrita.style.display = "none"
         erroClassUsado.style.display = "none"
         return false
     } else {
-        campo.style.border = '2px solid #526D82'
+        campo.style.border = '2px solid #011e42'
         erroClassObrigatorio.style.display = "none"
         VerificacoesUsuario.corrigeUsuario(campo)
         if(campo.validity.patternMismatch){
@@ -48,7 +49,7 @@ function verificaCampoUsuario(campo, erroClassObrigatorio, erroClassEscrita, err
             erroClassEscrita.style.display = "block"
             return false
         } else {
-            campo.style.border = '2px solid #526D82'
+            campo.style.border = '2px solid #011e42'
             erroClassEscrita.style.display = "none"
             if(VerificacoesUsuario.existeUsuario(contasAPI, campo, contaUsuario)){
                 //existe
@@ -57,7 +58,8 @@ function verificaCampoUsuario(campo, erroClassObrigatorio, erroClassEscrita, err
                 erroClassUsado.style.display = "block"
                 return false
             } else {
-                campo.style.border = '2px solid #526D82'
+
+                campo.style.border = '2px solid #011e42'
                 erroClassUsado.style.display = "none"
                 return true
             }
@@ -74,7 +76,7 @@ function verificaCampoCPF(campo, erroClassObrigatorio, erroClassInvalido, erroCl
         erroClassExiste.style.display = "none"
         return false
     } else {
-        campo.style.border = '2px solid #526D82'
+        campo.style.border = '2px solid #011e42'
         erroClassObrigatorio.style.display = "none"
         verificacoesCPF.formataCPF(campo)
         if(!campo.validity.patternMismatch && campo.value.length == 11){
@@ -83,7 +85,7 @@ function verificaCampoCPF(campo, erroClassObrigatorio, erroClassInvalido, erroCl
             erroClassEscrita.style.display = "block"
             return false
         } else {
-            campo.style.border = '2px solid #526D82'
+            campo.style.border = '2px solid #011e42'
             erroClassEscrita.style.display = "none"
             if(!verificacoesCPF.validaCPF(campo.value)){
                 //invalido
@@ -91,7 +93,7 @@ function verificaCampoCPF(campo, erroClassObrigatorio, erroClassInvalido, erroCl
                 erroClassInvalido.style.display = "block"
                 return false
             } else {
-                campo.style.border = '2px solid #526D82'
+                campo.style.border = '2px solid #011e42'
                 erroClassInvalido.style.display = "none"
                 if(!verificacoesCPF.verificaCPF(array, campo.value)){
                     console.log();
@@ -100,7 +102,7 @@ function verificaCampoCPF(campo, erroClassObrigatorio, erroClassInvalido, erroCl
                     erroClassExiste.style.display = "block"
                     return false
                 } else {
-                    campo.style.border = '2px solid #526D82'
+                    campo.style.border = '2px solid #011e42'
                     erroClassExiste.style.display = "none"
                     return true
                 }
@@ -115,14 +117,14 @@ function verificaCampoEmail(campo, erroClassObrigatorio, erroClassEscrita){
         erroClassEscrita.style.display = "none"
         return false
     } else {
-        campo.style.border = '2px solid #526D82'
+        campo.style.border = '2px solid #011e42'
         erroClassObrigatorio.style.display = "none"
         if(!campo.validity.valid){
             campo.style.border = '2px solid #e45e5e'
             erroClassEscrita.style.display = "block"
             return false
         } else {
-            campo.style.border = '2px solid #526D82'
+            campo.style.border = '2px solid #011e42'
             erroClassEscrita.style.display = "none"
             return true
         }
@@ -136,7 +138,7 @@ function verificaCampoTelefone(campo, erroClassObrigatorio, erroClassEscrita, er
         erroClassEscrita.style.display = "none"
         return false
     } else {
-        campo.style.border = '2px solid #526D82'
+        campo.style.border = '2px solid #011e42'
         erroClassObrigatorio.style.display = "none"
         if(campo.value.length < 11){
             campo.style.border = '2px solid #e45e5e'
@@ -144,7 +146,7 @@ function verificaCampoTelefone(campo, erroClassObrigatorio, erroClassEscrita, er
             return false
 
         } else {
-            campo.style.border = '2px solid #526D82'
+            campo.style.border = '2px solid #011e42'
             erroClassInvalido.style.display = "none"
             if(!campo.validity.valid){
                 campo.style.border = '2px solid #e45e5e'
@@ -152,7 +154,7 @@ function verificaCampoTelefone(campo, erroClassObrigatorio, erroClassEscrita, er
                 return false
 
             } else {
-                campo.style.border = '2px solid #526D82'
+                campo.style.border = '2px solid #011e42'
                 erroClassEscrita.style.display = "none"
                 return true
             }
@@ -172,7 +174,7 @@ function verificaCampoSenha(campo, erroClassObrigatorio, erroClassEscrita, erroC
             erroClassInvalido.style.display = "block"
             return false
         } else {
-            campo.style.border = '2px solid #526D82'
+            campo.style.border = '2px solid #011e42'
             erroClassObrigatorio.style.display = "none"
             erroClassInvalido.style.display = "none"
             if(campo.value.length < 4){
@@ -181,7 +183,7 @@ function verificaCampoSenha(campo, erroClassObrigatorio, erroClassEscrita, erroC
                 return false
     
             } else {
-                campo.style.border = '2px solid #526D82'
+                campo.style.border = '2px solid #011e42'
                 erroClassEscrita.style.display = "none"
                 return true
             }
@@ -190,7 +192,7 @@ function verificaCampoSenha(campo, erroClassObrigatorio, erroClassEscrita, erroC
 }
 function verificaCampoSenhaConta(campo, erroClassEscrita, erroClassInvalido){
     if(campo.value == ""){
-        campo.style.border = '2px solid #526D82'
+        campo.style.border = '2px solid #011e42'
         erroClassEscrita.style.display = "none"
         erroClassInvalido.style.display = "none"
         return true
@@ -201,7 +203,7 @@ function verificaCampoSenhaConta(campo, erroClassEscrita, erroClassInvalido){
             erroClassInvalido.style.display = "block"
             return false
         } else {
-            campo.style.border = '2px solid #526D82'
+            campo.style.border = '2px solid #011e42'
             erroClassInvalido.style.display = "none"
             if(campo.value.length < 4){
             campo.style.border = '2px solid #e45e5e'
@@ -209,7 +211,7 @@ function verificaCampoSenhaConta(campo, erroClassEscrita, erroClassInvalido){
             return false
     
             } else {
-                campo.style.border = '2px solid #526D82'
+                campo.style.border = '2px solid #011e42'
                 erroClassEscrita.style.display = "none"
                 return true
             }
@@ -220,7 +222,7 @@ function comparaSenha(campoSenha1, campoSenha2, erroSenhaDif){
     if(!campoSenha1.validity.patternMismatch){
         if(!(campoSenha1.value.length < 4)){
             if(campoSenha1.value == campoSenha2.value){
-                campoSenha2.style.border = '2px solid #526D82'
+                campoSenha2.style.border = '2px solid #011e42'
                 erroSenhaDif.style.display = "none"
                 return true
             } else {
@@ -229,7 +231,7 @@ function comparaSenha(campoSenha1, campoSenha2, erroSenhaDif){
                 return false
             }
         } else {
-            campoSenha2.style.border = '2px solid #526D82'
+            campoSenha2.style.border = '2px solid #011e42'
             erroSenhaDif.style.display = "none"
             return true
         }
@@ -242,7 +244,7 @@ function inputsOperacoes(campo, usuario, taxa = 0){
     const classErroValor = document.querySelector('.erro-valor')
     if(taxa == 0){
         if(campo.value == ""){
-            campo.style.border = '2px solid #526D82'
+            campo.style.border = '2px solid #011e42'
             classErroValor.style.display = "none"
             return false
         } else {
@@ -251,14 +253,14 @@ function inputsOperacoes(campo, usuario, taxa = 0){
                 classErroValor.style.display = "block"
                 return false
             } else {
-                campo.style.border = '2px solid #526D82'
+                campo.style.border = '2px solid #011e42'
                 classErroValor.style.display = "none"
                 return true
             }
         }
     }
     if(campo.value == ""){
-        campo.style.border = '2px solid #526D82'
+        campo.style.border = '2px solid #011e42'
         classErroInsuficiente.style.display = "none"
         classErroValor.style.display = "none"
         return false
@@ -274,7 +276,7 @@ function inputsOperacoes(campo, usuario, taxa = 0){
             classErroValor.style.display = "none"
             return false
         } else {
-            campo.style.border = '2px solid #526D82'
+            campo.style.border = '2px solid #011e42'
             classErroInsuficiente.style.display = "none"
             classErroValor.style.display = "none"
             return true
@@ -291,7 +293,7 @@ function verificaCamposLogin(campo, erroClassObrigatorio, erroClassInvalido, err
         erroClassExiste.style.display = "none"
         return false
     } else {
-        campo.style.border = '2px solid #526D82'
+        campo.style.border = '2px solid #011e42'
         erroClassObrigatorio.style.display = "none"
         verificacoesCPF.formataCPF(campo)
         if(!campo.validity.patternMismatch && campo.value.length == 11){
@@ -300,7 +302,7 @@ function verificaCamposLogin(campo, erroClassObrigatorio, erroClassInvalido, err
             erroClassEscrita.style.display = "block"
             return false
         } else {
-            campo.style.border = '2px solid #526D82'
+            campo.style.border = '2px solid #011e42'
             erroClassEscrita.style.display = "none"
             if(!verificacoesCPF.verificaCPF(contasApi, campo.value)){
                 //existe
@@ -308,7 +310,7 @@ function verificaCamposLogin(campo, erroClassObrigatorio, erroClassInvalido, err
                 erroClassExiste.style.display = "block"
                 return false
             } else {
-                campo.style.border = '2px solid #526D82'
+                campo.style.border = '2px solid #011e42'
                 erroClassExiste.style.display = "none"
                 return true
             }

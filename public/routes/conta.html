@@ -13,136 +13,136 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/main.css">
+    <!-- <link rel="stylesheet" href="../styles/main.css"> -->
+    <link rel="stylesheet" href="../styles/dist/style.css">
     <title>GuiBank</title>
 </head>
 
-<body>
-    <header class="cabecalho">
-        <div class='cabecalho-esquerdo'>
-            <img src="../img/fotoMinha.png" alt="Foto-de-perfil">
-            <h3>Bem Vindo, Guilherme</h3>
+<body class="grid grid-cols-[13rem_auto]">
+    <aside class="flex flex-col fixed justify-between 
+        bg-cor-terciaria text-white text-lg px-4 py-5 h-screen">
+        <div class="">
+            <h1 class='text-center mb-9 mt-3 text-2xl font-semibold'>GuiBank</h1>
+            <nav>
+                <ul class="flex flex-col gap-1.5 font-normal">
+                    <li class="btn-exit" data-lista="main">
+                        <img src="../img/casaHome.svg" alt="home" class="h-6 w-6">
+                        <p>Home</p>
+                    </li>
+                    <li class="btn-exit" data-lista="conta">
+                        <img src="../img/conta-icone.svg" alt="home" class="h-6 w-6">
+                        <p>Conta</p>
+                    </li>
+                    <li class="btn-exit" data-lista="depositar">
+                        <img src="../img/depositar-icone.svg" alt="home" class="h-6 w-6">
+                        <p>Depositar</p>
+                    </li>
+                    <li class="btn-exit" data-lista="sacar">
+                        <img src="../img/sacar-icone.svg" alt="home" class="h-6 w-6">
+                        <p>Sacar</p>
+                    </li>
+                    <li class="btn-exit" data-lista="transferirEscolha">
+                        <img src="../img/transferir-icone.svg" alt="home" class="h-6 w-6">
+                        <p>Transferir</p>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <div class='cabecalho-direito'>
-            <img src="../img/olho-cego.png" alt="olho" width="28">
-            <!-- Saldo: R$100,00 -->
-        </div>
-    </header>
-    <aside class="menu-lateral">
-        <div class="nome-empresa">
-            <h1>GuiBank</h1>
-        </div>
-        <div class="deslogar-li">
-            <li class="deslogar" id="deslogar">Deslogar</li>
-        </div>
-        <div class="menu-lateral_itens">
-            <div class="menu-lateral_itens_div">
-                <h2 class="menu-lateral-titulo">Janelas</h1>
-                    <nav>
-                        <ul class="menu-lateral_ul">
-                            <li class="itens-lista" data-lista="main"><a>Home</a></li>
-                            <li class="itens-lista" data-lista="conta"><a>Conta</a></li>
-                            <li class="itens-lista" data-lista="depositar"><a>Depositar</a></li>
-                            <li class="itens-lista" data-lista="sacar"><a>Sacar</a></li>
-                            <li class="itens-lista" data-lista="transferirEscolha"><a>Transferir</a></li>
-                        </ul>
-                    </nav>
-            </div>
-        </div>
+        <h3 class="flex my-4 text-xl font-medium justify-center btn-exit" id="deslogar">Deslogar</h3>
     </aside>
-    <main class="main">
-        <section class="principal-conta">
-            <div class="informacoes">
-                <p>Informações da Conta</p>
-            </div>
-            <div class="conta">
-                <div class="tela">
-                    <div class="conta-perfil">
-                        <form class="conta-perfil_informacoes" id="formulario">
-                            <div class="conta-perfil_dados">
-                                <h3>Foto de Perfil</h3>
-                                <img src="" alt="" width="200" height="200" id="foto-perfil">
-                            </div>
-                            <div class="botao-enviar-foto">
-                                <label for="buscar-foto">Buscar foto</label>
-                                <input type="file" id="buscar-foto" accept=".jpg, .jpeg, .png">
-                                <!--multiple (escolhe múltiplos arquivos)-->
-                            </div>
-                            <div class="conta-perfil_dados">
-                                <label>Primeiro Nome</label>
-                                <input type="text" id="primeiroNome" class="campo-input-nome" minlength="3"
-                                    pattern="[a-zA-Z\u00C0-\u00FF']+">
-                                <p class="erro-primeiroNome-obrigatorio">*Esse campo é obrigatório!</p>
-                                <p class="erro-primeiroNome-escrita">*O campo não pode conter espaços, caracteres
-                                    especiais ou números!</p>
-                                <p class="erro-primeiroNome-length">*O nome deve ter pelo menos 3 letras!</p>
-                            </div>
-                            <div class="conta-perfil_dados">
-                                <label>Segundo Nome</label>
-                                <input type="name" id="segundoNome" class="campo-input-nome" minlength="3"
-                                    pattern="[a-zA-Z\u00C0-\u00FF']+">
-                                <p class="erro-segundoNome-obrigatorio">*Esse campo é obrigatório!</p>
-                                <p class="erro-segundoNome-escrita">*O campo não pode conter espaços, caracteres
-                                    especiais ou números!</p>
-                                <p class="erro-segundoNome-length">*O nome deve ter pelo menos 3 letras!</p>
-                            </div>
-                            <div class="conta-perfil_dados">
-                                <label>Usuario</label>
-                                <input id="usuario" maxlength="14" pattern="[@]\w+">
-                                <p class="erro-usuario-escrita">
-                                    *Este campo só pode conter letras, números e "_"!
-                                </p>
-                                <p class="erro-usuario-obrigatorio">*Esse campo é obrigatório!</p>
-                                <p class="erro-usuario-usado">*Esse usuário já está sendo usado!</p>
-                            </div>
-                            <div class="conta-perfil_dados conta-perfil_dados-proibido">
-                                <label>CPF</label>
-                                <input type="text" id="cpf" readonly>
-                            </div>
-                            <div class="conta-perfil_dados">
-                                <label>Email</label>
-                                <input type="email" id="email" class="campo-input-email" minlength="4">
-                                <p class="erro-email-obrigatorio">*Esse campo é obrigatório!</p>
-                                <p class="erro-email-escrita">*Email inválido!</p>
-                            </div>
-                            <div class="conta-perfil_dados">
-                                <label>Telefone</label>
-                                <input type="tel" id="telefone" minlength="11" maxlength="11"
-                                    class="campo-input-telefone" pattern="[0-9]{11}">
-                                <p class="erro-telefone-obrigatorio">*Esse campo é obrigatório!</p>
-                                <p class="erro-telefone-escrita">*O campo pode conter apenas números!</p>
-                                <p class="erro-telefone-invalido">*Telefone Inválido!</p>
-                                <p>*Apenas números</p>
-                            </div>
-                            <div class="conta-perfil_dados conta-perfil_dados-proibido">
-                                <label>Número Banco</label>
-                                <input type="number" id="numeroBanco" readonly><!--disabled-->
-                            </div>
-                            <div class="conta-perfil_dados conta-perfil_dados-proibido">
-                                <label>Agência</label>
-                                <input type="number" id="agencia" readonly>
-                            </div>
-                            <div class="conta-perfil_dados">
-                                <label>Alterar Senha</label>
-                                <input type="password" id="campo-senha1" class="campo-input-senha" minlength="4"
-                                    autocomplete="off" pattern="\S+">
-                                <p class="erro-senha-invalido">*Este campo não pode conter espaços!</p>
-                                <p class="erro-senha-escrita">*A senha deve conter pelo menos 4 caracteres!</p>
-
-                            </div>
-                            <div class="conta-perfil_dados">
-                                <label>Confirmar Senha</label>
-                                <input type="password" id="campo-senha2" class="campo-input-senha2" autocomplete="off">
-                                <p class="erro-senhas-diferentes">*As senhas não coincidem!</p>
-                            </div>
-                            <div class="conta-perfil_dados">
-                                <button type="submit" class="botao-dados-enviar">Atualizar Dados</button>
-                            </div>
-                        </form>
+    <main class="col-start-2 h-full w-full bg-cor-clara px-24 py-12">
+        <section class="flex flex-col rounded-2xl px-12 py-6 gap-4">
+            <p class="font-medium text-xl border-b-2 border-cor-terciaria w-96">Informações da Conta</p>
+            <form id="formulario" class="flex flex-col gap-8 w-3/5 max-w-xl">
+                <div class="flex flex-col gap-4">
+                    <div>
+                        <label class="titulo-informacoes-conta">Foto de Perfil</label>
+                        <img src="" alt="" id="foto-perfil"
+                            class="border-4 border-cor-terciaria object-cover h-28 w-28 rounded-full">
+                    </div>
+                    <div class="">
+                        <label for="buscar-foto" class="text-white px-5 py-2.5 rounded-xl bg-cor-terciaria hover:bg-cor-hover cursor-pointer">Buscar
+                            foto</label>
+                        <input type="file" id="buscar-foto" accept=".jpg, .jpeg, .png" class="hidden">
+                        <!--multiple (escolhe múltiplos arquivos)-->
                     </div>
                 </div>
+                <div class="flex justify-between">
+                    <label class="titulo-informacoes-conta">Primeiro Nome</label>
+                    <div class="flex flex-col text-end items-end max-w-xs">
+                        <input type="text" id="primeiroNome" minlength="3" pattern="[a-zA-Z\u00C0-\u00FF']+" 
+                            class="border-2 border-cor-outline rounded-lg px-2 py-1 focus:outline-none focus:border-cor-hover">
+                        <p id="erroPrimeiroNome-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                        <p id="erroPrimeiroNome-length" class="hidden">*O nome deve ter pelo menos 3 letras!</p>
+                        <p id="erroPrimeiroNome-invalido" class="hidden">*O campo não pode conter espaços, caracteres especiais ou números!</p>
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <label class="titulo-informacoes-conta">Segundo Nome</label>
+                    <input type="name" id="segundoNome" class="campo-input-nome" minlength="3"
+                        pattern="[a-zA-Z\u00C0-\u00FF']+">
+                    <p class="hidden">*Esse campo é obrigatório!</p>
+                    <p class="hidden">*O campo não pode conter espaços, caracteres
+                        especiais ou números!</p>
+                    <p class="hidden">*O nome deve ter pelo menos 3 letras!</p>
+                </div>
+                <div class="flex justify-between">
+                    <label class="titulo-informacoes-conta">Usuario</label>
+                    <input id="usuario" maxlength="14" pattern="[@]\w+">
+                    <p class="hidden">
+                        *Este campo só pode conter letras, números e "_"!
+                    </p>
+                    <p class="hidden">*Esse campo é obrigatório!</p>
+                    <p class="hidden">*Esse usuário já está sendo usado!</p>
+                </div>
+                <div class="flex justify-between conta-perfil_dados-proibido">
+                    <label class="titulo-informacoes-conta">CPF</label>
+                    <input type="text" id="cpf" readonly>
+                </div>
+                <div class="flex justify-between">
+                    <label class="titulo-informacoes-conta">Email</label>
+                    <input type="email" id="email" class="campo-input-email" minlength="4">
+                    <p class="hidden">*Esse campo é obrigatório!</p>
+                    <p class="hidden">*Email inválido!</p>
+                </div>
+                <div class="flex justify-between">
+                    <div>
+                        <label class="titulo-informacoes-conta">Telefone</label>
+                        <p>*Apenas números</p>
+                    </div>
+                    <div>
+                        <input type="tel" id="telefone" minlength="11" maxlength="11" class="campo-input-telefone"
+                        pattern="[0-9]{11}">
+                        <p class="hidden">*Esse campo é obrigatório!</p>
+                        <p class="hidden">*O campo pode conter apenas números!</p>
+                        <p class="hidden">*Telefone Inválido!</p>
+                    </div>
+                </div>
+                <div class="flex justify-between conta-perfil_dados-proibido">
+                    <label class="titulo-informacoes-conta">Número Banco</label>
+                    <input type="number" id="numeroBanco" readonly><!--disabled-->
+                </div>
+                <div class="flex justify-between conta-perfil_dados-proibido">
+                    <label class="titulo-informacoes-conta">Agência</label>
+                    <input type="number" id="agencia" readonly>
+                </div>
+                <div class="flex justify-between">
+                    <label class="titulo-informacoes-conta">Alterar Senha</label>
+                    <input type="password" id="campo-senha1" class="campo-input-senha" minlength="4" autocomplete="off"
+                        pattern="\S+">
+                    <p class="hidden">*Este campo não pode conter espaços!</p>
+                    <p class="hidden">*A senha deve conter pelo menos 4 caracteres!</p>
 
-            </div>
+                </div>
+                <div class="flex justify-between">
+                    <label class="titulo-informacoes-conta">Confirmar Senha</label>
+                    <input type="password" id="campo-senha2" class="campo-input-senha2" autocomplete="off">
+                    <p class="hidden">*As senhas não coincidem!</p>
+                </div>
+                <div class="flex justify-between w-fit bg-cor-terciaria px-5 py-2 rounded-xl hover:bg-cor-hover">
+                    <button type="submit" class="text-white text-lg">Atualizar Dados</button>
+                </div>
+            </form>
         </section>
 
     </main>

@@ -14,28 +14,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../styles/main.css"> -->
     <link rel="stylesheet" href="../styles/dist/style.css">
     <title>GuiBank</title>
 </head>
 
 <body class="grid h-screen grid-rows-[auto_1fr] grid-cols-[13rem_auto] overflow-y-hidden">
-    <aside class="flex flex-col justify-between fixed bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52">
+    <aside class="flex flex-col row-start-1 row-end-3 justify-between 
+        bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52">
         <div class="">
-            <h1 class='text-center mb-7 mt-3 text-2xl font-semibold'>GuiBank</h1>
+            <h1 class='text-center mb-9 mt-3 text-2xl font-semibold'>GuiBank</h1>
             <nav>
                 <ul class="flex flex-col gap-1.5 font-normal">
-                    <li class="btn-exit" data-lista="main">Home</li>
-                    <li class="btn-exit" data-lista="conta">Conta</li>
-                    <li class="btn-exit" data-lista="depositar">Depositar</li>
-                    <li class="btn-exit" data-lista="sacar">Sacar</li>
-                    <li class="btn-exit" data-lista="transferirEscolha">Transferir</li>
+                    <li class="btn-exit" data-lista="main">
+                        <img src="../img/casaHome.svg" alt="home" class="h-6 w-6">
+                        <p>Home</p>
+                    </li>
+                    <li class="btn-exit" data-lista="conta">
+                        <img src="../img/conta-icone.svg" alt="home" class="h-6 w-6">
+                        <p>Conta</p>
+                    </li>
+                    <li class="btn-exit" data-lista="depositar">
+                        <img src="../img/depositar-icone.svg" alt="home" class="h-6 w-6">
+                        <p>Depositar</p>
+                    </li>
+                    <li class="btn-exit" data-lista="sacar">
+                        <img src="../img/sacar-icone.svg" alt="home" class="h-6 w-6">
+                        <p>Sacar</p>
+                    </li>
+                    <li class="btn-exit" data-lista="transferirEscolha">
+                        <img src="../img/transferir-icone.svg" alt="home" class="h-6 w-6">
+                        <p>Transferir</p>
+                    </li>
                 </ul>
             </nav>
         </div>
-        <h3 class="my-4 text-xl font-medium text-center btn-exit" id="deslogar">Deslogar</h3>
+        <h3 class="flex my-4 text-xl font-medium justify-center btn-exit" id="deslogar">Deslogar</h3>
     </aside>
-    <header class="grid col-start-2">
+    <header class="grid row-start-1 col-start-2">
         <div class="flex justify-between items-center bg-cor-branco px-7 py-2 h-16 text-cor-terciaria">
             <div>
                 <h2 class="text-xl font-semibold" id="texto-bem-vindo">Olá, Guilherme</h2>
@@ -49,22 +64,22 @@
             </div>
         </div>
     </header>
-    <main class="h-full grid col-start-2 grid-rows-[auto_1fr] grid-cols-[auto_auto] 
+    <main class="h-full grid col-start-2 row-start-2 grid-rows-[auto_1fr] grid-cols-[auto_auto] 
         bg-cor-clara gap-6 px-7 py-6 scrollbar">
         <section class="grid col-start-1 estilo-blocos-informacoes">
             <div id="informacoes-saldo" class="flex flex-col gap-9">
-                <div class="flex flex-col gap-2.5 border-cor-terciaria border-solid border-2 rounded-xl px-7 py-4">
+                <div class="flex justify-between items-center gap-2.5 border-cor-terciaria border-solid border-2 rounded-xl px-7 py-4">
                     <p class="font-medium text-lg">Saldo Disponível:</p>
-                    <div class="flex items-center gap-4 h-6">
+                    <div class="flex items-center gap-4 w-36 h-6">
                         <img id='olhoSaldo' src="../img/olho-cego.png" alt="olho" class="h-5">
                         <div id="esconde-saldo" class="w-24 h-2.5  bg-cor-terciaria"></div>
-                        <p id="saldo" class="hidden font-medium text-basic"></p>
+                        <p id="saldo" class="hidden self-center font-medium text-lg"></p>
                     </div>
                 </div>
                 <div class="flex justify-evenly">
                     <div class="flex flex-col items-center w-max">
                         <img src="../img/depositar-icone.svg" alt="  " class="btn-operacoes">
-                        <p class="font-medium text-basic">Depositar</p>
+                        <p class="font-medium text-basic font-sans">Depositar</p>
                     </div>
                     <div class="flex flex-col items-center w-max">
                         <img src="../img/sacar-icone.svg" alt="  " class="btn-operacoes">

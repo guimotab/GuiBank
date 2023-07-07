@@ -19,6 +19,7 @@ export default {
           primaria: '#DBE2EF',
           secundaria: '#3F72AF',
           terciaria: '#112D4E',
+          outline: '#011e42',
           clara: '#eeeeee',
           branco: '#fff',
           preto: '#000',
@@ -26,6 +27,11 @@ export default {
           cinza_claro: '#616161',
           cinza_transparente: '#49494927',
           hover: '#1355a0',
+          erro: "#b92626",
+        },
+        fontFamily:{
+          primaria: ["Work Sans, sans-serif"],
+          secundaria: ["Open Sans, sans-serif"]
         }
       },
       components: {
