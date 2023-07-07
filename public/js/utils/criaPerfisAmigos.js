@@ -1,5 +1,11 @@
 export class ListaAmigos {
     static criaPerfisAmigos(contasApi, contaUsuario, listaAmigosUl, contasAmigosLi){
+        const sectionAmigos = document.getElementById('section-amigos')
+
+        if(contasApi.length > 5){
+            sectionAmigos.classList += " overflow-y-scroll"
+        }
+
         if(!contasApi[1]){
             throw new Error()
         }
@@ -19,26 +25,23 @@ export class ListaAmigos {
     }
 
     static criaLiSemPerfis(listaAmigosUl){
-        listaAmigosUl.innerHTML = `<li class="tela-contas_informacoes" id="contas-li">
-        <div class="tela_informacoes-contas">
-        <h4>Não há perfis no momento...</h4>
-        </div>
-        </li>`
+        listaAmigosUl.innerHTML = `
+        <h3 class="text-lg font-medium">Não há amigos no momento...</h3>`
     }
 
     static criaLiExistePerfis(listaAmigosUl, idAmigos, indexAmigos){
-        const AdicionaPerfilAmigos = `<li class="tela-contas_informacoes">
-            <div class="tela_informacoes-contas">
-                <div>
-                    <h4 id="nome">${indexAmigos.primeiroNome + " " + indexAmigos.segundoNome}</h4>
-                    <p id="nome-pessoal">${indexAmigos.usuario}</p>
-                </div>
-                <div class="botao-transferir-contas" id="contas-li">
-                    <button id="${idAmigos}">Transferir</button>
-                </div>
+        const AdicionaPerfilAmigos = 
+        `<li class="border-cor-terciaria border-solid border-2 rounded-xl px-7 py-2">
+        <div class="flex justify-between w-full items-center">
+            <div class="flex flex-col justify-center">
+                <h4 class="text-lg font-medium" id="nome">${indexAmigos.primeiroNome + " " + indexAmigos.segundoNome}</h4>
+                <p id="nome-pessoal">${indexAmigos.usuario}</p>
             </div>
-            <div class="barra-separacao"></div>
-        </li>`
+            <div id="contas-li" class="flex items-end" >
+                <button id="${idAmigos}"class="px-3.5 py-1.5 bg-cor-terciaria rounded-xl text-cor-branco hover:bg-cor-hover">Transferir</button>
+            </div>
+        </div>
+    </li>`
         listaAmigosUl.innerHTML += AdicionaPerfilAmigos 
     }
 }

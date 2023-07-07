@@ -1,14 +1,20 @@
 export class ExtratoMain {
     static posicaoArray = 0
     static constroiExtrato(usuario, extratoUl) {
+        const sectionExtrato = document.getElementById("section-extratos")
+        let adicionado = false
         try{
             if (usuario.transacoes == []) {
                 throw Error
             } else {
                 usuario.transacoes.slice().reverse().forEach((elemento) => {
-                    extratoUl.innerHTML += this.criaExtrato(elemento.periodo.dia, this.posicaoArray)
+                    extratoUl.innerHTML += this.criaExtrato(elemento.periodo.dia, this.posicaoArray, usuario)
                     const extratoLi = document.getElementById(`li-extratos-${this.posicaoArray}`)
-                    
+                    console.log();
+                    if(elemento.periodo.tipos.length > 3 && !adicionado){
+                        adicionado = true
+                        sectionExtrato.classList += " overflow-y-scroll "
+                    }
                     for (let i = elemento.periodo.tipos.length - 1; i >= 0; i--) {
                         extratoLi.innerHTML += this.adicionaLiExtrato(elemento.periodo.tipos[i], elemento.periodo.valores[i], elemento.periodo.horarios[i])
                     }
@@ -16,63 +22,59 @@ export class ExtratoMain {
                 })
             }
         } catch {
-            extratoUl.innerHTML = `<li class="extrato-depositos_li">
-            <div class="extrato-depositos_informacoes">
-            <div class="extrato-depositos_tipo">
-            <h3 id="nome">Não há extratos no momento...</h3>
-            </div>
-            <div class="extrato-depositos_informacoes_contas">
-            </div>
-            </div>
-            <div class="barra-separacao"></div>
-            </li>`
+            extratoUl.innerHTML = `
+                <h3 class="text-lg font-medium">Não há extratos no momento...</h3>`
         }
     }
 
-    static criaExtrato(mesDia, posicaoArray){
+    static contagem = 0
+    static criaExtrato(mesDia, posicaoArray, usuario){
+        this.contagem++
+        let divisaoDias = '<div class="w-full h-0.5 bg-cor-cinza_transparente"></div>'
+        if(this.contagem == usuario.transacoes.length){
+            divisaoDias = ""
+        }
         
         // <img src=${srcImagem} alt=${altImagem} width="30" heigth="10">
-        const adicionaExtrato = 
-        `<div class="extrato-depositos_dias id="dias-extratos">
-        <div class="extrato-depositos_dias-numeros">
-            <h4>${mesDia}</h4>
-        </div>
-        <div class="extrato-depositos_dias-li">
-            <li class="extrato-depositos_li" id="li-extratos-${posicaoArray}">
+        const adicionaExtrato = `
+        <li class="flex flex-col gap-4" id="dias-extratos">
+            <h4 class="text-cor-cinza_claro text-base font-medium">${mesDia}</h4>
+            <div class="flex flex-col gap-4" id="li-extratos-${posicaoArray}">
                 
-            </li>
-        </div>
-        <div class="barra-separacao"></div>
-        </div>`
+            </div>
+        </li>
+        ${divisaoDias}`
         return adicionaExtrato   
     }
     
     static adicionaLiExtrato(tipoExtrato, valor, horario){
-        let classTipo
-        let id
-        if(tipoExtrato == "Transferência Enviada"){
-            classTipo = "extrato-depositos_tipo-enviado"
-            id="enviado"
-        } else if (tipoExtrato == "Transferência Recebida"){
-            classTipo = "extrato-depositos_tipo-recebido"
-            id="recebido"
-        } else if (tipoExtrato == "Depósito"){
-            classTipo = "extrato-depositos_tipo-deposito"
-            id="dep"
-        } else if (tipoExtrato == "Saque"){
-            classTipo = "extrato-depositos_tipo-saque"
-            id="saq"
+        let imgExtrato;
+        let altExtrato
+        if(tipoExtrato == "Transferência Enviada" || tipoExtrato == "Transferência Recebida"){
+            imgExtrato = "../img/transferenciaEnviada-icone.svg"
+            altExtrato = "transferenciaEnviada-ícone"
+        } else if(tipoExtrato == "Saque"){
+            imgExtrato = "../img/sacar-icone.svg"
+            altExtrato = "saque-ícone"
+        } else if(tipoExtrato == "Depósito"){
+            imgExtrato = "../img/depositoRealizado-icone.svg"
+            altExtrato = "depósito-ícone"
         }
+        
         const liExtrato = 
-        `<div class="extrato-depositos_informacoes">
-        <div class=${classTipo}>
-            <h3 id="nome">${tipoExtrato}</h3>
-        </div>
-        <div class="extrato-depositos_informacoes_contas ${classTipo}">
-            <h4 id=${id}>R$${valor.replace('.', ',')}</h4>
-            <div class="barra-serapacao_valor"></div>
-            <p id="nome-pessoal">${horario}</p>
-        </div>
+        
+        `
+        <div class="flex gap-3 items-center">
+            <div class="p-2.5 bg-cor-terciaria rounded-full">
+            <img src=${imgExtrato} alt=${altExtrato} class="w-6 h-6">
+            </div>
+            <div class="flex w-full justify-between">
+                <div>
+                    <p id="nome" class="text-cor-cinza_escuro text-base font-semibold">${tipoExtrato}</p>
+                    <p id="nome-pessoal" class="text-cor-cinza_claro">${horario}</p>
+                </div>
+                <p class="text-cor-cinza_escuro text-base font-semibold">R$${valor.replace('.', ',')}</p>
+            </div>
         </div>`
         return liExtrato  
     }

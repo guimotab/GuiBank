@@ -19,9 +19,9 @@
     <title>GuiBank</title>
 </head>
 
-<body class="grid grid-rows-2 grid-rows-[4rem_auto] grid-cols-2 grid-cols-[13rem_auto]">
-    <aside class="grid row-start-1 row-span-2 bg-cor-terciaria justify-between text-white text-lg px-4 py-5 h-screen">
-        <div>
+<body class="grid h-screen grid-rows-[auto_1fr] grid-cols-[13rem_auto] overflow-y-hidden">
+    <aside class="flex flex-col justify-between fixed bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52">
+        <div class="">
             <h1 class='text-center mb-7 mt-3 text-2xl font-semibold'>GuiBank</h1>
             <nav>
                 <ul class="flex flex-col gap-1.5 font-normal">
@@ -36,9 +36,9 @@
         <h3 class="my-4 text-xl font-medium text-center btn-exit" id="deslogar">Deslogar</h3>
     </aside>
     <header class="grid col-start-2">
-        <div class="flex justify-between items-center bg-cor-clara px-7 py-2 h-16 text-cor-terciaria">
+        <div class="flex justify-between items-center bg-cor-branco px-7 py-2 h-16 text-cor-terciaria">
             <div>
-                <h2 class="text-xl font-semibold">Olá, Guilherme</h2>
+                <h2 class="text-xl font-semibold" id="texto-bem-vindo">Olá, Guilherme</h2>
             </div>
             <div class="flex gap-3">
                 <img class="object-cover h-12 w-12 rounded-full" src="" id="foto-perfil">
@@ -49,34 +49,49 @@
             </div>
         </div>
     </header>
-    <main class="grid grid-rows-2 grid-cols-2 mx-7 my-5">
-        <section class="">
-            <div id="informacoes-saldo" class="flex flex-col gap-5">
-                <div>
-                    <p class="font-medium text-lg">Saldo disponível:</p>
-                    <div class="flex items-center gap-1.5">
-                        <img id='olhoSaldo' src="../img/olho-cego.png" alt="olho" class="w-8 h-5">
-                        <div id="esconde-saldo" class="w-20 h-2.5 mx-2 bg-cor-terciaria"></div>
-                        <p id="saldo" class="hidden font-medium text-lg"></p>
+    <main class="h-full grid col-start-2 grid-rows-[auto_1fr] grid-cols-[auto_auto] 
+        bg-cor-clara gap-6 px-7 py-6 scrollbar">
+        <section class="grid col-start-1 estilo-blocos-informacoes">
+            <div id="informacoes-saldo" class="flex flex-col gap-9">
+                <div class="flex flex-col gap-2.5 border-cor-terciaria border-solid border-2 rounded-xl px-7 py-4">
+                    <p class="font-medium text-lg">Saldo Disponível:</p>
+                    <div class="flex items-center gap-4 h-6">
+                        <img id='olhoSaldo' src="../img/olho-cego.png" alt="olho" class="h-5">
+                        <div id="esconde-saldo" class="w-24 h-2.5  bg-cor-terciaria"></div>
+                        <p id="saldo" class="hidden font-medium text-basic"></p>
                     </div>
                 </div>
-                <div class="flex gap-7">
-                    <img src="" alt="  " class="btn-operacoes">
-                    <img src="" alt="  " class="btn-operacoes">
-                    <img src="" alt="  " class="btn-operacoes">
-                    <img src="" alt="  " class="btn-operacoes">
+                <div class="flex justify-evenly">
+                    <div class="flex flex-col items-center w-max">
+                        <img src="../img/depositar-icone.svg" alt="  " class="btn-operacoes">
+                        <p class="font-medium text-basic">Depositar</p>
+                    </div>
+                    <div class="flex flex-col items-center w-max">
+                        <img src="../img/sacar-icone.svg" alt="  " class="btn-operacoes">
+                        <p class="font-medium text-basic">Sacar</p>
+                    </div>
+                    <div class="flex flex-col items-center w-max">
+                        <img src="../img/transferir-icone.svg" alt="  " class="btn-operacoes">
+                        <p class="font-medium text-basic">Transferir</p>
+                    </div>
+                    <div class="flex flex-col items-center w-max">
+                        <img src="../img/cofrinho-icone.svg" alt="  " class="btn-operacoes">
+                        <p class="font-medium text-basic">Caixinha</p>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="grid col-start-2 row-start-1 row-end-3">
-            <div id="informacoes-amigos">
-                <p class="font-medium text-lg">Amigos:</p>
-                <ul class=tela-contas_ul id="contas-ul">
-                </ul>
-            </div>
+
+        <section id="section-amigos" class="col-start-2 row-start-1 row-end-3 flex flex-col estilo-blocos-informacoes 
+            gap-3 h-fit">
+            <p class="font-medium text-lg">Amigos</p>
+            <ul class="flex flex-col gap-3" id="contas-ul">
+            </ul>
         </section>
-        <section class="grid col-start-1 row-end-3">
-            <p>Extratos</p>
+        <section id="section-extratos" class="estilo-blocos-informacoes gap-6 max-h-64 padding_css">
+            <p class="font-medium text-lg mb-2">Extratos</p>
+            <ul class="flex flex-col gap-4" id="extrato-ul">
+            </ul>
         </section>
     </main>
     <footer></footer>

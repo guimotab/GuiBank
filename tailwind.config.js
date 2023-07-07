@@ -2,13 +2,30 @@
 export default {
   content: ['./public/**/*.{html,js}'],
   theme: {
+    screens: {
+      'sm': '640px',
+
+      'md': '768px',
+
+      'lg': '1024px',
+
+      'xl': '1280px',
+
+      '2xl': '1536px',
+    },
     extend: {
       colors: {
         cor: {
           primaria: '#DBE2EF',
           secundaria: '#3F72AF',
           terciaria: '#112D4E',
-          clara: '#F9F7F7'
+          clara: '#eeeeee',
+          branco: '#fff',
+          preto: '#000',
+          cinza_escuro: '#111111', 
+          cinza_claro: '#616161',
+          cinza_transparente: '#49494927',
+          hover: '#1355a0',
         }
       },
       components: {

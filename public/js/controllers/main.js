@@ -16,6 +16,7 @@ import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
     const usuarioInnerHTML = document.getElementById('usuario')
     const saldoInnerHTML = document.getElementById('saldo')
     const botaoSair = document.getElementById('deslogar')
+    const fraseBemVindo = document.getElementById('texto-bem-vindo')
 
     const verSaldo = document.getElementById('olhoSaldo')
 
@@ -24,10 +25,11 @@ import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
 
     async function insereInformacoesNoPerfil() {
         fotoPerfil.setAttribute("src", usuario.foto)
-        primeiroNomeInnerHTML.innerHTML = usuario.primeiroNome
-        segundoNomeInnerHTML.innerHTML += " " + usuario.segundoNome
-        usuarioInnerHTML.innerHTML = usuario.usuario
-        saldoInnerHTML.innerHTML = `R$${usuario.saldo.toFixed(2)}`.replace(".", ",")
+        fraseBemVindo.innerText = "Olá, " + usuario.primeiroNome
+        primeiroNomeInnerHTML.innerText = usuario.primeiroNome
+        segundoNomeInnerHTML.innerText += " " + usuario.segundoNome
+        usuarioInnerHTML.innerText = usuario.usuario
+        saldoInnerHTML.innerText = `R$${usuario.saldo.toFixed(2)}`.replace(".", ",")
     }
     insereInformacoesNoPerfil()
 
@@ -40,14 +42,12 @@ import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
     const extratoUl = document.getElementById("extrato-ul")
     ExtratoMain.constroiExtrato(usuario, extratoUl)
 
-    let cliqueSaldo;
     verSaldo.addEventListener("click", () => {
-        if (saldoInnerHTML.style.display == "none") {
+        console.log(saldoInnerHTML.style.display);
+        if (saldoInnerHTML.style.display == "none" || saldoInnerHTML.style.display == "" ) {
             mostraSenha.mostraSaldo(verSaldo, saldoInnerHTML)
-            cliqueSaldo = 0
         } else {
             mostraSenha.escondeSaldo(verSaldo)
-            cliqueSaldo = 1
         }
     })
 
