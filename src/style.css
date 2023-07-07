@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer components {
+    /* main */
     .btn-exit {
       @apply flex items-center gap-5 px-8 py-1.5 rounded-xl cursor-pointer hover:bg-cor-hover
     }
@@ -12,8 +13,19 @@
     .estilo-blocos-informacoes {
       @apply bg-cor-branco px-8 py-5 h-max rounded-xl
     }
+
+    /* conta */
     .titulo-informacoes-conta{
       @apply font-medium text-lg
+    }
+    .input-conta{
+      @apply border-2 border-cor-outline rounded-lg px-2 py-1 placeholder:font-medium focus:outline-none focus:border-cor-hover
+    }
+    .div-informacoes-conta{
+      @apply grid grid-cols-[18rem_20rem_auto] grid-rows-[fit_auto] gap-1
+    }
+    .frase-erro-conta{
+      @apply row-start-2 row-end-3 col-start-2 col-end-4 font-medium text-cor-erro
     }
 }
 

@@ -19,8 +19,8 @@
 </head>
 
 <body class="grid grid-cols-[13rem_auto]">
-    <aside class="flex flex-col fixed justify-between 
-        bg-cor-terciaria text-white text-lg px-4 py-5 h-screen">
+    <aside class="flex flex-col row-start-1 row-end-3 justify-between 
+        bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52">
         <div class="">
             <h1 class='text-center mb-9 mt-3 text-2xl font-semibold'>GuiBank</h1>
             <nav>
@@ -52,8 +52,9 @@
     </aside>
     <main class="col-start-2 h-full w-full bg-cor-clara px-24 py-12">
         <section class="flex flex-col rounded-2xl px-12 py-6 gap-4">
-            <p class="font-medium text-xl border-b-2 border-cor-terciaria w-96">Informações da Conta</p>
-            <form id="formulario" class="flex flex-col gap-8 w-3/5 max-w-xl">
+            <p class="font-medium text-2xl pb-1 border-b-2 border-cor-terciaria w-96 text-cor-terciaria">Informações da
+                Conta</p>
+            <form id="formulario" class="flex flex-col gap-8 w-3/5 w-full">
                 <div class="flex flex-col gap-4">
                     <div>
                         <label class="titulo-informacoes-conta">Foto de Perfil</label>
@@ -61,83 +62,82 @@
                             class="border-4 border-cor-terciaria object-cover h-28 w-28 rounded-full">
                     </div>
                     <div class="">
-                        <label for="buscar-foto" class="text-white px-5 py-2.5 rounded-xl bg-cor-terciaria hover:bg-cor-hover cursor-pointer">Buscar
-                            foto</label>
+                        <label for="buscar-foto"
+                            class="text-white text-lg px-5 py-2 rounded-xl bg-cor-terciaria hover:bg-cor-hover cursor-pointer">Buscar
+                            Foto</label>
                         <input type="file" id="buscar-foto" accept=".jpg, .jpeg, .png" class="hidden">
                         <!--multiple (escolhe múltiplos arquivos)-->
                     </div>
                 </div>
-                <div class="flex justify-between">
+                <div class="div-informacoes-conta">
                     <label class="titulo-informacoes-conta">Primeiro Nome</label>
-                    <div class="flex flex-col text-end items-end max-w-xs">
-                        <input type="text" id="primeiroNome" minlength="3" pattern="[a-zA-Z\u00C0-\u00FF']+" 
-                            class="border-2 border-cor-outline rounded-lg px-2 py-1 focus:outline-none focus:border-cor-hover">
-                        <p id="erroPrimeiroNome-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
-                        <p id="erroPrimeiroNome-length" class="hidden">*O nome deve ter pelo menos 3 letras!</p>
-                        <p id="erroPrimeiroNome-invalido" class="hidden">*O campo não pode conter espaços, caracteres especiais ou números!</p>
-                    </div>
+                    <input type="text" id="primeiroNome" minlength="3" maxlength="20" pattern="[a-zA-Z\u00C0-\u00FF']+"
+                        class="input-conta">
+                    <p id="erroPrimeiroNome-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                    <p id="erroPrimeiroNome-length" class="hidden">*O nome deve ter pelo menos 3 letras!</p>
+                    <p id="erroPrimeiroNome-invalido" class="hidden">*O campo não
+                        pode conter espaços, caracteres especiais ou números!</p>
                 </div>
-                <div class="flex justify-between">
+                <div class="div-informacoes-conta">
                     <label class="titulo-informacoes-conta">Segundo Nome</label>
-                    <input type="name" id="segundoNome" class="campo-input-nome" minlength="3"
-                        pattern="[a-zA-Z\u00C0-\u00FF']+">
-                    <p class="hidden">*Esse campo é obrigatório!</p>
-                    <p class="hidden">*O campo não pode conter espaços, caracteres
+                    <input type="name" id="segundoNome" minlength="3" maxlength="20" pattern="[a-zA-Z\u00C0-\u00FF']+"
+                        class="input-conta">
+                    <p id="erroSegundoNome-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                    <p id="erroSegundoNome-length" class="hidden">*O nome deve ter pelo menos 3 letras!</p>
+                    <p id="erroSegundoNome-invalido" class="hidden">*O campo não pode conter espaços, caracteres
                         especiais ou números!</p>
-                    <p class="hidden">*O nome deve ter pelo menos 3 letras!</p>
                 </div>
-                <div class="flex justify-between">
+                <div class="div-informacoes-conta">
                     <label class="titulo-informacoes-conta">Usuario</label>
-                    <input id="usuario" maxlength="14" pattern="[@]\w+">
-                    <p class="hidden">
+                    <input id="usuario" maxlength="14" pattern="[@]\w+" class="input-conta">
+                    <p id="erroUsuario-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                    <p id="erroUsuario-invalido" class="hidden">
                         *Este campo só pode conter letras, números e "_"!
                     </p>
-                    <p class="hidden">*Esse campo é obrigatório!</p>
-                    <p class="hidden">*Esse usuário já está sendo usado!</p>
+                    <p id="erroUsuario-existe" class="hidden">*Esse usuário já está sendo usado!</p>
                 </div>
-                <div class="flex justify-between conta-perfil_dados-proibido">
+                <div class="div-informacoes-conta conta-perfil_dados-proibido">
                     <label class="titulo-informacoes-conta">CPF</label>
-                    <input type="text" id="cpf" readonly>
+                    <input type="text" id="cpf" readonly class="input-conta cursor-not-allowed">
                 </div>
-                <div class="flex justify-between">
+                <div class="div-informacoes-conta">
                     <label class="titulo-informacoes-conta">Email</label>
-                    <input type="email" id="email" class="campo-input-email" minlength="4">
-                    <p class="hidden">*Esse campo é obrigatório!</p>
-                    <p class="hidden">*Email inválido!</p>
+                    <input type="email" id="email" minlength="4" maxlength="30" class="input-conta">
+                    <p id="erroEmail-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                    <p id="erroEmail-invalido" class="hidden">*Email inválido!</p>
                 </div>
-                <div class="flex justify-between">
+                <div class="div-informacoes-conta">
                     <div>
                         <label class="titulo-informacoes-conta">Telefone</label>
-                        <p>*Apenas números</p>
+                        <p class="font-medium">*Apenas números</p>
                     </div>
-                    <div>
-                        <input type="tel" id="telefone" minlength="11" maxlength="11" class="campo-input-telefone"
+                    <input type="tel" id="telefone" minlength="11" maxlength="11" class="input-conta h-fit"
                         pattern="[0-9]{11}">
-                        <p class="hidden">*Esse campo é obrigatório!</p>
-                        <p class="hidden">*O campo pode conter apenas números!</p>
-                        <p class="hidden">*Telefone Inválido!</p>
-                    </div>
+                    <p id="erroTelefone-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                    <p id="erroTelefone-invalido" class="hidden">*Telefone Inválido!</p>
+                    <p id="erroTelefone-formato" class="hidden">*O campo pode conter apenas números!</p>
                 </div>
-                <div class="flex justify-between conta-perfil_dados-proibido">
+                <div class="div-informacoes-conta conta-perfil_dados-proibido">
                     <label class="titulo-informacoes-conta">Número Banco</label>
-                    <input type="number" id="numeroBanco" readonly><!--disabled-->
+                    <input type="number" id="numeroBanco" readonly class="input-conta cursor-not-allowed"><!--disabled-->
                 </div>
-                <div class="flex justify-between conta-perfil_dados-proibido">
+                <div class="div-informacoes-conta conta-perfil_dados-proibido">
                     <label class="titulo-informacoes-conta">Agência</label>
-                    <input type="number" id="agencia" readonly>
+                    <input type="number" id="agencia" readonly class="input-conta cursor-not-allowed">
                 </div>
-                <div class="flex justify-between">
+                <div class="div-informacoes-conta">
                     <label class="titulo-informacoes-conta">Alterar Senha</label>
-                    <input type="password" id="campo-senha1" class="campo-input-senha" minlength="4" autocomplete="off"
+                    <input type="password" id="campo-senha1" class="input-conta" minlength="4" autocomplete="off"
                         pattern="\S+">
-                    <p class="hidden">*Este campo não pode conter espaços!</p>
-                    <p class="hidden">*A senha deve conter pelo menos 4 caracteres!</p>
+                    <p id="erroSenha-invalido" class="hidden">*Este campo não pode conter espaços!</p>
+                    <p id="erroSenha-length" class="hidden">*A senha deve conter pelo menos 4 caracteres!</p>
 
                 </div>
-                <div class="flex justify-between">
+                <div class="div-informacoes-conta">
                     <label class="titulo-informacoes-conta">Confirmar Senha</label>
-                    <input type="password" id="campo-senha2" class="campo-input-senha2" autocomplete="off">
-                    <p class="hidden">*As senhas não coincidem!</p>
+                    <input id="campo-senha2" type="password" id="campo-senha2" class="input-conta"
+                        autocomplete="off">
+                    <p id="erroSenha-naoIgual" class="hidden">*As senhas não coincidem!</p>
                 </div>
                 <div class="flex justify-between w-fit bg-cor-terciaria px-5 py-2 rounded-xl hover:bg-cor-hover">
                     <button type="submit" class="text-white text-lg">Atualizar Dados</button>

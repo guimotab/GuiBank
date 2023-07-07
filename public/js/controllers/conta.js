@@ -66,53 +66,51 @@ import { InformacoesApi } from "../utils/InformacoesApi.js"
             let senhaHash = hashSenha.transformaHash(campoSenha1.value)
             usuario.senha = senhaHash;
         }
-        
-        if(!verificaCampos.verificaCamposErros([campoPrimeiroNome, campoSegundoNome, campoEmail, campoTelefone, campoSenha1, campoSenha2])){ 
+        if(!verificaCampos.verificaCamposErros([campoPrimeiroNome, campoSegundoNome, campoUsuario, campoEmail, campoTelefone, campoSenha1, campoSenha2])){ 
             await editaUsuario(usuario.id, usuario.devolveInformacoes())
             window.location.href = `./conta.html?id=${usuario.id}`
         }
     })
 
     campoPrimeiroNome.addEventListener("blur", evento =>{
-        console.log(campoPrimeiroNome.className)
         const erroPrimeiroNomeObg = document.getElementById("erroPrimeiroNome-obrigatorio")
         const erroPrimeiroNomeLen = document.getElementById("erroPrimeiroNome-length")
-        const erroPrimeiroNomeEsc = document.getElementById("erroPrimeiroNome-invalido")
-        verificaCampos.verificaCampoNome(campoPrimeiroNome, erroPrimeiroNomeObg, erroPrimeiroNomeLen, erroPrimeiroNomeEsc)
+        const erroPrimeiroNomeInv = document.getElementById("erroPrimeiroNome-invalido")
+        verificaCampos.verificaCampoNome(campoPrimeiroNome, erroPrimeiroNomeObg, erroPrimeiroNomeLen, erroPrimeiroNomeInv) //
     })
     campoSegundoNome.addEventListener("blur", evento =>{
-        const erroSegundoNomeObg = document.querySelector(".erro-segundoNome-obrigatorio")
-        const erroSegundoNomeLen = document.querySelector(".erro-segundoNome-length")
-        const erroSegundoNomeEsc = document.querySelector(".erro-segundoNome-escrita")
-        verificaCampos.verificaCampoNome(campoSegundoNome, erroSegundoNomeObg, erroSegundoNomeLen, erroSegundoNomeEsc)
+        const erroSegundoNomeObg = document.getElementById("erroSegundoNome-obrigatorio")
+        const erroSegundoNomeLen = document.getElementById("erroSegundoNome-length")
+        const erroSegundoNomeInv = document.getElementById("erroSegundoNome-invalido")
+        verificaCampos.verificaCampoNome(campoSegundoNome, erroSegundoNomeObg, erroSegundoNomeLen, erroSegundoNomeInv)//
 
     })
     campoUsuario.addEventListener("blur", evento =>{
-        const erroCpfObg = document.querySelector(".erro-usuario-obrigatorio")
-        const erroCpfEsc = document.querySelector(".erro-usuario-escrita")
-        const erroCpfUsa = document.querySelector(".erro-usuario-usado")
-        verificaCampos.verificaCampoUsuario(campoUsuario, erroCpfObg, erroCpfEsc, erroCpfUsa, contasApi, usuario)
+        const erroCpfObg = document.getElementById("erroUsuario-obrigatorio")
+        const erroCpfInv = document.getElementById("erroUsuario-invalido")
+        const erroCpfExi = document.getElementById("erroUsuario-existe")
+        verificaCampos.verificaCampoUsuario(campoUsuario, erroCpfObg, erroCpfInv, erroCpfExi, contasApi, usuario) //
     })
     campoEmail.addEventListener("blur", evento =>{
-        const erroEmailObg = document.querySelector(".erro-email-obrigatorio")
-        const erroEmailEsc = document.querySelector(".erro-email-escrita")
-        verificaCampos.verificaCampoEmail(campoEmail, erroEmailObg, erroEmailEsc)
+        const erroEmailObg = document.getElementById("erroEmail-obrigatorio")
+        const erroEmailInv = document.getElementById("erroEmail-invalido")
+        verificaCampos.verificaCampoEmail(campoEmail, erroEmailObg, erroEmailInv)//
     })
     campoTelefone.addEventListener("blur", evento =>{
-        const erroTelefoneObg = document.querySelector(".erro-telefone-obrigatorio")
-        const erroTelefoneEsc = document.querySelector(".erro-telefone-escrita")
-        const erroTelefoneInv = document.querySelector(".erro-telefone-invalido")
-        verificaCampos.verificaCampoTelefone(campoTelefone, erroTelefoneObg, erroTelefoneEsc, erroTelefoneInv)
+        const erroTelefoneObg = document.getElementById("erroTelefone-obrigatorio")
+        const erroTelefoneInv = document.getElementById("erroTelefone-invalido")
+        const erroTelefoneFor = document.getElementById("erroTelefone-formato")
+        verificaCampos.verificaCampoTelefone(campoTelefone, erroTelefoneObg, erroTelefoneInv, erroTelefoneFor)//
     })
-    const erroSenhaDif = document.querySelector(".erro-senhas-diferentes")
+    const erroSenhaDif = document.getElementById("erroSenha-naoIgual")
     campoSenha1.addEventListener("blur", evento =>{
-        const erroSenhaInv = document.querySelector(".erro-senha-invalido")
-        const erroSenhaEsc = document.querySelector(".erro-senha-escrita")
-        verificaCampos.verificaCampoSenhaConta(campoSenha1, erroSenhaEsc, erroSenhaInv)
+        const erroSenhaLen = document.getElementById("erroSenha-length")
+        const erroSenhaInv = document.getElementById("erroSenha-invalido")
+        verificaCampos.verificaCampoSenhaConta(campoSenha1, erroSenhaLen, erroSenhaInv)//
         verificaCampos.comparaSenha(campoSenha1, campoSenha2, erroSenhaDif)
     })
     campoSenha2.addEventListener("blur", evento =>{
-        verificaCampos.comparaSenha(campoSenha1, campoSenha2, erroSenhaDif,)
+        verificaCampos.comparaSenha(campoSenha1, campoSenha2, erroSenhaDif)
     })
     redirecionaBotoesAside(botaoSair, usuario, botoesRedirecionar)
 
