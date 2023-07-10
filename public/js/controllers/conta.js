@@ -18,6 +18,7 @@ import { InformacoesApi } from "../utils/InformacoesApi.js"
     const campoTelefone = document.getElementById('telefone')
     const campoSenha1 = document.getElementById('campo-senha1')
     const campoSenha2 = document.getElementById('campo-senha2')
+    const botaoSubmit = document.getElementById('botao-submit')
 
     const fotoPerfil = document.getElementById('foto-perfil')
     const primeiroNomeInput = document.getElementById('primeiroNome')
@@ -55,6 +56,9 @@ import { InformacoesApi } from "../utils/InformacoesApi.js"
 
     form.addEventListener('submit', async evento=>{
         evento.preventDefault()
+        botaoSubmit.innerHTML = `
+        <div class="mx-12 h-7 w-7 border-4 border-cor-carregamento border-t-white rounded-full animate-spin">
+        </div>`
         usuario.foto = fotoPerfil.src
         usuario.primeiroNome = primeiroNomeInput.value
         usuario.segundoNome = segundoNomeInput.value

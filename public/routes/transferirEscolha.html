@@ -13,14 +13,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/dist/style.css">
     <title>GuiBank</title>
 </head>
 
-<body>
-    
-    <aside class="flex flex-col row-start-1 row-end-3 justify-between 
+<body class="grid grid-cols-[13rem_auto] h-screen">
+    <aside class="flex flex-col fixed row-start-1 row-end-3 justify-between 
         bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52">
         <div class="">
             <h1 class='text-center mb-9 mt-3 text-2xl font-semibold'>GuiBank</h1>
@@ -51,28 +49,13 @@
         </div>
         <h3 class="flex my-4 text-xl font-medium justify-center btn-exit" id="deslogar">Deslogar</h3>
     </aside>
-    <main class="main">
-        <div class="principal">
-            <h3>Escolha uma conta para quem transferir:</h3>
-            <div class=tela-contas>
-                <ul class=tela-contas_ul id="contas-ul">
-                    <!-- <li class="tela-contas_informacoes">
-                        <div class="tela_informacoes-contas">
-                            <div>
-                                <h4 id="nome">${indexAmigos.nome}</h4>
-                                <p id="nome-pessoal">@guilhermemota</p>
-                            </div>
-                            <div class="botao-transferir-contas">
-                                <button>Transferir</button>
-                            </div>
-                        </div>
-                        <div class="barra-separacao"></div>
-                    </li> -->
-                </ul>
-            </div>
-        </div>
+    <main class="col-start-2 px-28 py-32 bg-cor-clara scrollbar">
+        <section id="section-amigos" class="flex flex-col bg-white max-h-96 max-w-xl px-9 py-4 gap-4 rounded-2xl">
+            <h3 class="text-2xl font-medium">Escolha uma conta para transferir:</h3>
+            <ul class="flex flex-col gap-3 " id="contas-ul">
+            </ul>
+        </section>
     </main>
-    <footer></footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type='module' src="../js/controllers/transferirEscolha.js"></script>
 </body>

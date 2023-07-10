@@ -12,8 +12,9 @@ export class RealizaOperacao {
         }
     }
     static async realizaDepositar(inputValor, usuario){
+        let saldo
         if(parseFloat(inputValor.value) > 8000){
-            let saldo = inputValor.value.replace(',', '.')*0.001 + usuario.saldo
+            saldo = inputValor.value.replace(',', '.')*0.001 + usuario.saldo
             InsereExtratos.extratoDepositar(usuario, parseFloat(inputValor.value.replace(',', '.')).toFixed(2))
             usuario.saldo = saldo
         } else {

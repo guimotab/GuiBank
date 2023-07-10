@@ -19,7 +19,7 @@
 </head>
 
 <body class="grid grid-cols-[13rem_auto]">
-    <aside class="flex flex-col row-start-1 row-end-3 justify-between 
+    <aside class="flex flex-col fixed row-start-1 row-end-3 justify-between 
         bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52">
         <div class="">
             <h1 class='text-center mb-9 mt-3 text-2xl font-semibold'>GuiBank</h1>
@@ -51,7 +51,7 @@
         <h3 class="flex my-4 text-xl font-medium justify-center btn-exit" id="deslogar">Deslogar</h3>
     </aside>
     <main class="col-start-2 h-full w-full bg-cor-clara px-24 py-12">
-        <section class="flex flex-col rounded-2xl px-12 py-6 gap-4">
+        <section class="flex flex-col rounded-2xl px-12 py-6 gap-4 bg-white">
             <p class="font-medium text-2xl pb-1 border-b-2 border-cor-terciaria w-96 text-cor-terciaria">Informações da
                 Conta</p>
             <form id="formulario" class="flex flex-col gap-8 w-3/5 w-full">
@@ -72,7 +72,7 @@
                 <div class="div-informacoes-conta">
                     <label class="titulo-informacoes-conta">Primeiro Nome</label>
                     <input type="text" id="primeiroNome" minlength="3" maxlength="20" pattern="[a-zA-Z\u00C0-\u00FF']+"
-                        class="input-conta">
+                        class="input-conta" required>
                     <p id="erroPrimeiroNome-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
                     <p id="erroPrimeiroNome-length" class="hidden">*O nome deve ter pelo menos 3 letras!</p>
                     <p id="erroPrimeiroNome-invalido" class="hidden">*O campo não
@@ -81,7 +81,7 @@
                 <div class="div-informacoes-conta">
                     <label class="titulo-informacoes-conta">Segundo Nome</label>
                     <input type="name" id="segundoNome" minlength="3" maxlength="20" pattern="[a-zA-Z\u00C0-\u00FF']+"
-                        class="input-conta">
+                        class="input-conta" required>
                     <p id="erroSegundoNome-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
                     <p id="erroSegundoNome-length" class="hidden">*O nome deve ter pelo menos 3 letras!</p>
                     <p id="erroSegundoNome-invalido" class="hidden">*O campo não pode conter espaços, caracteres
@@ -89,7 +89,7 @@
                 </div>
                 <div class="div-informacoes-conta">
                     <label class="titulo-informacoes-conta">Usuario</label>
-                    <input id="usuario" maxlength="14" pattern="[@]\w+" class="input-conta">
+                    <input id="usuario" maxlength="14" pattern="[@]\w+" class="input-conta" required>
                     <p id="erroUsuario-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
                     <p id="erroUsuario-invalido" class="hidden">
                         *Este campo só pode conter letras, números e "_"!
@@ -102,7 +102,7 @@
                 </div>
                 <div class="div-informacoes-conta">
                     <label class="titulo-informacoes-conta">Email</label>
-                    <input type="email" id="email" minlength="4" maxlength="30" class="input-conta">
+                    <input type="email" id="email" minlength="4" maxlength="30" class="input-conta" required>
                     <p id="erroEmail-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
                     <p id="erroEmail-invalido" class="hidden">*Email inválido!</p>
                 </div>
@@ -112,14 +112,15 @@
                         <p class="font-medium">*Apenas números</p>
                     </div>
                     <input type="tel" id="telefone" minlength="11" maxlength="11" class="input-conta h-fit"
-                        pattern="[0-9]{11}">
+                        pattern="[0-9]{11}" required>
                     <p id="erroTelefone-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
                     <p id="erroTelefone-invalido" class="hidden">*Telefone Inválido!</p>
                     <p id="erroTelefone-formato" class="hidden">*O campo pode conter apenas números!</p>
                 </div>
                 <div class="div-informacoes-conta conta-perfil_dados-proibido">
                     <label class="titulo-informacoes-conta">Número Banco</label>
-                    <input type="number" id="numeroBanco" readonly class="input-conta cursor-not-allowed"><!--disabled-->
+                    <input type="number" id="numeroBanco" readonly
+                        class="input-conta cursor-not-allowed"><!--disabled-->
                 </div>
                 <div class="div-informacoes-conta conta-perfil_dados-proibido">
                     <label class="titulo-informacoes-conta">Agência</label>
@@ -135,13 +136,12 @@
                 </div>
                 <div class="div-informacoes-conta">
                     <label class="titulo-informacoes-conta">Confirmar Senha</label>
-                    <input id="campo-senha2" type="password" id="campo-senha2" class="input-conta"
-                        autocomplete="off">
+                    <input id="campo-senha2" type="password" id="campo-senha2" class="input-conta" autocomplete="off">
                     <p id="erroSenha-naoIgual" class="hidden">*As senhas não coincidem!</p>
                 </div>
-                <div class="flex justify-between w-fit bg-cor-terciaria px-5 py-2 rounded-xl hover:bg-cor-hover">
-                    <button type="submit" class="text-white text-lg">Atualizar Dados</button>
-                </div>
+                <button type="submit" id="botao-submit"
+                    class="text-white text-lg bg-cor-terciaria w-fit px-5 py-2 rounded-xl hover:bg-cor-hover">
+                    Atualizar Dados</button>
             </form>
         </section>
 

@@ -8,9 +8,10 @@ import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
 
 const [contasApi, usuario] = await InformacoesApi.pegaInformacoes()
 const formulario = document.getElementById('formulario')
-const input = document.getElementById('input-valor')
+const input = document.getElementById('input-operacao')
 const tipoOperacao = Operacoes.devolveOperacao()
 const taxaDasOperacoes = Operacoes.devolveTaxas()
+const botaoSubmit = document.getElementById('botao-operacao')
 
 let usuarioDestinatario
 try{
@@ -27,12 +28,17 @@ const botoesRedirecionar = document.querySelectorAll('[data-lista]')
 
 Operacoes.criaTextos(usuarioDestinatario)
 
+
 input.addEventListener('blur', evento=>{
     verificaCampos.inputsOperacoes(input, usuario, taxaDasOperacoes)
 })
 
 formulario.addEventListener('submit', async evento =>{
     evento.preventDefault()
+    botaoSubmit.innerHTML = ` <div class = "flex justify-center w-full">
+    <div class="h-7 w-7 border-4 border-cor-carregamento border-t-white rounded-full animate-spin">
+    </div>
+    </div>`
     verificaExtratoExiste(usuario)
     if(verificaCampos.inputsOperacoes(input, usuario, taxaDasOperacoes)){
         await RealizaOperacao.adicionaValores(input, usuario, tipoOperacao, usuarioDestinatario)

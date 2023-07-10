@@ -13,14 +13,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/dist/style.css">
     <title>GuiBank</title>
 </head>
 
-<body>
-    
-    <aside class="flex flex-col row-start-1 row-end-3 justify-between 
+<body class="grid grid-cols-[13rem_auto]">
+    <aside class="flex flex-col fixed row-start-1 row-end-3 justify-between 
         bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52">
         <div class="">
             <h1 class='text-center mb-9 mt-3 text-2xl font-semibold'>GuiBank</h1>
@@ -51,20 +49,17 @@
         </div>
         <h3 class="flex my-4 text-xl font-medium justify-center btn-exit" id="deslogar">Deslogar</h3>
     </aside>
-    <main class="main">
-        <div class="texto-operacao-sucesso">
-            <h3 id="titulo-operacao"></h3>
-            <img src="" alt="">
-            <div class="operacao_texto">
-                <div class="operacao-input" id="frase-operacao">
-                </div>
-                <div class="concluir-operacao">
-                    <button id="voltar-home"><a>Concluído</a></button>
-                </div>
+    <main class="col-start-2 px-24 py-32 bg-cor-clara h-screen">
+        <section class="flex flex-col bg-white rounded-2xl px-12 py-10 max-w-2xl gap-5">
+            <h3 id="titulo-operacao" class="text-2xl font-medium border-b-2 border-cor-terciaria"></h3>
+            <div class="text-xl font-medium" id="frase-operacao">
             </div>
-        </div>
+            <div class="w-28">
+                <button type="submit" id="voltar-home"
+                class="flex justify-center text-white text-lg bg-cor-terciaria w-full px-5 py-1.5 rounded-xl hover:bg-cor-hover">Concluído</button>
+            </div>
+        </section>
     </main>
-    <footer></footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type='module' src="../js/controllers/operacaoConcluida.js"></script>
 </body>

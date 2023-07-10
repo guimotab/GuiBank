@@ -21,18 +21,18 @@ export class Operacoes {
         }
     }
     static sacarTexto(tituloOperacao, textoTaxa, botaoOperacao) {
-        tituloOperacao.innerText = 'Quanto você deseja sacar?'
-        textoTaxa.innerText = '*taxa de R$3,30 por saque'
+        tituloOperacao.innerText = 'Qual valor deseja sacar?'
+        textoTaxa.innerText = '*Taxa de R$3,30 por saque'
         botaoOperacao.innerText = 'Sacar'
     }
     static transferirTexto(tituloOperacao, textoTaxa, botaoOperacao, destinatario) {
         tituloOperacao.innerText = 
-            `Quanto você deseja transferir para ${destinatario.primeiroNome} ${destinatario.segundoNome}?`
-        textoTaxa.innerText = '*taxa de R$9,30 por transferir'
+            `Qual valor deseja transferir para ${destinatario.primeiroNome} ${destinatario.segundoNome}?`
+        textoTaxa.innerText = '*Taxa de R$9,30 por transferência'
         botaoOperacao.innerText = 'Transferir'
     }
     static depositarTexto(tituloOperacao, textoTaxa, botaoOperacao) {
-        tituloOperacao.innerText = 'Quanto você deseja depositar?'
+        tituloOperacao.innerText = 'Qual valor deseja depositar?'
         textoTaxa.innerText = ''
         botaoOperacao.innerText = 'Depositar'
     }

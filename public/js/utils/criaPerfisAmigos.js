@@ -1,8 +1,7 @@
 export class ListaAmigos {
     static criaPerfisAmigos(contasApi, contaUsuario, listaAmigosUl, contasAmigosLi){
         const sectionAmigos = document.getElementById('section-amigos')
-
-        if(contasApi.length > 5){
+        if(contasApi.length > 3){
             sectionAmigos.classList += " overflow-y-scroll"
         }
 

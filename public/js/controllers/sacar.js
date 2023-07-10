@@ -10,7 +10,7 @@ import { RealizaOperacao } from "./RealizaOperacao.js"
     const botoesRedirecionar = document.querySelectorAll('[data-lista]')
 
     const inputValor = document.getElementById('valor')
-    // const botao = document.getElementById('botao-sacar')
+    const botaoSubmit = document.getElementById('botao-operacao')
     const form = document.getElementById('formulario')
     const erroSaldoInsuficiente = document.querySelector(".erro-insuficiente")
 
@@ -22,6 +22,9 @@ import { RealizaOperacao } from "./RealizaOperacao.js"
     })
     form.addEventListener('submit', async evento =>{
         evento.preventDefault()
+        botaoSubmit.innerHTML = `
+        <div class="mx-12 h-7 w-7 border-4 border-cor-carregamento border-t-white rounded-full animate-spin">
+        </div>`
         verificaExtratoExiste(usuario)
         const taxa = 3.30
         if(verificaCampos.inputsOperacoes(inputValor, usuario, taxa)){

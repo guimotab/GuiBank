@@ -10,10 +10,9 @@ export class ExtratoMain {
                 usuario.transacoes.slice().reverse().forEach((elemento) => {
                     extratoUl.innerHTML += this.criaExtrato(elemento.periodo.dia, this.posicaoArray, usuario)
                     const extratoLi = document.getElementById(`li-extratos-${this.posicaoArray}`)
-                    console.log();
                     if(elemento.periodo.tipos.length > 3 && !adicionado){
                         adicionado = true
-                        sectionExtrato.classList += " overflow-y-scroll "
+                        sectionExtrato.classList += " overflow-y-scroll"
                     }
                     for (let i = elemento.periodo.tipos.length - 1; i >= 0; i--) {
                         extratoLi.innerHTML += this.adicionaLiExtrato(elemento.periodo.tipos[i], elemento.periodo.valores[i], elemento.periodo.horarios[i])

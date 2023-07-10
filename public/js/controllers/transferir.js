@@ -20,6 +20,7 @@ import { RealizaOperacao } from "./RealizaOperacao.js"
 
     const inputValor = document.getElementById('valor')
     const form = document.getElementById('formulario-transfere')
+    const botaoSubmit = document.getElementById('botao-operacao')
 
     inputValor.focus()
 
@@ -28,6 +29,9 @@ import { RealizaOperacao } from "./RealizaOperacao.js"
     })
     form.addEventListener('submit', async evento =>{
         evento.preventDefault()
+        botaoSubmit.innerHTML = `
+        <div class="mx-12 h-7 w-7 border-4 border-cor-carregamento border-t-white rounded-full animate-spin">
+        </div>`
         verificaExtratoExiste(usuario)
         const taxa = 9.30
         if(verificaCampos.inputsOperacoes(inputValor, usuario, taxa)){

@@ -13,14 +13,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/dist/style.css">
     <title>GuiBank</title>
 </head>
 
-<body>
-    
-    <aside class="flex flex-col row-start-1 row-end-3 justify-between 
+<body class="grid grid-cols-[13rem_auto]">
+    <aside class="flex flex-col fixed row-start-1 row-end-3 justify-between 
         bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52">
         <div class="">
             <h1 class='text-center mb-9 mt-3 text-2xl font-semibold'>GuiBank</h1>
@@ -51,23 +49,24 @@
         </div>
         <h3 class="flex my-4 text-xl font-medium justify-center btn-exit" id="deslogar">Deslogar</h3>
     </aside>
-    <main class="main">
-        <form id="formulario">
-            <div class="operacao">
-                <div class="texto-operacao">
-                    <label id="titulo-operacao"></label>
-                    <p id="texto-taxa"></p>
+    <main class="col-start-2 px-24 py-32 bg-cor-clara h-screen">
+        <form id="formulario" class="flex flex-col px-12 py-10 gap-5 bg-white rounded-xl">
+            <div>
+                <label id="titulo-operacao" class="text-3xl font-semibold"></label>
+                <p id="texto-taxa" class="font-medium"></p>
+            </div>
+            <div>
+                <div id="div-input" class="flex items-end gap-px border-b-2 w-80 border-cor-outline">
+                    <p class="text-2xl font-semibold self-center">R$</p>
+                    <input type="text" id="input-operacao" placeholder="0,00" autocomplete="off"
+                        pattern="^(((\d+)(\.\d{2})*(|.\d{2}))|(\d*))$" class="input-operacao" maxlength="14" required>
                 </div>
-                <div>
-                    <div class="operacao-input">
-                        <p>R$</p>
-                        <input type="text" placeholder="100,00" id="input-valor"
-                            pattern="^(((\d+)(\.\d{2})*(|.\d{2}))|(\d*))$" required>
-                    </div>
-                    <p class="erro-valor">*Valor Inválido!</p>
-                    <p class="erro-insuficiente">*Saldo Insuficiente!</p>
-                </div>
-                <button type="submit" id="botao-operacao"></button>
+                <p id="erroInvalido" class="hidden">*Valor Inválido!</p>
+                <p id="erroInsuficiente" class="hidden">*Saldo Insuficiente!</p>
+            </div>
+            <div class="w-28">
+                <button type="submit" id="botao-operacao"
+                class="text-white text-lg bg-cor-terciaria w-full px-5 py-1.5 rounded-xl hover:bg-cor-hover"></button>
             </div>
         </form>
     </main>

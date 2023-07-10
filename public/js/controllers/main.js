@@ -1,7 +1,6 @@
 import mostraSenha from "../utils/mostraSenha.js"
 import { ListaAmigos } from "../utils/criaPerfisAmigos.js"
 import { ExtratoMain } from "../utils/ExtratoMain.js"
-import { editaUsuario } from "../services/usuarios.js"
 import { InformacoesApi } from "../utils/InformacoesApi.js"
 import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
 //guardo o usário para poder alterar

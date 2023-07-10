@@ -1,7 +1,7 @@
 import { VerificacoesUsuario } from "./VerificacoesUsuario.js"
 import { verificacoesCPF } from "./verificacoesCPF.js"
 const classCorreto = " border-2 border-cor-outline rounded-lg px-2 py-1 h-fit placeholder:font-medium focus:outline-none focus:border-cor-hover"
-const classErro = " border-2 border-cor-erro rounded-lg px-2 py-1 h-fit focus:outline-none focus:border-cor-erro border-cor-erro"
+const classErro = " border-2 border-cor-erro rounded-lg px-2 py-1 h-fit focus:outline-none focus:border-cor-erro"
 function verificaCampoNome(campo, erroClassObrigatorio, erroClassLength, erroClassInvalido){
     if(campo.value == ""){
         campo.className = classErro
@@ -253,43 +253,56 @@ function comparaSenha(campoSenha1, campoSenha2, erroSenhaDif){
 function inputsOperacoes(campo, usuario, taxa = 0){
     const valor = parseFloat(campo.value)
     const saldo = usuario.saldo
-    const classErroInsuficiente = document.querySelector('.erro-insuficiente')
-    const classErroValor = document.querySelector('.erro-valor')
+    const divInput = document.getElementById('div-input')
+    const classErroValor = document.getElementById('erroInvalido')
+    const classErroInsuficiente = document.getElementById('erroInsuficiente')
+    const classCorretoLabel = " flex items-end gap-px border-b-2 w-80 border-cor-outline"
+    const classErroLabel = " flex items-end gap-px border-b-2 w-80 border-cor-erro"
+    const classCorretoOperacao = " h-9 bg-transparent px-2 text-2xl font-semibold placeholder:text-black focus:outline-none"
+    const classErroOperacao = " h-9 bg-transparent px-2 text-2xl font-semibold placeholder:text-black focus:outline-none"
+
     if(taxa == 0){
         if(campo.value == ""){
-            campo.className = classCorreto
+            campo.className = classCorretoOperacao
+            divInput.classList = classCorretoLabel
             classErroValor.className = "hidden"
             return false
         } else {
             if(!campo.validity.valid){
-                campo.className = classErro
-                classErroValor.className = "frase-erro-conta"
+                campo.className = classErroOperacao
+                divInput.classList = classErroLabel
+                classErroValor.className = "frase-erro-operacao"
                 return false
             } else {
-                campo.className = classCorreto
+                campo.className = classCorretoOperacao
+                divInput.classList = classCorretoLabel
                 classErroValor.className = "hidden"
                 return true
             }
         }
     }
     if(campo.value == ""){
-        campo.className = classCorreto
+        campo.className = classCorretoOperacao
+        divInput.classList = classCorretoLabel
         classErroInsuficiente.className = "hidden"
         classErroValor.className = "hidden"
         return false
     } else {
         if(!campo.validity.valid){
-            campo.className = classErro
+            campo.className = classErroOperacao
+            divInput.classList = classErroLabel
             classErroInsuficiente.className = "hidden"
-            classErroValor.className = "frase-erro-conta"
+            classErroValor.className = "frase-erro-operacao"
             return false
         } else if(valor + taxa > saldo) {
-            campo.className = classErro
-            classErroInsuficiente.className = "frase-erro-conta"
+            campo.className = classErroOperacao
+            divInput.classList = classErroLabel
+            classErroInsuficiente.className = "frase-erro-operacao"
             classErroValor.className = "hidden"
             return false
         } else {
-            campo.className = classCorreto
+            campo.className = classCorretoOperacao
+            divInput.classList = classCorretoLabel
             classErroInsuficiente.className = "hidden"
             classErroValor.className = "hidden"
             return true
@@ -331,7 +344,6 @@ function verificaCamposLogin(campo, erroClassObrigatorio, erroClassInvalido, err
     }
 }
 function verificaCamposErros(arrayDosCampos){
-    const vazio = arrayDosCampos.find(elemento => !(elemento.id == "campo-senha1" || elemento.id == "campo-senha2") && elemento.value == "")
     const temErro = arrayDosCampos.find(elemento => elemento.className == classErro )
     let senha1Vazia = false 
     let senha2Vazia = false
@@ -343,7 +355,7 @@ function verificaCamposErros(arrayDosCampos){
         senha2Vazia = true
     } 
 
-    if(vazio || temErro || senha1Vazia || senha2Vazia){
+    if(temErro || senha1Vazia || senha2Vazia){
         return true
     } else {
         return false

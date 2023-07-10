@@ -14,6 +14,17 @@ export default {
       '2xl': '1536px',
     },
     extend: {
+      keyframes:{
+        carregamento: {
+          to: { transform: "scaleX(1.25)" },
+          from: { transform: "translateY(-12px) scaleX(1)" },
+        },
+      },
+      animation:{
+        "carregar-um": "carregamento 450ms alternate infinite",
+        "carregar-dois": "carregamento 450ms 150ms alternate infinite",
+        "carregar-tres": "carregamento 450ms 300ms alternate infinite",
+      },
       colors: {
         cor: {
           primaria: '#DBE2EF',
@@ -27,6 +38,7 @@ export default {
           cinza_claro: '#616161',
           cinza_transparente: '#49494927',
           hover: '#1355a0',
+          carregamento: "#517bac",
           erro: "#b92626",
         },
         fontFamily:{
@@ -40,24 +52,6 @@ export default {
       fontFamily: {
         inter: ['Inter', 'sans-serif']
       },
-      // é o @keyframe do css
-      keyframes: {
-        //variável
-        sino_kf: {
-          // no 0% e 100% ele roda pra direita
-          '0%, 100%': {
-            transform: 'rotate(-10deg)'
-          },
-          //no 50% ele roda para esquerda
-          '50%': {
-            transform: 'rotate(10deg)'
-          }
-        },
-        animation: {
-          //traz a configuração do sino_kf
-          sino: 'sino_kf 0.31s ease-in-out infinite'
-        }
-      }
     }
   },
   plugins: [],
