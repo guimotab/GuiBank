@@ -1,11 +1,8 @@
 import { InformacoesApi } from "../utils/InformacoesApi.js"
 import { ListaAmigos } from "../utils/criaPerfisAmigos.js"
-import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
+import { RedirecionaBotoes } from "../utils/redirecionaBotoesAside.js"
 (async()=>{
     const [contasApi, usuario] = await InformacoesApi.pegaInformacoes()
-
-    const botaoSair = document.getElementById('deslogar')
-    const botoesRedirecionar = document.querySelectorAll('[data-lista]')
 
     const listaAmigosUl = document.getElementById('contas-ul')
     const contasAmigosLi = document.querySelectorAll('#contas-li')
@@ -16,5 +13,5 @@ import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
         ListaAmigos.criaLiSemPerfis(listaAmigosUl)
     }
 
-    redirecionaBotoesAside(botaoSair, usuario, botoesRedirecionar)
+    RedirecionaBotoes.redireciona(usuario)
 })()

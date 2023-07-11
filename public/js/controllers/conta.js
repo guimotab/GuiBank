@@ -1,14 +1,11 @@
 import { verificaCampos } from "../utils/verificaCampos.js"
 import { hashSenha } from "../utils/criptografaSenha.js"
 import { editaUsuario } from "../services/usuarios.js"
-import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
+import { RedirecionaBotoes} from "../utils/redirecionaBotoesAside.js"
 import { InformacoesApi } from "../utils/InformacoesApi.js"
 
 (async()=>{
     const [contasApi, usuario] = await InformacoesApi.pegaInformacoes()
-
-    const botoesRedirecionar = document.querySelectorAll('[data-lista]')
-    const botaoSair = document.getElementById('deslogar')
 
     const buscarFoto = document.getElementById('buscar-foto')
     const campoPrimeiroNome = document.getElementById('primeiroNome')
@@ -116,6 +113,5 @@ import { InformacoesApi } from "../utils/InformacoesApi.js"
     campoSenha2.addEventListener("blur", evento =>{
         verificaCampos.comparaSenha(campoSenha1, campoSenha2, erroSenhaDif)
     })
-    redirecionaBotoesAside(botaoSair, usuario, botoesRedirecionar)
-
+    RedirecionaBotoes.redireciona(usuario)
 })()

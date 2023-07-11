@@ -1,6 +1,6 @@
 import { Operacoes } from "../utils/Operacoes.js"
 import { verificaExtratoExiste } from "../utils/criaExtratoUsuario.js"
-import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
+import { RedirecionaBotoes} from "../utils/redirecionaBotoesAside.js"
 import { verificaCampos } from "../utils/verificaCampos.js"
 import { RealizaOperacao } from "../utils/RealizaOperacao.js"
 import { InformacoesApi } from "../utils/InformacoesApi.js"
@@ -23,11 +23,7 @@ try{
 
 }
 
-const botaoSair = document.getElementById('deslogar')
-const botoesRedirecionar = document.querySelectorAll('[data-lista]')
-
 Operacoes.criaTextos(usuarioDestinatario)
-
 
 input.addEventListener('blur', evento=>{
     verificaCampos.inputsOperacoes(input, usuario, taxaDasOperacoes)
@@ -45,4 +41,4 @@ formulario.addEventListener('submit', async evento =>{
     }
 })
 
-redirecionaBotoesAside(botaoSair, usuario, botoesRedirecionar)
+RedirecionaBotoes.redireciona(usuario)

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <script type='module'>
+        import { verificaLogin } from "../js/utils/verificaLogin.js";
+        (async () => {
+            if (!await verificaLogin()) {
+                window.location.href = '../login.html'
+            }
+        })()
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/dist/style.css">
+    <title>GuiBank</title>
+</head>
+
+<body class="grid grid-cols-[13rem_auto]">
+    <aside class="flex flex-col row-start-1 row-end-3 justify-between 
+        bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52">
+        <div class="">
+            <h1 class='text-center mb-9 mt-3 text-2xl font-semibold'>GuiBank</h1>
+            <nav>
+                <ul class="flex flex-col gap-1.5 font-normal">
+                    <li class="btn-aside" data-aside="home">
+                        <img src="../img/casaHome.svg" alt="home" class="h-6 w-6">
+                        <p>Home</p>
+                    </li>
+                    <li class="btn-aside" data-aside="conta">
+                        <img src="../img/conta-icone.svg" alt="conta" class="h-6 w-6">
+                        <p>Conta</p>
+                    </li>
+                    <li class="btn-aside" data-aside="depositar">
+                        <img src="../img/depositar-icone.svg" alt="depositar" class="h-6 w-6">
+                        <p>Depositar</p>
+                    </li>
+                    <li class="btn-aside" data-aside="sacar">
+                        <img src="../img/sacar-icone.svg" alt="sacar" class="h-6 w-6">
+                        <p>Sacar</p>
+                    </li>
+                    <li class="btn-aside" data-aside="transferirEscolha">
+                        <img src="../img/transferir-icone.svg" alt="transferir" class="h-6 w-6">
+                        <p>Transferir</p>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <h3 class="flex my-4 text-xl font-medium justify-center btn-aside" id="deslogar">Deslogar</h3>
+    </aside>
+    <main class="grid col-start-2 px-12 py-8 bg-cor-clara h-screen gap-5">
+
+        <h1 id="titulo-operacao" class="text-3xl font-semibold">Caixinha GuiBank</h1>
+        <section class="grid grid-cols-[auto_1fr] gap-5 overflow-y-hidden">
+            <form id="formulario-sacar" class="flex flex-col px-12 py-10 gap-4 bg-white rounded-xl h-full">
+                <div class="flex flex-col gap-3">
+                    <div>
+                        <h2 class="text-2xl font-medium">Pegue seu dinheiro</h2>
+                    </div>
+                </div>
+                <div>
+                    <div id="div-input" class="flex items-end gap-px border-b-2 w-80 border-cor-outline">
+                        <p class="text-2xl font-semibold self-center">R$</p>
+                        <input type="text" id="input-sacar" placeholder="0,00" autocomplete="off"
+                            pattern="^(((\d+)(\.\d{2})*(|.\d{2}))|(\d*))$" class="input-operacao" maxlength="14"
+                            required>
+                        </div>
+                    <p id="erroInvalido-sacar" class="hidden">*Valor Inválido!</p>
+                    <p id="erroInsuficiente-sacar" class="hidden">*Saldo Insuficiente!</p>
+                    <div class="flex gap-2">
+                        <p class="font-medium text-lg">Saldo Disponível:</p>
+                        <p id="saldo-disponivel" class="self-center font-semibold text-lg"></p>
+                    </div>
+                </div>
+                <div class="w-28">
+                    <button type="submit" id="botao-operacao"
+                        class="text-white text-lg bg-cor-terciaria w-full px-5 py-1.5 rounded-xl hover:bg-cor-hover">Receber</button>
+                </div>
+            </form>
+            <div class="flex flex-col px-12 py-10 gap-4 bg-white rounded-xl h-full">
+                <div class="flex flex-col gap-3">
+                    <div>
+                        <h2 class="text-2xl font-medium">Rendimento</h2>
+                    </div>
+                </div>
+                <ul id="ul-rendimentos" class="flex flex-col gap-3">
+                    <div id="div-rendimentos" class="flex w-full justify-between">
+                    </div>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <form id="formulario-depositar" class="flex flex-col px-12 py-10 gap-5 bg-white rounded-xl h-full">
+                <div>
+                    <p class="text-2xl font-medium">Deposite seu dinheiro</p>
+                    <p class="text-lg font-medium">Deixe ele render até 3% a
+                        cada dia</p>
+                </div>
+                <div>
+                    <div id="div-input" class="flex items-end gap-px border-b-2 w-80 border-cor-outline">
+                        <p class="text-2xl font-semibold self-center">R$</p>
+                        <input type="text" id="input-depositar" placeholder="0,00" autocomplete="off"
+                            pattern="^(((\d+)(\.\d{2})*(|.\d{2}))|(\d*))$" class="input-operacao" maxlength="14"
+                            required>
+                    </div>
+                    <p id="erroInvalido-depositar" class="hidden">*Valor Inválido!</p>
+                    <p id="erroInsuficiente-depositar" class="hidden">*Saldo Insuficiente!</p>
+                </div>
+                <div class="w-28">
+                    <button type="submit" id="botao-operacao"
+                        class="text-white text-lg bg-cor-terciaria w-full px-5 py-1.5 rounded-xl hover:bg-cor-hover">Depositar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type='module' src="../js/controllers/caixinha.js"></script>
+</body>
+
+</html>

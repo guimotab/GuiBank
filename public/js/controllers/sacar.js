@@ -1,13 +1,10 @@
 import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
 import { verificaCampos } from "../utils/verificaCampos.js"
 import { verificaLogin } from "../utils/verificaLogin.js"
-import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
+import { RedirecionaBotoes} from "../utils/redirecionaBotoesAside.js"
 import { RealizaOperacao } from "./RealizaOperacao.js"
 (async()=>{
     const usuario = new InformacoesUsuario(await verificaLogin())
-
-    const botaoSair = document.getElementById('deslogar')
-    const botoesRedirecionar = document.querySelectorAll('[data-lista]')
 
     const inputValor = document.getElementById('valor')
     const botaoSubmit = document.getElementById('botao-operacao')
@@ -32,5 +29,6 @@ import { RealizaOperacao } from "./RealizaOperacao.js"
         }
     })
 
-    redirecionaBotoesAside(botaoSair, usuario, botoesRedirecionar)
+    RedirecionaBotoes.redireciona(usuario)
+
 })()

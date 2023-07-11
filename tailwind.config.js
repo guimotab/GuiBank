@@ -14,6 +14,17 @@ export default {
       '2xl': '1536px',
     },
     extend: {
+      margin:{
+        "6.25rem": "6.25rem",
+        "21rem": "21rem",
+        "25rem": "25rem"
+      },
+      width:{
+        "33rem" : "33rem",
+      },
+      maxWidth:{
+        "27": "27rem",
+      },
       keyframes:{
         carregamento: {
           to: { transform: "scaleX(1.25)" },
@@ -30,6 +41,7 @@ export default {
           primaria: '#DBE2EF',
           secundaria: '#3F72AF',
           terciaria: '#112D4E',
+          rendimento: '#cfe5ff',
           outline: '#011e42',
           clara: '#eeeeee',
           branco: '#fff',

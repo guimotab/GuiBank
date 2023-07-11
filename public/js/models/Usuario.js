@@ -48,7 +48,8 @@ export class Usuario {
             "saldo": this.#saldo,
             "foto": this.#foto,
             "logado": this.#logado,
-            "transacoes": []
+            "transacoes": [],
+            "rendimentos": []
         }
         return conta
     }

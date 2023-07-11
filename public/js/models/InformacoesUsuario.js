@@ -13,6 +13,7 @@ export class InformacoesUsuario{
     #foto
     #logado
     #transacoes
+    #rendimentos
 
     constructor(usuario){
         this.#primeiroNome = usuario.primeiroNome;
@@ -29,6 +30,7 @@ export class InformacoesUsuario{
         this.#logado = usuario.logado;
         this.#usuario = usuario.usuario
         this.#transacoes = usuario.transacoes
+        this.#rendimentos = usuario.rendimentos
     }
      devolveInformacoes(){
         
@@ -46,7 +48,8 @@ export class InformacoesUsuario{
             "foto": this.#foto,
             "logado" : this.#logado,
             "usuario": this.#usuario,
-            "transacoes" : this.#transacoes
+            "transacoes" : this.#transacoes,
+            "rendimentos": this.#rendimentos
         }
         return informacoes
     }
@@ -91,6 +94,9 @@ export class InformacoesUsuario{
     }
      get transacoes(){
         return this.#transacoes
+    }
+     get rendimentos(){
+        return this.#rendimentos
     }
      set logado(status){
        this.#logado = status

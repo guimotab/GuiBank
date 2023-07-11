@@ -1,7 +1,7 @@
 import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
 import { InformacoesApi } from "../utils/InformacoesApi.js"
 import { verificaCampos } from "../utils/verificaCampos.js"
-import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
+import { RedirecionaBotoes} from "../utils/redirecionaBotoesAside.js"
 import { verificaExtratoExiste } from "../utils/criaExtratoUsuario.js"
 import { RealizaOperacao } from "./RealizaOperacao.js"
 (async()=>{
@@ -11,9 +11,6 @@ import { RealizaOperacao } from "./RealizaOperacao.js"
     const idRementente = pegaUrl.searchParams.get('remetente') 
     const remetente = contasApi.find( (elemento) => elemento._id == idRementente )
     const usuarioDestinatario = new InformacoesUsuario(remetente)
-
-    const botaoSair = document.getElementById('deslogar')
-    const botoesRedirecionar = document.querySelectorAll('[data-lista]') 
 
     const frase = document.getElementById('label-frase')
     frase.innerHTML = `Quanto você deseja transferir para ${usuarioDestinatario.primeiroNome + " " + usuarioDestinatario.segundoNome}?`
@@ -39,5 +36,6 @@ import { RealizaOperacao } from "./RealizaOperacao.js"
         }
     })
 
-    redirecionaBotoesAside(botaoSair, usuario, botoesRedirecionar)
+    RedirecionaBotoes.redireciona(usuario)
+
 })()

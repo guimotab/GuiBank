@@ -2,11 +2,9 @@ import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
 import { editaUsuario } from "../services/usuarios.js"
 import { OperacaoRealizada } from "../utils/OperacaoRealizada.js"
 import { verificaLogin } from "../utils/verificaLogin.js"
-import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
+import { RedirecionaBotoes } from "../utils/redirecionaBotoesAside.js"
 (async()=>{
     const usuario = new InformacoesUsuario(await verificaLogin())
-    const botaoSair = document.getElementById('deslogar')
-    const botoesRedirecionar = document.querySelectorAll('[data-lista]')
     const voltarHome = document.getElementById('voltar-home')
     
     Array.prototype.get = function (index) {
@@ -19,8 +17,8 @@ import { redirecionaBotoesAside } from "../utils/redirecionaBotoesAside.js"
     
     voltarHome.addEventListener('click', async evento =>{
         await editaUsuario(usuario.id, usuario.devolveInformacoes())
-        window.location.href = `./main.html?id=${usuario.id}`
+        window.location.href = `./home.html?id=${usuario.id}`
     })
     
-    redirecionaBotoesAside(botaoSair, usuario, botoesRedirecionar)
+    RedirecionaBotoes.redireciona(usuario)
 })()
