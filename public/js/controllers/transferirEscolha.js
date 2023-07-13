@@ -1,7 +1,9 @@
-import { InformacoesApi } from "../utils/InformacoesApi.js"
+import { InformacoesApi } from "../class/InformacoesApi.js"
 import { ListaAmigos } from "../utils/criaPerfisAmigos.js"
 import { RedirecionaBotoes } from "../utils/redirecionaBotoesAside.js"
+import { verificaLogin } from "../utils/verificaLogin.js";
 (async()=>{
+    await verificaLogin()
     const [contasApi, usuario] = await InformacoesApi.pegaInformacoes()
 
     const listaAmigosUl = document.getElementById('contas-ul')

@@ -1,4 +1,4 @@
-import { editaUsuario } from "../services/usuarios.js"
+import { UsuariosApi } from "../services/UsuariosApi.js"
 import { InsereExtratos } from "./InsereExtratos.js"
 
 export class RealizaOperacao {
@@ -16,14 +16,14 @@ export class RealizaOperacao {
         if(parseFloat(inputValor.value) > 8000){
             saldo = inputValor.value.replace(',', '.')*0.001 + usuario.saldo
             InsereExtratos.extratoDepositar(usuario, parseFloat(inputValor.value.replace(',', '.')).toFixed(2))
-            usuario.saldo = saldo
+            usuario.saldo = saldo.toFixed(2)
         } else {
             saldo = (parseFloat(inputValor.value.replace(',', '.')) + usuario.saldo)
             usuario.saldo = saldo
             InsereExtratos.extratoDepositar(usuario, parseFloat(inputValor.value.replace(',', '.')).toFixed(2))
             
         }
-        await editaUsuario(usuario.id, usuario.devolveInformacoes())
+        await UsuariosApi.put(usuario.id, usuario.devolveInformacoes())
         window.location.href = `./operacaoConcluida.html?id=${usuario.id}`
     }
     static async realizaSacar(inputValor, usuario){
@@ -32,7 +32,7 @@ export class RealizaOperacao {
             InsereExtratos.extratoSacar(usuario, (parseFloat(inputValor.value.replace(',', '.')) + 3.30).toFixed(2))
             usuario.saldo = saldo
         }
-        await editaUsuario(usuario.id, usuario.devolveInformacoes())
+        await UsuariosApi.put(usuario.id, usuario.devolveInformacoes())
 
         window.location.href = `./operacaoConcluida.html?id=${usuario.id}`
     }
@@ -48,8 +48,8 @@ export class RealizaOperacao {
         } else {
             throw new Error("Você não tem saldo suficiente para essa operação") 
         }
-        await editaUsuario(usuario.id, usuario.devolveInformacoes())
-        await editaUsuario(usuarioDestinatario.id, usuarioDestinatario.devolveInformacoes())
+        await UsuariosApi.put(usuario.id, usuario.devolveInformacoes())
+        await UsuariosApi.put(usuarioDestinatario.id, usuarioDestinatario.devolveInformacoes())
         
         window.location.href = `./operacaoConcluida.html?id=${usuario.id}`
     }

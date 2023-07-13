@@ -12,16 +12,12 @@ export class verificacoesCPF {
     }
 
     static verificaCPF(contas, cpf) {
-        try {
-            contas.forEach((elemento) => {
-                if (elemento.cpf == cpf) {
-                    existe = true
-                }
-            })
-            return false
-        } catch {
-            return true
-        }
+            const resultado = contas.find((elemento) => elemento.cpf == cpf)
+            if (resultado){
+                return false
+            } else {
+                return true
+            }
     }
 
     static validaCPF(campoCpf) {

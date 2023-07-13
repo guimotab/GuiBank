@@ -1,14 +1,11 @@
-import { getUsuariosApi } from "../services/usuarios.js"
+import { InformacoesApi } from "../class/InformacoesApi.js"
 
 export async function verificaLogin(){
-    const contasApi = await getUsuariosApi()
-    const pegaUrl = new URL(window.location.href)
-    const idUrl = pegaUrl.searchParams.get('id')
-    
     try {
-        return contasApi.find(elemento => elemento._id == idUrl && elemento.logado == true)
+    const [contasApi, usuario] = await InformacoesApi.pegaInformacoes()
+        return usuario
     } catch {
-        return false
+        window.location.href = './login.html'
     }
     
 }

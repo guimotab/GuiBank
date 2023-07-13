@@ -1,6 +1,7 @@
-import { editaUsuario } from "../services/usuarios.js"
+import { UsuariosApi } from "../services/UsuariosApi.js"
 export class RedirecionaBotoes{
     static redireciona(usuario){
+
         const botaoSair = document.getElementById('deslogar')
         const botoesAside = document.querySelectorAll('[data-aside]')
         const botoesCard = document.querySelectorAll('[data-card]')
@@ -33,7 +34,7 @@ export class RedirecionaBotoes{
     static botaoDeslogar(botaoSair, usuario){
         botaoSair.addEventListener("click", async ()=>{
             usuario.logado = false
-            await editaUsuario(usuario.id, usuario.devolveInformacoes())
+            await UsuariosApi.put(usuario.id, usuario.devolveInformacoes())
             window.location.href="./login.html"
         })
     }

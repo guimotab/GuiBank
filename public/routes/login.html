@@ -6,48 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GuiBank-Login</title>
-    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/dist/style.css">
 </head>
 
-<body>
-
-    <main>
-        <div class="login">
-            <h1 class="nome-empresa">GuiBank</h1>
-            <form class="campos" id='form' data-id="">
-                <div class="campo-titulo">
-                    <div class="campo-titulo-esquerdo">
-                        <h2>Entrar</h2>
-                    </div>
-                    <div class="campo-titulo-direito">
-                        <a href="./sign.html" class="campo-titulo-direito-link">Criar Conta</a>
-                    </div>
-                </div>
-                <div class="campo">
-                    <label class="campo-nome">CPF</label>
-                    <input class="campo-input" type="text" name="cpf" id='cpf' minlength="11" maxlength="11"
-                        pattern="([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" required>
-                    <p class="erro-cpf-obrigatorio">*Esse campo é obrigatório!</p>
-                    <p class="erro-cpf-escrita">*O campo pode conter apenas números!</p>
-                    <p class="erro-cpf-existe">*Esse CPF não foi cadastrado!</p>
-                    <p class="erro-cpf-invalido">*CPF inválido!</p>
-                    <p>*Apenas números</p>
-                </div>
-                <div class="campo">
-                    <div class="campo-senha">
-                        <label class="campo-nome">Senha</a></label>
-                        <img src="../img/olho-cego.png" alt="Ver Senha" width="25px" id='1'>
-                    </div>
-                    <input type="password" name='senha' class="campo-input" autocomplete="off" id="campo-senha" pattern="\S+" required>
-                    <p class="erro-senha-obrigatorio">*Esse campo é obrigatório!</p>
-                    <p class="erro-senha-invalido">*Este campo não pode conter espaços!</p>
-                    <p class="erro-senha-escrita">*A senha deve conter pelo menos 4 caracteres!</p>
-                </div>
-                <div class="campo">
-                    <button type="submit" class="campo-enviar">Entrar</button>
-                </div>
-            </form>
+<body class="grid grid-cols-[auto_1fr]">
+    <aside class="flex flex-col gap-10 bg-white py-24 px-10 h-screen">
+        <div>
+            <h1 class="text-3xl text-cor-terciaria font-semibold pb-1 border-b-2 border-cor-terciaria w-36">GuiBank</h1>
+            <h2 class="text-xl font-semibold text-cor-terciaria">Login</h2>
         </div>
+        <div class="flex flex-col gap-6">
+            <form class="flex flex-col gap-5" id='form' data-id="">
+                <div class="flex flex-col">
+                    <label class="text-lg font-medium">CPF</label>
+                    <input type="text" name="cpf" id='cpf' minlength="11" maxlength="11"
+                        pattern="([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" autocomplete="on"
+                        class="input-login flex items-end gap-px border-b-2 w-80 border-cor-outline bg-transparent autocomplete"
+                        required>
+                    <p id="erro-cpf-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                    <p id="erro-cpf-escrita" class="hidden">*O campo pode conter apenas números!</p>
+                    <p id="erro-cpf-existe" class="hidden">*Esse CPF não foi cadastrado!</p>
+                    <p id="erro-cpf-invalido" class="hidden">*CPF inválido!</p>
+                    <p class="font-medium text-cor-outline">*Apenas números</p>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <label class="text-lg font-medium">Senha</a></label>
+                        <img src="../img/olho-cego.png" alt="Ver Senha" width="28" id='1'>
+                    </div>
+                    <input type="password" name='senha' autocomplete="off" id="campo-senha" pattern="\S+"
+                        class="input-login flex items-end gap-px border-b-2 w-80 border-cor-outline bg-transparent autocomplete"
+                        required>
+                    <p id="erro-senha-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                    <p id="erro-senha-invalido" class="hidden">*Este campo não pode conter espaços!</p>
+                    <p id="erro-senha-escrita" class="hidden">*A senha deve conter pelo menos 4 caracteres!</p>
+                </div>
+                <button type="submit" id="botao-submit"
+                    class="bg-cor-terciaria py-1 px-12 w-fit rounded-2xl text-white text-lg font-medium ">Entrar</button>
+            </form>
+            <a href="./sign.html" class="flex font-medium self-end">Não tenho conta</a>
+        </div>
+
+    </aside>
+    <main class="bg-cor-terciaria">
 
     </main>
     <footer></footer>

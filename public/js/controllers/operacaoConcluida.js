@@ -1,10 +1,12 @@
-import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
-import { editaUsuario } from "../services/usuarios.js"
-import { OperacaoRealizada } from "../utils/OperacaoRealizada.js"
-import { verificaLogin } from "../utils/verificaLogin.js"
+import { OperacaoRealizada } from "../class/OperacaoRealizada.js"
 import { RedirecionaBotoes } from "../utils/redirecionaBotoesAside.js"
+import { verificaLogin } from "../utils/verificaLogin.js";
+import { UsuariosApi } from "../services/UsuariosApi.js"
+import { InformacoesApi } from "../class/InformacoesApi.js";
 (async()=>{
-    const usuario = new InformacoesUsuario(await verificaLogin())
+    await verificaLogin()
+    const [contasApi, usuario] = await InformacoesApi.pegaInformacoes()
+
     const voltarHome = document.getElementById('voltar-home')
     
     Array.prototype.get = function (index) {
@@ -16,7 +18,7 @@ import { RedirecionaBotoes } from "../utils/redirecionaBotoesAside.js"
     OperacaoRealizada.criaTexto(tipoExtrato, valorExtrato, usuario)
     
     voltarHome.addEventListener('click', async evento =>{
-        await editaUsuario(usuario.id, usuario.devolveInformacoes())
+        await UsuariosApi.put(usuario.id, usuario.devolveInformacoes())
         window.location.href = `./home.html?id=${usuario.id}`
     })
     

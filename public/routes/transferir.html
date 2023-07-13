@@ -2,14 +2,6 @@
 <html lang="pt-br">
 
 <head>
-    <script type='module'>
-        import { verificaLogin } from "../js/utils/verificaLogin.js";
-        (async () => {
-            if (!await verificaLogin()) {
-                window.location.href = '../login.html'
-            }
-        })()
-    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,13 +42,13 @@
     <h3 class="flex my-4 text-xl font-medium justify-center btn-aside" id="deslogar">Deslogar</h3>
     </aside>
     <main class="col-start-2 px-24 py-32 bg-cor-clara h-screen">
-        <form id="formulario" class="flex flex-col px-12 py-10 gap-5 bg-white rounded-xl">
+        <form id="formulario" class="flex flex-col px-12 py-10 gap-5 bg-white rounded-xl shadow-xl">
             <div>
                 <label id="titulo-operacao" class="text-3xl font-semibold"></label>
                 <p id="texto-taxa" class="font-medium"></p>
             </div>
             <div>
-                <div id="div-input" class="flex items-end gap-px border-b-2 w-80 border-cor-outline">
+                <div id="div-input" class="flex items-end gap-px border-b-2 border-cor-outline w-80">
                     <p class="text-2xl font-semibold self-center">R$</p>
                     <input type="text" id="input-operacao" placeholder="0,00" autocomplete="off"
                         pattern="^(((\d+)(\.\d{2})*(|.\d{2}))|(\d*))$" class="input-operacao" maxlength="14" required>

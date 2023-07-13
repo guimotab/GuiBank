@@ -2,14 +2,6 @@
 <html lang="pt-br">
 
 <head>
-    <script type="module">
-        import { verificaLogin } from "../js/utils/verificaLogin.js";
-        (async () => {
-            if (!await verificaLogin()) {
-                window.location.href = './login.html'
-            }
-        })()
-    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +43,7 @@
         <h3 class="flex my-4 text-xl font-medium justify-center btn-aside" id="deslogar">Deslogar</h3>
     </aside>
     <main class="col-start-2 h-full w-full bg-cor-clara px-24 py-12">
-        <section class="flex flex-col rounded-2xl px-12 py-6 gap-4 bg-white">
+        <section class="flex flex-col rounded-2xl px-12 py-6 gap-4 bg-white shadow-xl">
             <p class="font-medium text-2xl pb-1 border-b-2 border-cor-terciaria w-96 text-cor-terciaria">Informações da
                 Conta</p>
             <form id="formulario" class="flex flex-col gap-8 w-3/5 w-full">
@@ -89,7 +81,7 @@
                 </div>
                 <div class="div-informacoes-conta">
                     <label class="titulo-informacoes-conta">Usuario</label>
-                    <input id="usuario" maxlength="14" pattern="[@]\w+" class="input-conta" required>
+                    <input id="usuario" maxlength="20" pattern="[@]\w+" class="input-conta" required>
                     <p id="erroUsuario-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
                     <p id="erroUsuario-invalido" class="hidden">
                         *Este campo só pode conter letras, números e "_"!

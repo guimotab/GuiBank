@@ -1,5 +1,5 @@
-import { Horario } from "./criaHorario.js"
-import { verificaExtratoExiste } from "./criaExtratoUsuario.js"
+import { Horario } from "../utils/criaHorario.js"
+import { verificaExtratoExiste } from "../utils/criaExtratoUsuario.js"
 export class InsereExtratos {
     static extratoDepositar(indexId, valor) {
         try {

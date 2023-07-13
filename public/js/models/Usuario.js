@@ -1,4 +1,4 @@
-import { hashSenha } from "../utils/formataSenha.js"
+import { hashSenha } from "../utils/criptografaSenha.js"
 
 export class Usuario {
     #primeiroNome
@@ -15,45 +15,26 @@ export class Usuario {
     #foto
     #logado
     #transacoes
-    itemAtual
+    #itemAtual
 
     constructor(usuariosApi, primeiroNome, segundoNome, cpf, email, telefone, senha, id) {
 
-        this.itemAtual = usuariosApi[usuariosApi.length - 1] ? usuariosApi[usuariosApi.length - 1].numeroBanco + 1 : 1
+        const itemAtual = usuariosApi[usuariosApi.length - 1] ? usuariosApi[usuariosApi.length - 1].numeroBanco + 1 : 1
         this.#primeiroNome = primeiroNome;
         this.#segundoNome = segundoNome;
         this.#cpf = cpf;
         this.#email = email;
         this.#telefone = telefone;
         this.#senha = senha;
-        this.#numeroBanco = this.itemAtual + 10;
-        this.#agencia = this.itemAtual + 100;
+        this.#numeroBanco = itemAtual + 10;
+        this.#agencia = itemAtual + 100;
         this.#id = id;
         this.#saldo = 100;
         this.#foto = "../img/semFoto.jpg";
         this.#logado = true;
-        this.#usuario = constroiArrobaUsuario(primeiroNome, segundoNome, itemAtual, usuariosApi)
+        this.#itemAtual = itemAtual
     }
-    devolveInformacoes() {
-        const conta = {
-            "primeiroNome": this.#primeiroNome,
-            "segundoNome": this.#segundoNome,
-            "usuario": this.#usuario,
-            "cpf": this.#cpf,
-            "email": this.#email,
-            "telefone": this.#telefone,
-            "senha": this.#senha,
-            "numeroBanco": this.#numeroBanco,
-            "agencia": this.#agencia,
-            "saldo": this.#saldo,
-            "foto": this.#foto,
-            "logado": this.#logado,
-            "transacoes": [],
-            "rendimentos": []
-        }
-        return conta
-    }
-    static constroiArrobaUsuario(primeiroNome, segundoNome, itemAtual, usuariosApi){
+    constroiArrobaUsuario(primeiroNome, segundoNome, itemAtual, usuariosApi){
         let arrobaUsuario = `@${(primeiroNome.toLowerCase() + segundoNome.toLowerCase())
             .normalize("NFD")
             .replace(/[^a-zA-Z\s]/g, "")}`
@@ -68,6 +49,33 @@ export class Usuario {
                 return arrobaUsuario
             }
     }
+    devolveInformacoes(usuariosApi) {
+        const conta = {
+            "primeiroNome": this.#primeiroNome,
+            "segundoNome": this.#segundoNome,
+            "usuario": this.constroiArrobaUsuario(this.#primeiroNome, this.#segundoNome, this.#itemAtual, usuariosApi),
+            "cpf": this.#cpf,
+            "email": this.#email,
+            "telefone": this.#telefone,
+            "senha": this.#senha,
+            "numeroBanco": this.#numeroBanco,
+            "agencia": this.#agencia,
+            "saldo": this.#saldo,
+            "foto": this.#foto,
+            "logado": this.#logado,
+            "transacoes": [],
+            "rendimentos": {dia:"", valores:[0]}
+        }
+        return conta
+    }
+    
+    // static contaQuantidadeUsuarios(contas){
+    //     let quantidadeContas = 0
+    //     contas.forEach( conta=>{
+    //         quantidadeContas++
+    //     })
+    //     return quantidadeContas
+    // }
     get id() {
         return this.#id
     }

@@ -4,7 +4,7 @@ export class ExtratoMain {
         const sectionExtrato = document.getElementById("section-extratos")
         let adicionado = false
         try{
-            if (usuario.transacoes == []) {
+            if (!usuario.transacoes.length) {
                 throw Error
             } else {
                 usuario.transacoes.slice().reverse().forEach((elemento) => {

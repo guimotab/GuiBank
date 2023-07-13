@@ -6,88 +6,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GuiBank-Sign</title>
-    <link rel="stylesheet" href="../styles/sign.css">
+    <!-- <link rel="stylesheet" href="../styles/sign.css"> -->
+    <link rel="stylesheet" href="../styles/dist/style.css">
 </head>
 
 <body>
 
-    <main>
-        <form class="campos" id="formulario" data-id=''>
-            <div class="campo-titulo">
-                <div class="campo-titulo-esquerdo">
-                    <h1 class="nome-empresa">GuiBank</h1>
-                    <h2>Criar Conta</h2>
+    <main class="h-screen py-16 px-32 bg-cor-clara">
+        <form class="flex flex-col gap-5 bg-white rounded-2xl px-16 py-10 border-2 border-cor-terciaria"
+            id="formulario">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-semibold border-b-2 border-cor-terciaria w-32">GuiBank</h1>
+                    <h2 class="text-xl font-semibold">Criar Conta</h2>
                 </div>
-                <div class="campo-titulo-direito">
-                    <a href="./login.html" class="campo-titulo-direito-link">Tenho Conta</a>
+                <a href="./login.html" class="text-lg font-medium border-b-2 border-cor-terciaria">Tenho Conta</a>
+            </div>
+            <div class="grid grid-cols-[1fr_1fr_1fr_auto] gap-x-10 gap-y-2 grid-rows-[5rem_auto_auto]">
+                <div class="flex flex-col col-start-1 col-span-2">
+                    <label class="titulo-input">Primeiro Nome</label>
+                    <input type="name" name='primeiroNome' id="primeiroNome" minlength="3"
+                        pattern="[a-zA-Z\u00C0-\u00FF']+" class="input-style autocomplete" required>
+                    <p id="erro-primeiroNome-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                    <p id="erro-primeiroNome-escrita" class="hidden">*O campo não pode conter
+                        caracteres
+                        especiais ou números!
+                    </p>
+                    <p id="erro-primeiroNome-length" class="hidden">*O nome deve ter pelo menos 3 letras!</p>
+                </div>
+                <div class="flex flex-col col-span-2">
+                    <label class="titulo-input">Segundo Nome</label>
+                    <input type="name" name='segundoNome' id="segundoNome" minlength="3"
+                        pattern="[a-zA-Z\u00C0-\u00FF']+" class="input-style autocomplete" required>
+                    <p id="erro-segundoNome-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                    <p id="erro-segundoNome-escrita" class="hidden">*O campo não pode conter caracteres
+                        especiais ou números!
+                    </p>
+                    <p id="erro-segundoNome-length" class="hidden">*O nome deve ter pelo menos 3 letras!</p>
+                </div>
+                <div class="col-start-1 flex flex-col col-start-1 col-span-2">
+                    <label class="titulo-input">CPF</label>
+                    <input type="text" name='cpf' id='cpf' minlength="11" maxlength="11"
+                        pattern="([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}-?[0-9]{2})" class="input-style autocomplete" required>
+                    <p id="erro-cpf-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                    <p id="erro-cpf-escrita" class="hidden">*O campo pode conter apenas números!</p>
+                    <p id="erro-cpf-existe" class="hidden">*Uma conta já possui esse CPF!</p>
+                    <p id="erro-cpf-invalido" class="hidden">*CPF inválido!</p>
+                    <p class="font-medium text-cor-outline">*Apenas números</p>
+                </div> 
+                <div class="flex flex-col col-span-2">
+                    <label class="titulo-input">Email</label>
+                    <input type="email" name='email' id="email" minlength="7" class="input-style autocomplete" required>
+                    <p id="erro-email-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                    <p id="erro-email-escrita" class="hidden">*Email inválido!</p>
+                </div>
+                <div class="col-start-1 flex flex-col col-start-1 col-span-2">
+                    <label class="titulo-input">Telefone com DDD</label>
+                    <input type="tel" id="telefone" minlength="11" maxlength="11" pattern="[0-9]{11}"
+                        class="input-style autocomplete" required>
+                    <p id="erro-telefone-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                    <p id="erro-telefone-escrita" class="hidden">*O campo pode conter apenas números!</p>
+                    <p id="erro-telefone-invalido" class="hidden">*Telefone Inválido!</p>
+                    <p class="font-medium text-cor-outline">*Apenas números</p>
+                </div>
+                <div class="flex flex-col col-start-3">
+                    <div class="flex items-center gap-2">
+                        <label class="titulo-input">Senha</a></label>
+                        <img src="../img/olho-cego.png" alt="Ver Senha" width="25px" id="1" data-id>
+                    </div>
+                    <input type="password" name='senha' id="campo-senha" minlength="4" autocomplete="off" pattern="\S+"
+                        class="input-style autocomplete" required>
+                    <p id="erro-senha-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
+                    <p id="erro-senha-invalido" class="hidden">*Este campo não pode conter espaços!</p>
+                    <p id="erro-senha-escrita" class="hidden">*A senha deve conter no mínimo 4 caracteres!</p>
+                </div>
+                <div class="flex flex-col col-start-4">
+                    <div class="flex items-center gap-2">
+                        <label class="titulo-input">Repita a Senha</label>
+                        <img src="../img/olho-cego.png" alt="Ver Senha" width="25px" id="2" data-id>
+                    </div>
+                    <input type="password" name="senhaVerifica" id="campo-senha2" autocomplete="off"
+                        class="input-style autocomplete">
+                    <p id="erro-senhas-diferentes" class="hidden">*As senhas não coincidem!</p>
                 </div>
             </div>
-            <div class="campo">
-                <label class="campo-nome">Primeiro Nome</label>
-                <input type="name" name='primeiroNome' id="primeiroNome" class="campo-input-nome" minlength="3"
-                    pattern="[a-zA-Z\u00C0-\u00FF']+" required>
-                <p class="erro-primeiroNome-obrigatorio">*Esse campo é obrigatório!</p>
-                <p class="erro-primeiroNome-escrita">*O campo não pode conter espaços, caracteres especiais ou números!
-                </p>
-                <p class="erro-primeiroNome-length">*O nome deve ter pelo menos 3 letras!</p>
             </div>
-            <div class="campo">
-                <label class="campo-nome">Segundo Nome</label>
-                <input type="name" name='segundoNome' id="segundoNome" class="campo-input-nome" minlength="3"
-                    pattern="[a-zA-Z\u00C0-\u00FF']+" required>
-                <p class="erro-segundoNome-obrigatorio">*Esse campo é obrigatório!</p>
-                <p class="erro-segundoNome-escrita">*O campo não pode conter espaços, caracteres especiais ou números!
-                </p>
-                <p class="erro-segundoNome-length">*O nome deve ter pelo menos 3 letras!</p>
-            </div>
-            <div class="campo">
-                <label class="campo-nome">CPF</label>
-                <input type="text" name='cpf' id='cpf' class="campo-input-cpf" minlength="11" maxlength="11"
-                    pattern="([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" required>
-                <p class="erro-cpf-obrigatorio">*Esse campo é obrigatório!</p>
-                <p class="erro-cpf-escrita">*O campo pode conter apenas números!</p>
-                <p class="erro-cpf-existe">*Uma conta já possui esse CPF!</p>
-                <p class="erro-cpf-invalido">*CPF inválido!</p>
-                <p>*Apenas números</p>
-            </div>
-            <div class="campo">
-                <label class="campo-nome">Email</label>
-                <input type="email" name='email' id="email" class="campo-input-email" minlength="4" required>
-                <p class="erro-email-obrigatorio">*Esse campo é obrigatório!</p>
-                <p class="erro-email-escrita">*Email inválido!</p>
-            </div>
-            <div class="campo">
-                <label class="campo-nome">Telefone com DDD</label>
-                <input type="tel" name='telefone' id="telefone" minlength="11" maxlength="11"
-                    class="campo-input-telefone" pattern="[0-9]{11}" required>
-                <p class="erro-telefone-obrigatorio">*Esse campo é obrigatório!</p>
-                <p class="erro-telefone-escrita">*O campo pode conter apenas números!</p>
-                <p class="erro-telefone-invalido">*Telefone Inválido!</p>
-                <p>*Apenas números</p>
-            </div>
-            <div class="campo">
-                <div class="campo-senha">
-                    <label class="campo-nome">Senha</a></label>
-                    <img src="../img/olho-cego.png" alt="Ver Senha" width="25px" id="1">
-                </div>
-                <input type="password" name='senha' id="campo-senha" class="campo-input-senha" minlength="4"
-                    autocomplete="off" pattern="\S+" required>
-                <p class="erro-senha-obrigatorio">*Esse campo é obrigatório!</p>
-                <p class="erro-senha-invalido">*Este campo não pode conter espaços!</p>
-                <p class="erro-senha-escrita">*A senha deve conter pelo menos 4 caracteres!</p>
-            </div>
-            <div class="campo">
-                <div class="campo-senha">
-                    <label class="campo-nome">Repita a Senha</label>
-                    <img src="../img/olho-cego.png" alt="Ver Senha" width="25px" id="2">
-                </div>
-                <input type="password" name="senhaVerifica" id="campo-senha2" class="campo-input-senha2"
-                    autocomplete="off">
-                <p class="erro-senhas-diferentes">*As senhas não coincidem!</p>
-            </div>
-            <div class="campo">
-                <button type="submit" class="campo-enviar">Criar Conta</button>
-            </div>
+            <button id="botao-submit" type="submit"
+                class="flex w-fit bg-cor-terciaria px-7 py-2 text-white font-medium text-lg rounded-xl">Criar
+                Conta</button>
         </form>
     </main>
     <footer></footer>

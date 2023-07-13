@@ -2,14 +2,6 @@
 <html lang="pt-br">
 
 <head>
-    <script type='module'>
-        import { verificaLogin } from "../js/utils/verificaLogin.js";
-        (async () => {
-            if (!await verificaLogin()) {
-                window.location.href = '../login.html'
-            }
-        })()
-    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +42,7 @@
     <h3 class="flex my-4 text-xl font-medium justify-center btn-aside" id="deslogar">Deslogar</h3>
     </aside>
     <main class="col-start-2 px-24 py-32 bg-cor-clara h-screen">
-        <section class="flex flex-col bg-white rounded-2xl px-12 py-10 max-w-2xl gap-5">
+        <section class="flex flex-col bg-white rounded-2xl px-12 py-10 max-w-2xl gap-5 shadow-xl">
             <h3 id="titulo-operacao" class="text-2xl font-medium border-b-2 border-cor-terciaria"></h3>
             <div class="text-xl font-medium" id="frase-operacao">
             </div>

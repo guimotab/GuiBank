@@ -1,11 +1,13 @@
-import { Operacoes } from "../utils/Operacoes.js"
+import { Operacoes } from "../class/Operacoes.js"
 import { verificaExtratoExiste } from "../utils/criaExtratoUsuario.js"
 import { RedirecionaBotoes} from "../utils/redirecionaBotoesAside.js"
 import { verificaCampos } from "../utils/verificaCampos.js"
-import { RealizaOperacao } from "../utils/RealizaOperacao.js"
-import { InformacoesApi } from "../utils/InformacoesApi.js"
+import { RealizaOperacao } from "../class/RealizaOperacao.js"
+import { InformacoesApi } from "../class/InformacoesApi.js"
+import { verificaLogin } from "../utils/verificaLogin.js"
 import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
 
+await verificaLogin()
 const [contasApi, usuario] = await InformacoesApi.pegaInformacoes()
 const formulario = document.getElementById('formulario')
 const input = document.getElementById('input-operacao')

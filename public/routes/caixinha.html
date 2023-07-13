@@ -2,14 +2,6 @@
 <html lang="pt-br">
 
 <head>
-    <script type='module'>
-        import { verificaLogin } from "../js/utils/verificaLogin.js";
-        (async () => {
-            if (!await verificaLogin()) {
-                window.location.href = '../login.html'
-            }
-        })()
-    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,7 +45,7 @@
 
         <h1 id="titulo-operacao" class="text-3xl font-semibold">Caixinha GuiBank</h1>
         <section class="grid grid-cols-[auto_1fr] gap-5 overflow-y-hidden">
-            <form id="formulario-sacar" class="flex flex-col px-12 py-10 gap-4 bg-white rounded-xl h-full">
+            <form id="formulario-sacar" class="flex flex-col px-12 py-7 gap-4 bg-white rounded-xl h-full">
                 <div class="flex flex-col gap-3">
                     <div>
                         <h2 class="text-2xl font-medium">Pegue seu dinheiro</h2>
@@ -91,11 +83,11 @@
             </div>
         </section>
         <section>
-            <form id="formulario-depositar" class="flex flex-col px-12 py-10 gap-5 bg-white rounded-xl h-full">
+            <form id="formulario-depositar" class="flex flex-col px-12 py-7 gap-5 bg-white rounded-xl h-full">
                 <div>
                     <p class="text-2xl font-medium">Deposite seu dinheiro</p>
-                    <p class="text-lg font-medium">Deixe ele render até 3% a
-                        cada dia</p>
+                    <p class="text-lg font-medium">Deixe render 3% a
+                        cada dia na caixinha</p>
                 </div>
                 <div>
                     <div id="div-input" class="flex items-end gap-px border-b-2 w-80 border-cor-outline">

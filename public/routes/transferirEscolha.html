@@ -2,14 +2,6 @@
 <html lang="pt-br">
 
 <head>
-    <script type='module'>
-        import { verificaLogin } from "../js/utils/verificaLogin.js";
-        (async () => {
-            if (!await verificaLogin()) {
-                window.location.href = '../login.html'
-            }
-        })()
-    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +42,7 @@
     <h3 class="flex my-4 text-xl font-medium justify-center btn-aside" id="deslogar">Deslogar</h3>
     </aside>
     <main class="h-screen col-start-2 px-28 py-32 bg-cor-clara scrollbar">
-        <section id="section-amigos" class="flex flex-col bg-white max-h-96 max-w-xl px-9 py-4 gap-4 rounded-2xl">
+        <section id="section-amigos" class="flex flex-col bg-white max-h-96 max-w-xl px-9 py-4 gap-4 rounded-2xl shadow-xl">
             <h3 class="text-2xl font-medium">Escolha uma conta para transferir:</h3>
             <ul class="flex flex-col gap-3 " id="contas-ul">
             </ul>

@@ -1,10 +1,11 @@
 import mostraSenha from "../utils/mostraSenha.js"
 import { ListaAmigos } from "../utils/criaPerfisAmigos.js"
-import { ExtratoMain } from "../utils/ExtratoMain.js"
-import { InformacoesApi } from "../utils/InformacoesApi.js"
+import { ExtratoMain } from "../class/ExtratoMain.js"
+import { InformacoesApi } from "../class/InformacoesApi.js"
 import { RedirecionaBotoes } from "../utils/redirecionaBotoesAside.js"
-//guardo o usário para poder alterar
+import { verificaLogin } from "../utils/verificaLogin.js";
 (async () => {
+    await verificaLogin()
     const [contasApi, usuario] = await InformacoesApi.pegaInformacoes()
 
     const fotoPerfil = document.getElementById('foto-perfil')

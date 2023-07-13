@@ -128,4 +128,7 @@ export class InformacoesUsuario{
      set transacoes(array){
         this.#transacoes = array
     }
+     set rendimentos(objeto){
+        this.#rendimentos = objeto
+     }
 }
