@@ -33,12 +33,12 @@ input.addEventListener('blur', evento=>{
 
 formulario.addEventListener('submit', async evento =>{
     evento.preventDefault()
-    botaoSubmit.innerHTML = ` <div class = "flex justify-center w-full">
-    <div class="h-7 w-7 border-4 border-cor-carregamento border-t-white rounded-full animate-spin">
-    </div>
-    </div>`
     verificaExtratoExiste(usuario)
     if(verificaCampos.inputsOperacoes(input, usuario, taxaDasOperacoes)){
+        botaoSubmit.innerHTML = ` <div class = "flex justify-center w-full">
+        <div class="h-7 w-7 border-4 border-cor-carregamento border-t-white rounded-full animate-spin">
+        </div>
+        </div>`
         await RealizaOperacao.adicionaValores(input, usuario, tipoOperacao, usuarioDestinatario)
     }
 })

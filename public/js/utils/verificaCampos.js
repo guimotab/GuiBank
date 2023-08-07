@@ -374,14 +374,14 @@ function verificaCamposErros(arrayDosCampos) {
     const temErro = arrayDosCampos.find(elemento => elemento.className == classErro)
     let senha1Vazia = false
     let senha2Vazia = false
-
-    if (arrayDosCampos[4].value == "" && arrayDosCampos[5].value != "") {
+    
+    if (arrayDosCampos[5].value == "" && arrayDosCampos[6].value != "") {
         senha1Vazia = true
     }
-    if (arrayDosCampos[4].value != "" && arrayDosCampos[5].value == "") {
+    if (arrayDosCampos[5].value != "" && arrayDosCampos[6].value == "") {
         senha2Vazia = true
     }
-
+    
     if (temErro || senha1Vazia || senha2Vazia) {
         return true
     } else {
