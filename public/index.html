@@ -10,44 +10,6 @@
 </head>
 
 <body>
-    <!-- <aside class="flex flex-col gap-10 bg-white py-24 px-10 h-screen">
-        <div>
-            <h1 class="text-3xl text-cor-terciaria font-semibold pb-1 border-b-2 border-cor-terciaria w-36">GuiBank</h1>
-            <h2 class="text-xl font-semibold text-cor-terciaria">Login</h2>
-        </div>
-        <div class="flex flex-col gap-6">
-            <form class="flex flex-col gap-5" id='form' data-id="">
-                <div class="flex flex-col">
-                    <label class="text-lg font-medium">CPF</label>
-                    <input type="text" name="cpf" id='cpf' minlength="11" maxlength="11"
-                        pattern="([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" autocomplete="on"
-                        class="input-login flex items-end gap-px border-b-2 w-80 border-cor-outline bg-transparent autocomplete"
-                        required>
-                    <p id="erro-cpf-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
-                    <p id="erro-cpf-escrita" class="hidden">*O campo pode conter apenas números!</p>
-                    <p id="erro-cpf-existe" class="hidden">*Esse CPF não foi cadastrado!</p>
-                    <p id="erro-cpf-invalido" class="hidden">*CPF inválido!</p>
-                    <p class="font-medium text-cor-outline">*Apenas números</p>
-                </div>
-                <div>
-                    <div class="flex items-center gap-2">
-                        <label class="text-lg font-medium">Senha</a></label>
-                        <img src="../img/olho-cego.png" alt="Ver Senha" width="28" id='1'>
-                    </div>
-                    <input type="password" name='senha' autocomplete="off" id="campo-senha" pattern="\S+"
-                        class="input-login flex items-end gap-px border-b-2 w-80 border-cor-outline bg-transparent autocomplete"
-                        required>
-                    <p id="erro-senha-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
-                    <p id="erro-senha-invalido" class="hidden">*Este campo não pode conter espaços!</p>
-                    <p id="erro-senha-escrita" class="hidden">*A senha deve conter pelo menos 4 caracteres!</p>
-                </div>
-                <button type="submit" id="botao-submit"
-                    class="bg-cor-terciaria py-1 px-12 w-fit rounded-2xl text-white text-lg font-medium ">Entrar</button>
-            </form>
-            <a href="./sign.html" class="flex font-medium self-end">Não tenho conta</a>
-        </div>
-
-    </aside> -->
     <header class="flex justify-between bg-cor-terciaria text-white py-4 px-28 items-center">
         <h1 class="text-lg"><strong class="text-2xl">GuiBank</strong> | Seu Banco de Sucesso!</h1>
         <div class="flex gap-5 items-center font-medium">
@@ -87,7 +49,7 @@
     </main>
     <footer></footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type='module' src="../js/controllers/index.js"></script>
+    <script type='module' src="./js/controllers/index.js"></script>
 </body>
 
 </html>
