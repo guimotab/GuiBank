@@ -3,19 +3,20 @@ export class Operacoes {
         const tituloOperacao = document.getElementById('titulo-operacao');
         const textoTaxa = document.getElementById('texto-taxa');
         const botaoOperacao = document.getElementById('botao-operacao');
-        if (window.location.pathname == `/public/routes/sacar.html`) {
+        const location = window.location.pathname;
+        if (location == `/public/routes/sacar.html` || location == `/routes/sacar.html`) {
             const taxa = 3.30;
             this.sacarTexto(tituloOperacao, textoTaxa, botaoOperacao);
             return taxa;
         }
-        else if (window.location.pathname == `/public/routes/transferir.html`) {
+        else if (location == `/public/routes/transferir.html` || location == `/routes/transferir.html`) {
             const taxa = 9.30;
             if (destinatario) {
                 this.transferirTexto(tituloOperacao, textoTaxa, botaoOperacao, destinatario.devolveInformacoes());
             }
             return taxa;
         }
-        else if (window.location.pathname == `/public/routes/depositar.html`) {
+        else if (location == `/public/routes/depositar.html` || location == `/routes/depositar.html`) {
             const taxa = 0;
             this.depositarTexto(tituloOperacao, textoTaxa, botaoOperacao);
             return taxa;
@@ -38,11 +39,12 @@ export class Operacoes {
         botaoOperacao.innerText = 'Depositar';
     }
     static devolveOperacao() {
-        if (window.location.pathname == `/public/routes/sacar.html`) {
+        const location = window.location.pathname;
+        if (location == `/public/routes/sacar.html` || location == `/routes/sacar.html`) {
             const operacao = 'Saque';
             return operacao;
         }
-        else if (window.location.pathname == `/public/routes/transferir.html`) {
+        else if (location == `/public/routes/transferir.html` || location == `/routes/transferir.html`) {
             const operacao = 'Transferência';
             return operacao;
         }
@@ -52,15 +54,16 @@ export class Operacoes {
         }
     }
     static devolveTaxas() {
-        if (window.location.pathname == `/public/routes/sacar.html`) {
+        const location = window.location.pathname;
+        if (location == `/public/routes/sacar.html` || location == `/routes/sacar.html`) {
             const taxa = 3.30;
             return taxa;
         }
-        else if (window.location.pathname == `/public/routes/transferir.html`) {
+        else if (location == `/public/routes/transferir.html` || location == `/routes/transferir.html`) {
             const taxa = 9.30;
             return taxa;
         }
-        else if (window.location.pathname == `/public/routes/depositar.html`) {
+        else if (location == `/public/routes/depositar.html` || location == `/routes/depositar.html`) {
             const taxa = 0;
             return taxa;
         }
