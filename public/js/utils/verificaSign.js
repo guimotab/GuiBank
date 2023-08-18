@@ -1,12 +1,10 @@
-import { UsuariosApi } from "../services/UsuariosApi.js"
-
-export async function verificaSign(cpf){
-    const contasApi = await UsuariosApi.get()
-    
+import { UsuariosApi } from "../services/UsuariosApi.js";
+export function verificaSign(cpf) {
+    const contasApi = UsuariosApi.get();
     try {
-        return contasApi.find(elemento => elemento.cpf == cpf && elemento.logado == true)
-    } catch {
-        return false
+        return contasApi.find(elemento => elemento.cpf == cpf && elemento.logado == true);
     }
-    
+    catch (_a) {
+        return undefined;
+    }
 }

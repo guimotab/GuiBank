@@ -1,20 +1,18 @@
-// import axios from 'axios';
-const usuariosApi = axios.create({baseURL:'http://localhost:3000/usuarios'})
-
-export class UsuariosApi{
-    static async get(){
-        const response = await usuariosApi.get('/')
-    
-        return response.data
+export class UsuariosApi {
+    static get() {
+        const contas = JSON.parse(localStorage.getItem("Contas"));
+        return contas;
     }
-    static async post(data){
-        await usuariosApi.post(`/`, data)
+    static post(conta, contasApi) {
+        contasApi.push(conta);
+        localStorage.setItem("Contas", JSON.stringify(contasApi));
     }
-    static async put(id, data){
-        await usuariosApi.put(`/${id}`, data)
+    static put(localStorager, id, data) {
+        const indexConta = localStorager.findIndex(conta => conta.id === id);
+        localStorager[indexConta] = data;
+        localStorage.setItem("Contas", JSON.stringify(localStorager));
     }
-    static async delete(id){
-        await usuariosApi.delete(`/${id}`)
+    static delete(id) {
+        // await usuariosApi.delete(`/${id}`)
     }
-
 }

@@ -1,11 +1,15 @@
-import { InformacoesApi } from "../class/InformacoesApi.js"
-
-export async function verificaLogin(){
+import { InformacoesApi } from "../class/InformacoesApi.js";
+export function verificaLogin() {
     try {
-    const [contasApi, usuario] = await InformacoesApi.pegaInformacoes()
-        return usuario
-    } catch {
-        window.location.href = './login.html'
+        const [contasApi, usuario] = InformacoesApi.pegaInformacoes();
+        if (usuario.logado) {
+            return usuario;
+        }
+        else {
+            window.location.href = './login.html';
+        }
     }
-    
+    catch (_a) {
+        window.location.href = './login.html';
+    }
 }

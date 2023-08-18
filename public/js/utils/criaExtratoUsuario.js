@@ -1,51 +1,50 @@
-import { Horario } from "./criaHorario.js"
-const mesDia = Horario.criaMesDia()
+import { Horario } from "./criaHorario.js";
+const mesDia = Horario.criaMesDia();
 export function verificaExtratoExiste(indexId) {
     //verifica se existe algum objeto de transacao
     function verificaExisteObjeto() {
-        if(indexId.transacoes){
-            return true
-        } else {
-            return false
+        if (indexId.transacoes) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
     //verifica se já existe algum dia igual
-    function verificaExisteDiaIgual(){
-        let existe = false
-        try{
+    function verificaExisteDiaIgual() {
+        let existe = false;
+        try {
             indexId.transacoes.forEach((elemento) => {
-                if(elemento.periodo.dia == Horario.criaMesDia()) {
-                    existe = true
+                if (elemento.periodo.dia == Horario.criaMesDia()) {
+                    existe = true;
                 }
             });
-            return existe
-        } catch {
-            return existe
+            return existe;
+        }
+        catch (_a) {
+            return existe;
         }
     }
-    const existeObjetoDia = verificaExisteObjeto()
-    const existeDiaIgual = verificaExisteDiaIgual()
-    
+    const existeObjetoDia = verificaExisteObjeto();
+    const existeDiaIgual = verificaExisteDiaIgual();
     const objetoDia = {
-        "periodo" : {
+        "periodo": {
             "dia": `${mesDia}`,
-            "tipos":[],
+            "tipos": [],
             "valores": [],
             "horarios": [],
         }
+    };
+    if (existeObjetoDia && existeDiaIgual) {
+        return false;
     }
-
-    if(existeObjetoDia && existeDiaIgual) {
-        return false
-    } else if(existeObjetoDia && !existeDiaIgual) {
-        indexId.transacoes.push(objetoDia)
-        return true
+    else if (existeObjetoDia && !existeDiaIgual) {
+        indexId.transacoes.push(objetoDia);
+        return true;
     }
-
-    if(!existeObjetoDia && !existeDiaIgual) {
-        indexId.transacoes = []
-        indexId.transacoes.push(objetoDia)
-        return true
-    } 
-}    
-
+    if (!existeObjetoDia && !existeDiaIgual) {
+        indexId.transacoes = [];
+        indexId.transacoes.push(objetoDia);
+        return true;
+    }
+}

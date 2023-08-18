@@ -1,134 +1,117 @@
-export class InformacoesUsuario{
-    #primeiroNome
-    #segundoNome
-    #usuario
-    #cpf
-    #email
-    #telefone
-    #senha
-    #numeroBanco
-    #agencia
-    #id
-    #saldo
-    #foto
-    #logado
-    #transacoes
-    #rendimentos
-
-    constructor(usuario){
-        this.#primeiroNome = usuario.primeiroNome;
-        this.#segundoNome = usuario.segundoNome;
-        this.#cpf = usuario.cpf;
-        this.#email = usuario.email;
-        this.#telefone = usuario.telefone;
-        this.#senha = usuario.senha;
-        this.#numeroBanco = usuario.numeroBanco
-        this.#agencia = usuario.agencia
-        this.#id = usuario._id
-        this.#saldo = usuario.saldo;
-        this.#foto = usuario.foto
-        this.#logado = usuario.logado;
-        this.#usuario = usuario.usuario
-        this.#transacoes = usuario.transacoes
-        this.#rendimentos = usuario.rendimentos
+export class InformacoesUsuario {
+    constructor({ id, agencia, cpf, email, foto, logado, numeroBanco, primeiroNome, rendimentos, saldo, segundoNome, senha, telefone, transacoes, usuario }) {
+        this._primeiroNome = primeiroNome;
+        this._segundoNome = segundoNome;
+        this._cpf = cpf;
+        this._email = email;
+        this._telefone = telefone;
+        this._senha = senha;
+        this._numeroBanco = numeroBanco;
+        this._agencia = agencia;
+        this._id = id;
+        this._saldo = saldo;
+        this._foto = foto;
+        this._logado = logado;
+        this._usuario = usuario;
+        this._transacoes = transacoes;
+        this._rendimentos = rendimentos;
     }
-     devolveInformacoes(){
-        
+    devolveInformacoes() {
         const informacoes = {
-            "_id": this.#id,
-            "primeiroNome" : this.#primeiroNome,
-            "segundoNome" : this.#segundoNome,
-            "cpf" : this.#cpf,
-            "email" : this.#email,
-            "telefone" : this.#telefone,
-            "senha" : this.#senha,
-            "numeroBanco" : this.#numeroBanco,
-            "agencia" : this.#agencia,
-            "saldo": this.#saldo,
-            "foto": this.#foto,
-            "logado" : this.#logado,
-            "usuario": this.#usuario,
-            "transacoes" : this.#transacoes,
-            "rendimentos": this.#rendimentos
-        }
-        return informacoes
+            id: this._id,
+            primeiroNome: this._primeiroNome,
+            segundoNome: this._segundoNome,
+            cpf: this._cpf,
+            email: this._email,
+            telefone: this._telefone,
+            senha: this._senha,
+            numeroBanco: this._numeroBanco,
+            agencia: this._agencia,
+            saldo: this._saldo,
+            foto: this._foto,
+            logado: this._logado,
+            usuario: this._usuario,
+            transacoes: this._transacoes,
+            rendimentos: this._rendimentos
+        };
+        return informacoes;
     }
-     get foto(){
-        return this.#foto
+    get foto() {
+        return this._foto;
     }
-     get id() {
-        return this.#id
+    get id() {
+        return this._id;
     }
-     get logado() {
-        return this.#logado
+    get logado() {
+        return this._logado;
     }
-     get primeiroNome(){
-        return this.#primeiroNome
+    get primeiroNome() {
+        return this._primeiroNome;
     }
-     get segundoNome(){
-        return this.#segundoNome
+    get segundoNome() {
+        return this._segundoNome;
     }
-     get usuario(){
-        return this.#usuario
+    get usuario() {
+        return this._usuario;
     }
-     get cpf(){
-        return this.#cpf
+    get cpf() {
+        return this._cpf;
     }
-     get email(){
-        return this.#email
+    get email() {
+        return this._email;
     }
-     get telefone(){
-        return this.#telefone
+    get telefone() {
+        return this._telefone;
     }
-     get numeroBanco(){
-        return this.#numeroBanco
+    get numeroBanco() {
+        return this._numeroBanco;
     }
-     get agencia(){
-        return this.#agencia
+    get agencia() {
+        return this._agencia;
     }
-     get saldo(){
-        return this.#saldo
+    get saldo() {
+        return this._saldo;
     }
-     get senha(){
-        return this.#senha
+    get senha() {
+        return this._senha;
     }
-     get transacoes(){
-        return this.#transacoes
+    get transacoes() {
+        return this._transacoes;
     }
-     get rendimentos(){
-        return this.#rendimentos
+    get rendimentos() {
+        return this._rendimentos;
     }
-     set logado(status){
-       this.#logado = status
+    set logado(status) {
+        this._logado = status;
     }
-     set foto(novaFoto){
-        this.#foto = novaFoto
+    set foto(novaFoto) {
+        this._foto = novaFoto;
     }
-     set primeiroNome(novoPrimeiroNome){
-        this.#primeiroNome = novoPrimeiroNome
+    set primeiroNome(novoPrimeiroNome) {
+        this._primeiroNome = novoPrimeiroNome;
     }
-     set segundoNome(novoSegundoNome){
-        this.#segundoNome = novoSegundoNome
+    set segundoNome(novoSegundoNome) {
+        this._segundoNome = novoSegundoNome;
     }
-     set usuario(novoUsuario){
-        this.#usuario = novoUsuario
+    set usuario(novoUsuario) {
+        this._usuario = novoUsuario;
     }
-     set email(novoEmail){
-        this.#email = novoEmail
+    set email(novoEmail) {
+        this._email = novoEmail;
     }
-     set telefone(novoTelefone){
-        this.#telefone = novoTelefone
+    set telefone(novoTelefone) {
+        this._telefone = novoTelefone;
     }
-     set senha(novaSenha){
-        this.#senha = novaSenha
+    set senha(novaSenha) {
+        this._senha = novaSenha;
     }
-     set saldo(novoSaldo){
-        this.#saldo = novoSaldo
+    set saldo(novoSaldo) {
+        this._saldo = novoSaldo;
     }
-     set transacoes(array){
-        this.#transacoes = array
+    set transacoes(array) {
+        this._transacoes = array;
     }
-     set rendimentos(objeto){
-        this.#rendimentos = objeto
-     }
+    set rendimentos(objeto) {
+        this._rendimentos = objeto;
+    }
 }

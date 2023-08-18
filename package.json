@@ -6,13 +6,16 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx tailwindcss -i ./public/styles/src/style.css -o ./public/styles/dist/style.css --watch"
+    "start": "npx tailwindcss -i ./public/styles/src/style.css -o ./public/styles/dist/style.css --watch",
+    "tsc": "tsc -w"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^20.5.0",
     "autoprefix": "^1.0.1",
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "typescript": "^5.1.6"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.15",

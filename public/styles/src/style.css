@@ -21,21 +21,21 @@
     }
 
     .input-style {
-        @apply border-2 border-cor-terciaria rounded-lg px-2 py-0.5 w-full text-lg font-medium focus: outline-none focus:border-cor-hover
+        @apply border-2 border-cor-terciaria rounded-lg px-2 py-0.5 w-full text-lg font-medium focus:outline-none focus:border-cor-hover
     }
 
     /* login */
     .input-login {
-        @apply h-9 bg-transparent px-2 text-xl font-medium placeholder: text-black focus:outline-none focus:border-cor-secundaria
+        @apply h-9 bg-transparent px-2 text-xl font-medium placeholder:text-black focus:outline-none focus:border-cor-secundaria
     }
 
     /* main */
     .btn-aside {
-        @apply flex items-center gap-5 px-8 py-1.5 rounded-xl cursor-pointer hover: bg-cor-hover
+        @apply flex items-center gap-5 px-8 py-1.5 rounded-xl cursor-pointer hover:bg-cor-hover
     }
 
     .btn-operacoes {
-        @apply w-14 h-14 px-4 py-2 bg-cor-terciaria rounded-full cursor-pointer hover: bg-cor-hover
+        @apply w-14 h-14 px-4 py-2 bg-cor-terciaria rounded-full cursor-pointer hover:bg-cor-hover
     }
 
     .estilo-blocos-informacoes {
@@ -48,11 +48,11 @@
     }
 
     .input-conta {
-        @apply border-2 border-cor-outline rounded-lg px-2 py-1 font-medium focus: outline-none focus:border-cor-hover
+        @apply border-2 border-cor-outline rounded-lg px-2 py-1 font-medium focus:outline-none focus:border-cor-hover
     }
 
     .div-informacoes-conta {
-        @apply grid grid-cols-[18rem_20rem_auto] grid-rows-[fit_auto] gap-1
+        @apply flex flex-col gap-1
     }
 
     .frase-erro-conta {
@@ -61,7 +61,7 @@
 
     /* operacoes */
     .input-operacao {
-        @apply h-9 bg-transparent px-2 text-2xl font-semibold placeholder: text-black focus:outline-none
+        @apply h-9 w-full bg-transparent px-2 text-2xl font-semibold placeholder:text-black focus:outline-none
     }
 
     .frase-erro-operacao {
@@ -70,11 +70,11 @@
 
     /* erros */
     .correto-label-transparente {
-        @apply flex items-end gap-px border-b-2 w-80 border-cor-outline h-9 px-2 text-xl font-medium focus: outline-none autocomplete
+        @apply flex items-end gap-px border-b-2 max-w-xs border-cor-outline h-9 px-2 text-xl font-medium focus:outline-none autocomplete
     }
 
     .erro-label-transparente {
-        @apply flex items-end gap-px border-b-2 w-80 border-cor-erro h-9 px-2 text-xl font-medium focus: outline-none autocomplete
+        @apply flex items-end gap-px border-b-2 max-w-xs border-cor-erro h-9 px-2 text-xl font-medium focus:outline-none autocomplete
     }
 
 }

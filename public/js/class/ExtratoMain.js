@@ -1,39 +1,37 @@
 export class ExtratoMain {
-    static posicaoArray = 0
     static constroiExtrato(usuario, extratoUl) {
-        const sectionExtrato = document.getElementById("section-extratos")
-        let adicionado = false
-        try{
+        const sectionExtrato = document.getElementById("section-extratos");
+        let adicionado = false;
+        try {
             if (!usuario.transacoes.length) {
-                throw Error
-            } else {
+                throw Error;
+            }
+            else {
                 usuario.transacoes.slice().reverse().forEach((elemento) => {
-                    extratoUl.innerHTML += this.criaExtrato(elemento.periodo.dia, this.posicaoArray, usuario)
-                    const extratoLi = document.getElementById(`li-extratos-${this.posicaoArray}`)
-                    if(elemento.periodo.tipos.length > 3 && !adicionado){
-                        adicionado = true
-                        sectionExtrato.classList += " overflow-y-scroll"
+                    extratoUl.innerHTML += this.criaExtrato(elemento.periodo.dia, this.posicaoArray, usuario);
+                    const extratoLi = document.getElementById(`li-extratos-${this.posicaoArray}`);
+                    if (elemento.periodo.tipos.length > 3 && !adicionado) {
+                        adicionado = true;
+                        sectionExtrato.className += " overflow-y-scroll";
                     }
                     for (let i = elemento.periodo.tipos.length - 1; i >= 0; i--) {
-                        extratoLi.innerHTML += this.adicionaLiExtrato(elemento.periodo.tipos[i], elemento.periodo.valores[i], elemento.periodo.horarios[i])
+                        extratoLi.innerHTML += this.adicionaLiExtrato(elemento.periodo.tipos[i], elemento.periodo.valores[i], elemento.periodo.horarios[i]);
                     }
-                    this.posicaoArray++
-                })
+                    this.posicaoArray++;
+                });
             }
-        } catch {
+        }
+        catch (_a) {
             extratoUl.innerHTML = `
-                <h3 class="text-lg font-medium">Não há extratos no momento...</h3>`
+                <h3 class="text-lg font-medium">Não há extratos no momento...</h3>`;
         }
     }
-
-    static contagem = 0
-    static criaExtrato(mesDia, posicaoArray, usuario){
-        this.contagem++
-        let divisaoDias = '<div class="w-full h-0.5 bg-cor-cinza_transparente"></div>'
-        if(this.contagem == usuario.transacoes.length){
-            divisaoDias = ""
+    static criaExtrato(mesDia, posicaoArray, usuario) {
+        this.contagem++;
+        let divisaoDias = '<div class="w-full h-0.5 bg-cor-cinza_transparente"></div>';
+        if (this.contagem == usuario.transacoes.length) {
+            divisaoDias = "";
         }
-        
         // <img src=${srcImagem} alt=${altImagem} width="30" heigth="10">
         const adicionaExtrato = `
         <li class="flex flex-col gap-4" id="dias-extratos">
@@ -42,27 +40,25 @@ export class ExtratoMain {
                 
             </div>
         </li>
-        ${divisaoDias}`
-        return adicionaExtrato   
+        ${divisaoDias}`;
+        return adicionaExtrato;
     }
-    
-    static adicionaLiExtrato(tipoExtrato, valor, horario){
-        let imgExtrato;
-        let altExtrato
-        if(tipoExtrato == "Transferência Enviada" || tipoExtrato == "Transferência Recebida"){
-            imgExtrato = "../img/transferenciaEnviada-icone.svg"
-            altExtrato = "transferenciaEnviada-ícone"
-        } else if(tipoExtrato == "Saque"){
-            imgExtrato = "../img/saqueRealizado.svg"
-            altExtrato = "saque-ícone"
-        } else if(tipoExtrato == "Depósito"){
-            imgExtrato = "../img/depositoRealizado-icone.svg"
-            altExtrato = "depósito-ícone"
+    static adicionaLiExtrato(tipoExtrato, valor, horario) {
+        let imgExtrato = "";
+        let altExtrato = "";
+        if (tipoExtrato == "Transferência Enviada" || tipoExtrato == "Transferência Recebida") {
+            imgExtrato = "../img/transferenciaEnviada-icone.svg";
+            altExtrato = "transferenciaEnviada-ícone";
         }
-        
-        const liExtrato = 
-        
-        `
+        else if (tipoExtrato == "Saque") {
+            imgExtrato = "../img/saqueRealizado.svg";
+            altExtrato = "saque-ícone";
+        }
+        else if (tipoExtrato == "Depósito") {
+            imgExtrato = "../img/depositoRealizado-icone.svg";
+            altExtrato = "depósito-ícone";
+        }
+        const liExtrato = `
         <div class="flex gap-3 items-center">
             <div class="p-2.5 bg-cor-terciaria rounded-full">
             <img src=${imgExtrato} alt=${altExtrato} class="w-6 h-6">
@@ -74,8 +70,9 @@ export class ExtratoMain {
                 </div>
                 <p class="text-cor-cinza_escuro text-base font-semibold">R$${valor.replace('.', ',')}</p>
             </div>
-        </div>`
-        return liExtrato  
+        </div>`;
+        return liExtrato;
     }
-
 }
+ExtratoMain.posicaoArray = 0;
+ExtratoMain.contagem = 0;

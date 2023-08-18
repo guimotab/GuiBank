@@ -10,10 +10,16 @@
     <title>GuiBank</title>
 </head>
 
-<body class="grid grid-cols-[13rem_auto]">
-    <aside class="flex flex-col fixed row-start-1 row-end-3 justify-between 
-        bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52">
+<body class="grid md:grid-cols-[13rem_auto]">
+    <header class="flex items-center bg-white w-full h-16 px-10 py-4 md:hidden">
+        <div id="menu-hamburguer" class="flex p-3 rounded-full bg-cor-terciaria w-fit" >
+            <img src="../img/Hamburger_icon-branco.png" alt="menuHamburguer" class="w-7">
+        </div>
+    </header>
+    <aside id="aside" class="hidden fixed flex-col col-start-1 row-start-1 row-end-3 justify-between 
+        bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52 md:flex">
         <div class="">
+            <p id="close-aside" class="flex px-4 font-semibold text-lg md:hidden">X</p>
             <h1 class='text-center mb-9 mt-3 text-2xl font-semibold'>GuiBank</h1>
             <nav>
                 <ul class="flex flex-col gap-1.5 font-normal">
@@ -42,13 +48,13 @@
         </div>
         <h3 class="flex my-4 text-xl font-medium justify-center btn-aside" id="deslogar">Deslogar</h3>
     </aside>
-    <main class="col-start-2 h-full w-full bg-cor-clara px-24 py-12">
-        <section class="flex flex-col rounded-2xl px-12 py-6 gap-4 bg-white shadow-xl">
-            <p class="font-medium text-2xl pb-1 border-b-2 border-cor-terciaria w-96 text-cor-terciaria">Informações da
+    <main class="h-full w-full bg-cor-clara px-10 py-12 lg:px-28 md:col-start-2">
+        <section class="flex flex-col rounded-2xl px-12 py-6 gap-4 bg-white shadow-xl w-full max-w-3xl">
+            <p class="font-medium text-2xl pb-1 border-b-2 border-cor-terciaria max-w-27 text-cor-terciaria">Informações da
                 Conta</p>
-            <form id="formulario" class="flex flex-col gap-8 w-3/5 w-full">
+            <form id="formulario" class="flex flex-col gap-8 w-full">
                 <div class="flex flex-col gap-4">
-                    <div>
+                    <div clas>
                         <label class="titulo-informacoes-conta">Foto de Perfil</label>
                         <img src="" alt="" id="foto-perfil"
                             class="border-4 border-cor-terciaria object-cover h-28 w-28 rounded-full">
@@ -62,73 +68,88 @@
                     </div>
                 </div>
                 <div class="div-informacoes-conta">
-                    <label class="titulo-informacoes-conta">Primeiro Nome</label>
-                    <input type="text" id="primeiroNome" minlength="3" maxlength="20" pattern="[a-zA-Z\u00C0-\u00FF']+"
-                        class="input-conta" required>
+                    <div class="flex flex-col justify-between lg:flex-row">
+                        <label class="titulo-informacoes-conta">Primeiro Nome</label>
+                        <input type="text" id="primeiroNome" minlength="3" maxlength="20"
+                            pattern="[a-zA-Z\u00C0-\u00FF']+" class="input-conta" required>
+                    </div>
                     <p id="erroPrimeiroNome-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
                     <p id="erroPrimeiroNome-length" class="hidden">*O nome deve ter pelo menos 3 letras!</p>
                     <p id="erroPrimeiroNome-invalido" class="hidden">*O campo não
                         pode conter espaços, caracteres especiais ou números!</p>
                 </div>
                 <div class="div-informacoes-conta">
-                    <label class="titulo-informacoes-conta">Segundo Nome</label>
-                    <input type="name" id="segundoNome" minlength="3" maxlength="20" pattern="[a-zA-Z\u00C0-\u00FF']+"
-                        class="input-conta" required>
+                    <div class="flex flex-col justify-between lg:flex-row">
+                        <label class="titulo-informacoes-conta">Segundo Nome</label>
+                        <input type="name" id="segundoNome" minlength="3" maxlength="20"
+                            pattern="[a-zA-Z\u00C0-\u00FF']+" class="input-conta" required>
+                    </div>
                     <p id="erroSegundoNome-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
                     <p id="erroSegundoNome-length" class="hidden">*O nome deve ter pelo menos 3 letras!</p>
                     <p id="erroSegundoNome-invalido" class="hidden">*O campo não pode conter espaços, caracteres
                         especiais ou números!</p>
                 </div>
                 <div class="div-informacoes-conta">
-                    <label class="titulo-informacoes-conta">Usuario</label>
-                    <input id="usuario" maxlength="20" pattern="[@]\w+" class="input-conta" required>
+                    <div class="flex flex-col justify-between lg:flex-row">
+                        <label class="titulo-informacoes-conta">Usuario</label>
+                        <input id="usuario" maxlength="20" pattern="[@]\w+" class="input-conta" required>
+                    </div>
                     <p id="erroUsuario-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
                     <p id="erroUsuario-invalido" class="hidden">
                         *Este campo só pode conter letras, números e "_"!
                     </p>
                     <p id="erroUsuario-existe" class="hidden">*Esse usuário já está sendo usado!</p>
                 </div>
-                <div class="div-informacoes-conta conta-perfil_dados-proibido">
+                <div class="flex flex-col justify-between flex-wrap conta-perfil_dados-proibido lg:flex-row">
                     <label class="titulo-informacoes-conta">CPF</label>
                     <input type="text" id="cpf" readonly class="input-conta cursor-not-allowed">
                 </div>
                 <div class="div-informacoes-conta">
-                    <label class="titulo-informacoes-conta">Email</label>
-                    <input type="email" id="email" minlength="4" maxlength="30" class="input-conta" required>
+                    <div class="flex flex-col justify-between lg:flex-row">
+                        <label class="titulo-informacoes-conta">Email</label>
+                        <input type="email" id="email" minlength="4" maxlength="30" class="input-conta" required>
+                    </div>
                     <p id="erroEmail-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
                     <p id="erroEmail-invalido" class="hidden">*Email inválido!</p>
                 </div>
                 <div class="div-informacoes-conta">
-                    <div>
-                        <label class="titulo-informacoes-conta">Telefone</label>
-                        <p class="font-medium">*Apenas números</p>
+                    <div class="flex flex-col justify-between lg:flex-row">
+                        <div>
+                            <label class="titulo-informacoes-conta">Telefone</label>
+                            <p class="font-medium">*Apenas números</p>
+                        </div>
+                        <input type="tel" id="telefone" minlength="11" maxlength="11" class="input-conta h-fit"
+                            pattern="[0-9]{11}" required>
                     </div>
-                    <input type="tel" id="telefone" minlength="11" maxlength="11" class="input-conta h-fit"
-                        pattern="[0-9]{11}" required>
                     <p id="erroTelefone-obrigatorio" class="hidden">*Esse campo é obrigatório!</p>
                     <p id="erroTelefone-invalido" class="hidden">*Telefone Inválido!</p>
                     <p id="erroTelefone-formato" class="hidden">*O campo pode conter apenas números!</p>
                 </div>
-                <div class="div-informacoes-conta conta-perfil_dados-proibido">
+                <div class="flex flex-col justify-between flex-wrap conta-perfil_dados-proibido lg:flex-row">
                     <label class="titulo-informacoes-conta">Número Banco</label>
                     <input type="number" id="numeroBanco" readonly
                         class="input-conta cursor-not-allowed"><!--disabled-->
                 </div>
-                <div class="div-informacoes-conta conta-perfil_dados-proibido">
+                <div class="flex flex-col justify-between flex-wrap conta-perfil_dados-proibido lg:flex-row">
                     <label class="titulo-informacoes-conta">Agência</label>
                     <input type="number" id="agencia" readonly class="input-conta cursor-not-allowed">
                 </div>
                 <div class="div-informacoes-conta">
-                    <label class="titulo-informacoes-conta">Alterar Senha</label>
-                    <input type="password" id="campo-senha1" class="input-conta" minlength="4" autocomplete="off"
-                        pattern="\S+">
+                    <div class="flex flex-col justify-between lg:flex-row">
+                        <label class="titulo-informacoes-conta">Alterar Senha</label>
+                        <input type="password" id="campo-senha1" class="input-conta" minlength="4" autocomplete="off"
+                            pattern="\S+">
+                    </div>
                     <p id="erroSenha-invalido" class="hidden">*Este campo não pode conter espaços!</p>
                     <p id="erroSenha-length" class="hidden">*A senha deve conter pelo menos 4 caracteres!</p>
 
                 </div>
                 <div class="div-informacoes-conta">
-                    <label class="titulo-informacoes-conta">Confirmar Senha</label>
-                    <input id="campo-senha2" type="password" id="campo-senha2" class="input-conta" autocomplete="off">
+                    <div class="flex flex-col justify-between lg:flex-row">
+                        <label class="titulo-informacoes-conta">Confirmar Senha</label>
+                        <input id="campo-senha2" type="password" id="campo-senha2" class="input-conta"
+                            autocomplete="off">
+                    </div>
                     <p id="erroSenha-naoIgual" class="hidden">*As senhas não coincidem!</p>
                 </div>
                 <button type="submit" id="botao-submit"
@@ -139,7 +160,6 @@
 
     </main>
     <footer></footer>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type='module' src="../js/controllers/conta.js"></script>
 </body>
 

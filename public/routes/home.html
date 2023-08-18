@@ -9,13 +9,14 @@
     <title>GuiBank</title>
 </head>
 
-<body class="grid h-screen grid-rows-[auto_1fr] grid-cols-[13rem_auto]">
-    <aside class="flex flex-col row-start-1 row-end-3 justify-between 
-        bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52">
-        <div class="">
+<body class="grid h-screen grid-rows-[auto_1fr] grid-cols-[auto] xl:grid-cols-[13rem_auto]">
+    <aside id="aside" class="hidden flex-col col-start-1 row-start-1 row-end-3 justify-between 
+        bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52 xl:flex">
+        <div class="flex flex-col">
+            <p id="close-aside" class="flex px-4 font-semibold text-lg xl:hidden">X</p>
             <h1 class='text-center mb-9 mt-3 text-2xl font-semibold'>GuiBank</h1>
             <nav>
-                <ul class="flex flex-col gap-1.5 font-normal">
+                <ul class="flex flex-col gap-4 font-normal lg:gap-1.5">
                     <li class="btn-aside" data-aside="home">
                         <img src="../img/casaHome.svg" alt="home" class="h-6 w-6">
                         <p>Home</p>
@@ -41,9 +42,10 @@
         </div>
         <h3 class="flex my-4 text-xl font-medium justify-center btn-aside" id="deslogar">Deslogar</h3>
     </aside>
-    <header class="grid row-start-1 col-start-2">
-        <div class="flex justify-between items-center bg-cor-branco px-7 py-2 h-16 text-cor-terciaria">
-            <div>
+    <header id="header" class="grid row-start-1 bg-cor-branco xl:col-start-2 ">
+        <div class="flex justify-between items-center px-7 py-2 h-16 max-w-7xl text-cor-terciaria">
+            <div class="flex items-center gap-4">
+                <img src="../img/Hamburger_icon.png" id="menu-hamburguer" alt="menu-hamburguer" class="w-8 text-cor-terciaria xl:hidden">
                 <h2 class="text-xl font-semibold" id="texto-bem-vindo">Olá, Guilherme</h2>
             </div>
             <div class="flex gap-3">
@@ -55,53 +57,61 @@
             </div>
         </div>
     </header>
-    <main class="h-full grid col-start-2 row-start-2 grid-rows-[auto_1fr] grid-cols-[auto_auto] 
-        bg-cor-clara gap-6 px-7 py-6 scrollbar">
-        <section class="grid col-start-1 estilo-blocos-informacoes">
-            <div id="informacoes-saldo" class="flex flex-col gap-9">
-                <div class="flex justify-between items-center gap-2.5 border-cor-terciaria border-solid border-2 rounded-xl px-7 py-4">
-                    <p class="font-medium text-lg">Saldo Disponível:</p>
-                    <div class="flex items-center gap-4 w-36 h-6">
-                        <img id='olhoSaldo' src="../img/olho-cego.png" alt="olho" class="h-5">
-                        <div id="esconde-saldo" class="w-24 h-2.5  bg-cor-terciaria"></div>
-                        <p id="saldo" class="hidden self-center font-medium text-lg"></p>
+    <main id="main" class="xl:col-start-2 h-full bg-cor-clara px-7 py-6 scrollbar">
+        <div class="flex justify-center flex-wrap gap-6 max-w-7xl lg:flex-nowrap">
+            <div class="flex flex-col items-center gap-6 w-full">
+                <section class="flex justify-center estilo-blocos-informacoes w-full max-w-2xl">
+                    <div id="informacoes-saldo" class="flex flex-col gap-9 w-full max-w-xl">
+                        <div
+                            class="flex justify-between items-center gap-2.5 border-cor-terciaria border-2 rounded-xl px-7 py-4 w-full">
+                            <p class="font-medium text-lg">Saldo Disponível:</p>
+                            <div class="flex items-center gap-4 w-36 h-6">
+                                <img id='olhoSaldo' src="../img/olho-cego.png" alt="olho" class="h-5">
+                                <div id="esconde-saldo" class="w-24 h-2.5  bg-cor-terciaria"></div>
+                                <p id="saldo" class="hidden self-center font-medium text-lg"></p>
+                            </div>
+                        </div>
+                        <ul class="flex justify-evenly w-full">
+                            <li data-card="depositar" class="flex flex-col items-center w-max">
+                                <img src="../img/depositar-icone.svg" alt="depositar" class="btn-operacoes">
+                                <p class="font-medium text-basic font-sans">Depositar</p>
+                            </li>
+                            <li data-card="sacar" class="flex flex-col items-center w-max">
+                                <img src="../img/sacar-icone.svg" alt="sacar" class="btn-operacoes">
+                                <p class="font-medium text-basic">Sacar</p>
+                            </li>
+                            <li data-card="transferir" class="flex flex-col items-center w-max">
+                                <img src="../img/transferir-icone.svg" alt="transferir" class="btn-operacoes">
+                                <p class="font-medium text-basic">Transferir</p>
+                            </li>
+                            <li data-card="caixinha" class="flex flex-col items-center w-max">
+                                <img src="../img/cofrinho-icone.svg" alt="caixinha" class="btn-operacoes">
+                                <p class="font-medium text-basic">Caixinha</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section id="section-extratos" class="flex flex-col justify-center estilo-blocos-informacoes pl-8 pr-2 w-full max-w-2xl max-h-72">
+                    <p class="font-medium text-lg mb-2">Extratos</p>
+                    <div class="flex flex-col max-w-xl w-full pr-3 overflow-auto">
+                        <ul class="flex flex-col gap-4 " id="extrato-ul"> 
+                        </ul>
+                    </div>
+                </section> 
+            </div>
+            <section id="section-amigos"
+                class="flex justify-center estilo-blocos-informacoes pl-8 pr-1 gap-3 w-full max-w-2xl max-h-[33.25rem]">
+                <div class="flex flex-col max-w-xl w-full gap-2 pb-6">
+                    <p class="font-medium text-lg">Amigos</p>
+                    <div class="overflow-auto pr-4">
+                        <ul class="flex flex-col gap-3" id="contas-ul">
+                        </ul>
                     </div>
                 </div>
-                <ul class="flex justify-evenly">
-                    <li data-card="depositar" class="flex flex-col items-center w-max">
-                        <img src="../img/depositar-icone.svg" alt="depositar" class="btn-operacoes">
-                        <p class="font-medium text-basic font-sans">Depositar</p>
-                    </li>
-                    <li data-card="sacar" class="flex flex-col items-center w-max">
-                        <img src="../img/sacar-icone.svg" alt="sacar" class="btn-operacoes">
-                        <p class="font-medium text-basic">Sacar</p>
-                    </li>
-                    <li data-card="transferir" class="flex flex-col items-center w-max">
-                        <img src="../img/transferir-icone.svg" alt="transferir" class="btn-operacoes">
-                        <p class="font-medium text-basic">Transferir</p>
-                    </li>
-                    <li data-card="caixinha" class="flex flex-col items-center w-max">
-                        <img src="../img/cofrinho-icone.svg" alt="caixinha" class="btn-operacoes">
-                        <p class="font-medium text-basic">Caixinha</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="section-amigos" class="col-start-2 row-start-1 row-end-3 flex flex-col estilo-blocos-informacoes 
-            gap-3 max-h-96">
-            <p class="font-medium text-lg">Amigos</p>
-            <ul class="flex flex-col gap-3" id="contas-ul">
-            </ul>
-        </section>
-        <section id="section-extratos" class="estilo-blocos-informacoes gap-6 max-h-64">
-            <p class="font-medium text-lg mb-2">Extratos</p>
-            <ul class="flex flex-col gap-4 " id="extrato-ul">
-            </ul>
-        </section>
+            </section>
+        </div>
     </main>
     <footer></footer>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type='module' src="../js/controllers/home.js"></script>
 </body>
 
