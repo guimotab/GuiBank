@@ -1,8 +1,8 @@
 import IUserBase from "../interfaces/IUserBase.js"
 import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
 import { UsuariosApi } from "../services/UsuariosApi.js"
-export class RedirecionaBotoes{
-    static redireciona(contasApi: IUserBase[], usuario: InformacoesUsuario){
+export class RedirecionaBotoes {
+    static redireciona(contasApi: IUserBase[], usuario: InformacoesUsuario) {
 
         const botaoSair = document.getElementById('deslogar') as HTMLInputElement
         const botoesAside = document.querySelectorAll('[data-aside]')!
@@ -13,31 +13,35 @@ export class RedirecionaBotoes{
         this.redirecionaCard(usuario, botoesCard)
     }
 
-    static redirecionaCard(usuario: InformacoesUsuario, botoesCard: any){
-        for(let i = 0; i < botoesCard.length; i++){
-            botoesCard[i].addEventListener('click' , () =>{
-                if (window.location.pathname != `/public/routes/${botoesCard[i].attributes[0].value}.html`) {
-                    window.location.href = `./${botoesCard[i].attributes[0].value}.html?id=${usuario.id}`
+    static redirecionaCard(usuario: InformacoesUsuario, botoesCard: any) {
+        const location = window.location.pathname
+        for (let i = 0; i < botoesCard.length; i++) {
+            const buttons = botoesCard[i].attributes[0].value
+            botoesCard[i].addEventListener('click', () => {
+            if (location != `/public/routes/${buttons}.html` || location != `/routes/${buttons}.html`) {
+                    window.location.href = `./${buttons}.html?id=${usuario.id}`
                 }
             })
         }
     }
 
-    static redirecionaAside(usuario: InformacoesUsuario, botoesAside: any){
-        for(let i = 0; i < botoesAside.length; i++){
-            botoesAside[i].addEventListener('click' , () =>{
-                if (window.location.pathname != `/public/routes/${botoesAside[i].attributes[1].value}.html`) {
-                    window.location.href = `./${botoesAside[i].attributes[1].value}.html?id=${usuario.id}`
+    static redirecionaAside(usuario: InformacoesUsuario, botoesAside: any) {
+        const location = window.location.pathname
+        for (let i = 0; i < botoesAside.length; i++) {
+            const buttons = botoesAside[i].attributes[1].value
+            botoesAside[i].addEventListener('click', () => {
+                if (location != `/public/routes/${buttons}.html` || location != `/routes/${buttons}.html`) {
+                    window.location.href = `./${buttons}.html?id=${usuario.id}`
                 }
             })
         }
     }
-    
-    static botaoDeslogar(contasApi: IUserBase[],botaoSair: HTMLInputElement, usuario: InformacoesUsuario){
-        botaoSair.addEventListener("click", async ()=>{
+
+    static botaoDeslogar(contasApi: IUserBase[], botaoSair: HTMLInputElement, usuario: InformacoesUsuario) {
+        botaoSair.addEventListener("click", async () => {
             usuario.logado = false
             await UsuariosApi.put(contasApi, usuario.id, usuario.devolveInformacoes())
-            window.location.href="./login.html"
+            window.location.href = "./login.html"
         })
     }
 

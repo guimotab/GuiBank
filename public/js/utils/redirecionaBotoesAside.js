@@ -18,19 +18,23 @@ export class RedirecionaBotoes {
         this.redirecionaCard(usuario, botoesCard);
     }
     static redirecionaCard(usuario, botoesCard) {
+        const location = window.location.pathname;
         for (let i = 0; i < botoesCard.length; i++) {
+            const buttons = botoesCard[i].attributes[0].value;
             botoesCard[i].addEventListener('click', () => {
-                if (window.location.pathname != `/public/routes/${botoesCard[i].attributes[0].value}.html`) {
-                    window.location.href = `./${botoesCard[i].attributes[0].value}.html?id=${usuario.id}`;
+                if (location != `/public/routes/${buttons}.html` || location != `/routes/${buttons}.html`) {
+                    window.location.href = `./${buttons}.html?id=${usuario.id}`;
                 }
             });
         }
     }
     static redirecionaAside(usuario, botoesAside) {
+        const location = window.location.pathname;
         for (let i = 0; i < botoesAside.length; i++) {
+            const buttons = botoesAside[i].attributes[1].value;
             botoesAside[i].addEventListener('click', () => {
-                if (window.location.pathname != `/public/routes/${botoesAside[i].attributes[1].value}.html`) {
-                    window.location.href = `./${botoesAside[i].attributes[1].value}.html?id=${usuario.id}`;
+                if (location != `/public/routes/${buttons}.html` || location != `/routes/${buttons}.html`) {
+                    window.location.href = `./${buttons}.html?id=${usuario.id}`;
                 }
             });
         }
