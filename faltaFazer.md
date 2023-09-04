@@ -1,0 +1,2 @@
+-ajeitar responsivos
+-mudar texto de sem amigos
