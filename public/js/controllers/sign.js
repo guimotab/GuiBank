@@ -8,7 +8,7 @@ let contas = UsuariosApi.get();
 if (!contas) {
     contas = [];
 }
-const olho = document.querySelector('[data-id]');
+const olho = document.querySelectorAll('[data-id]');
 const form = document.getElementById('formulario');
 const botaoSubmit = document.getElementById('botao-submit');
 const campoPrimeiroNome = document.getElementById('primeiroNome');
@@ -68,13 +68,15 @@ campoSenha2.addEventListener("blur", evento => {
     verificaCampos.comparaSenha(campoSenha1, campoSenha2, erroSenhaDif);
     consertaAutoComplete(campoSenha2);
 });
-olho.addEventListener("mousedown", (evento) => {
-    let clicouOlho = evento.target;
-    mostraSenha.verSenha(clicouOlho);
-});
-olho.addEventListener("mouseup", (evento) => {
-    let clicouOlho = evento.target;
-    mostraSenha.fecharSenha(clicouOlho);
+olho.forEach(olho => {
+    olho.addEventListener("mousedown", (evento) => {
+        let clicouOlho = evento.target;
+        mostraSenha.verSenha(clicouOlho);
+    });
+    olho.addEventListener("mouseup", (evento) => {
+        let clicouOlho = evento.target;
+        mostraSenha.fecharSenha(clicouOlho);
+    });
 });
 form.addEventListener("submit", evento => {
     evento.preventDefault();

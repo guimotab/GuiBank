@@ -9,14 +9,14 @@
     <title>GuiBank</title>
 </head>
 
-<body class="grid md:grid-cols-[13rem_auto]">
+<body class="grid md:grid-cols-[16rem_auto]">
     <header class="flex items-center bg-white w-full h-16 px-10 py-4 md:hidden">
         <div id="menu-hamburguer" class="flex p-3 rounded-full bg-cor-terciaria w-fit" >
             <img src="../img/Hamburger_icon-branco.png" alt="menuHamburguer" class="w-7">
         </div>
     </header>
     <aside id="aside" class="hidden flex-col col-start-1 row-start-1 row-end-3 justify-between 
-    bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52 md:flex">
+    bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-full md:flex">
         <div class="">
             <p id="close-aside" class="flex px-4 font-semibold text-lg md:hidden">X</p>
             <h1 class='text-center mb-9 mt-3 text-2xl font-semibold'>GuiBank</h1>
@@ -47,8 +47,8 @@
         </div>
         <h3 class="flex my-4 text-xl font-medium justify-center btn-aside" id="deslogar">Deslogar</h3>
     </aside>
-    <main class="md:col-start-2 px-12 md:py-32 py-14 bg-cor-clara h-screen md:px-24">
-        <form id="formulario" class="flex flex-col px-12 py-10  gap-5 bg-white rounded-xl shadow-xl">
+    <main class="md:col-start-2 px-6 sm:px-12 md:py-32 py-14 bg-cor-clara h-screen md:px-24">
+        <form id="formulario" class="flex flex-col px-8 sm:px-12 py-10  gap-5 bg-white rounded-xl shadow-xl max-w-4xl">
             <div>
                 <label id="titulo-operacao" class="text-3xl font-semibold"></label>
                 <p id="texto-taxa" class="font-medium"></p>

@@ -9,14 +9,14 @@
     <title>GuiBank</title>
 </head>
 
-<body class="grid lg:grid-cols-[13rem_auto]">
+<body class="grid lg:grid-cols-[16rem_auto]">
     <header class="flex items-center bg-white w-full h-16 px-10 py-4 lg:hidden">
         <div id="menu-hamburguer" class="flex p-3 rounded-full bg-cor-terciaria w-fit" >
             <img src="../img/Hamburger_icon-branco.png" alt="menuHamburguer" class="w-7">
         </div>
     </header>
     <aside id="aside" class="hidden flex-col col-start-1 row-start-1 row-end-3 justify-between 
-    bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52 lg:flex">
+    bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-full lg:flex">
         <div class="">
             <p id="close-aside" class="flex px-4 font-semibold text-lg lg:hidden">X</p>
             <h1 class='text-center mb-9 mt-3 text-2xl font-semibold'>GuiBank</h1>
@@ -47,14 +47,14 @@
         </div>
         <h3 class="flex my-4 text-xl font-medium justify-center btn-aside" id="deslogar">Deslogar</h3>
     </aside>
-    <main class="lg:col-start-2 px-12 bg-cor-clara">
+    <main class="lg:col-start-2 px-7 sm:px-12 bg-cor-clara">
         <div class="flex flex-col py-8 h-full md:h-screen gap-5 max-w-5xl">
-            <h1 id="titulo-operacao" class="text-3xl font-semibold h-fit">Caixinha GuiBank</h1>
+            <h1 id="titulo-operacao" class="text-2xl min-[340px]:text-3xl font-semibold h-fit">Caixinha GuiBank</h1>
             <section class="flex flex-col justify-between gap-5 md:flex-row">
-                <form id="formulario-sacar" class="flex grow flex-col px-12 py-7 gap-4 bg-white rounded-xl">
+                <form id="formulario-sacar" class="flex grow flex-col px-7 sm:px-12 py-7 gap-4 bg-white rounded-xl">
                     <div class="flex flex-col gap-3">
                         <div>
-                            <h2 class="text-2xl font-medium">Pegue seu dinheiro</h2>
+                            <h2 class="text-xl min-[340px]:text-2xl font-medium">Pegue seu dinheiro</h2>
                         </div>
                     </div>
                     <div>
@@ -66,9 +66,9 @@
                         </div>
                         <p id="erroInvalido-sacar" class="hidden">*Valor Inválido!</p>
                         <p id="erroInsuficiente-sacar" class="hidden">*Saldo Insuficiente!</p>
-                        <div class="flex gap-2">
+                        <div class="flex flex-col min-[340px]:gap-2 min-[340px]:flex-row">
                             <p class="font-medium text-lg">Saldo Disponível:</p>
-                            <p id="saldo-disponivel" class="self-center font-semibold text-lg"></p>
+                            <p id="saldo-disponivel" class="min-[340px]:self-center font-semibold text-lg"></p>
                         </div>
                     </div>
                     <div class="w-28">
@@ -76,10 +76,10 @@
                             class="text-white text-lg bg-cor-terciaria w-full px-5 py-1.5 rounded-xl hover:bg-cor-hover">Receber</button>
                     </div>
                 </form>
-                <form id="formulario-depositar" class="flex grow flex-col px-12 py-7 gap-5 bg-white rounded-xl">
+                <form id="formulario-depositar" class="flex grow flex-col px-7 sm:px-12 py-7 gap-5 bg-white rounded-xl">
                     <div>
-                        <p class="text-2xl font-medium">Deposite seu dinheiro</p>
-                        <p class="text-lg font-medium">Deixe render 3% a
+                        <p class="text-xl min-[340px]:text-2xl font-medium">Deposite seu dinheiro</p>
+                        <p class="min-[340px]:text-lg font-medium">Deixe render 3% a
                             cada dia na caixinha</p>
                     </div>
                     <div>
@@ -98,10 +98,10 @@
                     </div>
                 </form>
             </section>
-            <div class="flex flex-col px-12 py-10 gap-4 bg-white rounded-xl max-h-64 w-full max-w-[33rem]">
+            <div class="flex flex-col px-7 sm:px-12 py-10 gap-4 bg-white rounded-xl max-h-64 w-full max-w-[33rem]">
                 <div class="flex flex-col gap-3">
                     <div>
-                        <h2 class="text-2xl font-medium">Rendimento</h2>
+                        <h2 class="text-xl min-[340px]:text-2xl font-medium">Rendimento</h2>
                     </div>
                 </div>
                 <ul id="ul-rendimentos" class="flex flex-col gap-3">

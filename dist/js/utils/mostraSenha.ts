@@ -4,6 +4,7 @@ const riscaSaldo = document.getElementById('esconde-saldo') as HTMLInputElement
 const saldo = document.getElementById('saldo') as HTMLInputElement
 
 function verSenha(olho: any) {
+    console.log("🚀 ~ file: mostraSenha.ts:8 ~ verSenha ~ olho.id:", olho.id)
     if (parseFloat(olho.id) == 1) {
         campoSenha1.type = "text"
         olho.src = "../img/olho-ver.png"

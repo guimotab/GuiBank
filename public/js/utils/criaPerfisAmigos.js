@@ -26,7 +26,7 @@ export class ListaAmigos {
     }
     static criaLiExistePerfis(listaAmigosUl, idAmigos, indexAmigos) {
         const AdicionaPerfilAmigos = `<li class="border-cor-terciaria border-solid border-2 rounded-xl px-7 py-2">
-        <div class="flex justify-between w-full items-center">
+        <div class="flex flex-col gap-3 justify-between w-full items-center min-[440px]:flex-row min-[440px]:gap-2">
             <div class="flex flex-col justify-center">
                 <h4 class="text-lg font-medium " id="nome">${indexAmigos.primeiroNome + " " + indexAmigos.segundoNome}</h4>
                 <p id="nome-pessoal">${indexAmigos.usuario}</p>
