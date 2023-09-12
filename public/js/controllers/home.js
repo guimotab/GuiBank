@@ -54,13 +54,13 @@ verSaldo.addEventListener("click", () => {
         mostraSenha.escondeSaldo(verSaldo);
     }
 });
-let asideView = "hidden";
 closeAside.addEventListener("click", event => {
-    asideView = "hidden";
-    aside.className = `${asideView} flex-col row-start-1 row-end-3 justify-between bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52 xl:flex`;
+    aside.classList.add("hidden");
 });
 menuHamburguer.addEventListener("click", event => {
-    asideView = "absolute";
-    aside.className = `${asideView} flex-col row-start-1 row-end-3 justify-between bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52 xl:flex`;
+    // asideView = "absolute"
+    aside.classList.remove("hidden");
+    aside.classList.add("fixed");
+    //  `flex-col row-start-1 row-end-3 justify-between bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52 xl:flex`
 });
 RedirecionaBotoes.redireciona(contasApi, usuario);
