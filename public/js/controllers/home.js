@@ -13,6 +13,7 @@ import { ExtratoMain } from "../class/ExtratoMain.js";
 import { InformacoesApi } from "../class/InformacoesApi.js";
 import { RedirecionaBotoes } from "../utils/redirecionaBotoesAside.js";
 import { verificaLogin } from "../utils/verificaLogin.js";
+import abreAside from "../utils/abreAside.js";
 verificaLogin();
 const [contasApi, usuario] = InformacoesApi.pegaInformacoes();
 const fotoPerfil = document.getElementById('foto-perfil');
@@ -54,14 +55,5 @@ verSaldo.addEventListener("click", () => {
         mostraSenha.escondeSaldo(verSaldo);
     }
 });
-closeAside.addEventListener("click", event => {
-    aside.classList.remove("flex");
-    aside.classList.add("hidden");
-});
-menuHamburguer.addEventListener("click", event => {
-    // asideView = "absolute"
-    aside.classList.remove("hidden");
-    aside.classList.add("flex");
-    //  `flex-col row-start-1 row-end-3 justify-between bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52 xl:flex`
-});
+abreAside();
 RedirecionaBotoes.redireciona(contasApi, usuario);

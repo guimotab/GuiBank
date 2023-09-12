@@ -3,11 +3,11 @@ export default function abreAside() {
     const menuHambuguer = document.getElementById("menu-hamburguer");
     const closeAside = document.getElementById("close-aside");
     menuHambuguer.addEventListener("click", event => {
-        aside.className = `flex fixed flex-col col-start-1 row-start-1 row-end-3 justify-between 
-        bg-cor-terciaria text-white text-lg px-4 py-5 h-screen z-20 w-52`;
+        aside.classList.remove("flex");
+        aside.classList.add("hidden");
     });
     closeAside.addEventListener("click", event => {
-        aside.className = `hidden fixed flex-col col-start-1 row-start-1 row-end-3 justify-between 
-        bg-cor-terciaria text-white text-lg px-4 py-5 h-screen w-52 md:flex`;
+        aside.classList.remove("hidden");
+        aside.classList.add("flex");
     });
 }
