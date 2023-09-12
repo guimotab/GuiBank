@@ -1853,6 +1853,10 @@ input {
     gap: 0.5rem;
   }
 
+  .sm\:self-end {
+    align-self: flex-end;
+  }
+
   .sm\:self-center {
     align-self: center;
   }
