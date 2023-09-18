@@ -856,10 +856,6 @@ input {
   margin-bottom: 2.25rem;
 }
 
-.mt-20 {
-  margin-top: 5rem;
-}
-
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -943,18 +939,6 @@ input {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-4\/6 {
-  height: 66.666667%;
-}
-
-.h-3\/6 {
-  height: 50%;
-}
-
-.h-5\/6 {
-  height: 83.333333%;
 }
 
 .max-h-64 {
@@ -1138,10 +1122,6 @@ input {
 
 .items-center {
   align-items: center;
-}
-
-.justify-start {
-  justify-content: flex-start;
 }
 
 .justify-center {
@@ -1492,11 +1472,6 @@ input {
   padding-bottom: 2rem;
 }
 
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -1711,11 +1686,6 @@ input {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-
-  .min-\[380px\]\:px-5 {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
 }
 
 @media (min-width: 440px) {
@@ -1729,25 +1699,8 @@ input {
 }
 
 @media (min-width: 460px) {
-  .min-\[460px\]\:flex-row {
-    flex-direction: row;
-  }
-
-  .min-\[460px\]\:items-center {
-    align-items: center;
-  }
-
-  .min-\[460px\]\:justify-between {
-    justify-content: space-between;
-  }
-
   .min-\[460px\]\:border-2 {
     border-width: 2px;
-  }
-
-  .min-\[460px\]\:border-cor-terciaria {
-    --tw-border-opacity: 1;
-    border-color: rgb(17 45 78 / var(--tw-border-opacity));
   }
 
   .min-\[460px\]\:px-7 {
@@ -1765,10 +1718,6 @@ input {
     width: 8rem;
   }
 
-  .sm\:justify-between {
-    justify-content: space-between;
-  }
-
   .sm\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -1777,11 +1726,6 @@ input {
   .sm\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
-  }
-
-  .sm\:px-14 {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
   }
 
   .sm\:px-16 {
@@ -1797,11 +1741,6 @@ input {
   .sm\:px-7 {
     padding-left: 1.75rem;
     padding-right: 1.75rem;
-  }
-
-  .sm\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
 
   .sm\:text-2xl {
@@ -1840,10 +1779,6 @@ input {
     grid-column-start: 2;
   }
 
-  .md\:mt-14 {
-    margin-top: 3.5rem;
-  }
-
   .md\:flex {
     display: flex;
   }
@@ -1852,16 +1787,8 @@ input {
     display: none;
   }
 
-  .md\:h-4\/6 {
-    height: 66.666667%;
-  }
-
   .md\:h-screen {
     height: 100vh;
-  }
-
-  .md\:h-full {
-    height: 100%;
   }
 
   .md\:w-72 {
@@ -1870,18 +1797,6 @@ input {
 
   .md\:w-full {
     width: 100%;
-  }
-
-  .md\:max-w-\[23rem\] {
-    max-width: 23rem;
-  }
-
-  .md\:max-w-\[27rem\] {
-    max-width: 27rem;
-  }
-
-  .md\:max-w-\[25rem\] {
-    max-width: 25rem;
   }
 
   .md\:max-w-\[24rem\] {
