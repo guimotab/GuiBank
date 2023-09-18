@@ -22,7 +22,7 @@ export class ListaAmigos {
     }
     static criaLiSemPerfis(listaAmigosUl) {
         listaAmigosUl.innerHTML = `
-        <h3 class="text-lg font-medium">Não há amigos no momento...</h3>`;
+        <h3 class="text-lg font-medium">Não há amigos no momento! Crie novas contas para aparecerem aqui...</h3>`;
     }
     static criaLiExistePerfis(listaAmigosUl, idAmigos, indexAmigos) {
         const AdicionaPerfilAmigos = `<li class="border-cor-terciaria border-solid border-2 rounded-xl px-7 py-2">
