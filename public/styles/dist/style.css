@@ -1688,6 +1688,12 @@ input {
   }
 }
 
+@media (min-width: 400px) {
+  .min-\[400px\]\:flex-row {
+    flex-direction: row;
+  }
+}
+
 @media (min-width: 440px) {
   .min-\[440px\]\:flex-row {
     flex-direction: row;
