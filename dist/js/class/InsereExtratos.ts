@@ -1,7 +1,6 @@
 import { Horario } from "../utils/criaHorario.js"
 import { verificaExtratoExiste } from "../utils/criaExtratoUsuario.js"
 import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
-import IUserBase from "../interfaces/IUserBase.js"
 export class InsereExtratos {
     static extratoDepositar(indexId: InformacoesUsuario, valor: string) {
         try {

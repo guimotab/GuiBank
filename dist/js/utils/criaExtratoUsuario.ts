@@ -1,4 +1,3 @@
-import IUserBase from "../interfaces/IUserBase.js"
 import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
 import { Horario } from "./criaHorario.js"
 const mesDia = Horario.criaMesDia()

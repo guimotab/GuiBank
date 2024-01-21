@@ -25,7 +25,6 @@ try {
 catch (_a) {
     saldoDisponivel.innerHTML = "R$0,00";
     divRendimentos.innerHTML = `<div class="text-lg font-medium">Sem rendimentos ainda...<br>Adicione dinheiro à sua caixinha!</div>`;
-    console.log("oi");
 }
 inputDepositar.addEventListener("blur", evento => {
     blurInputs(inputDepositar, erroSaldoInsuficienteDep);
@@ -52,7 +51,6 @@ function blurInputs(tipoInput, classInput) {
         }
     }
     else if (tipoInput.id == "input-sacar") {
-        console.log("🚀 ~ file: caixinha.ts:61 ~ blurInputs ~ rendimentosUsuario[0]:", rendimentosUsuario[0]);
         if (rendimentosUsuario[0] == 0 && valorInput) {
             classInput.className = "frase-erro-conta";
         }

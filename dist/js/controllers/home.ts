@@ -14,10 +14,6 @@ const segundoNomeInnerHTML = document.getElementById('nome')!
 const usuarioInnerHTML = document.getElementById('usuario')!
 const saldoInnerHTML = document.getElementById('saldo')!
 const fraseBemVindo = document.getElementById('texto-bem-vindo')!
-const menuHamburguer = document.getElementById('menu-hamburguer')!
-const aside = document.getElementById('aside')!
-const closeAside = document.getElementById('close-aside')!
-
 
 const verSaldo = document.getElementById('olhoSaldo')!
 

@@ -1,4 +1,3 @@
-import IPeriodsTransations from "../interfaces/IPeriodsTransations.js"
 import { InformacoesUsuario } from "../models/InformacoesUsuario.js"
 import { InsereExtratos } from "./InsereExtratos.js"
 export class OperacaoRealizada {

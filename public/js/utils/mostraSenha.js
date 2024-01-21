@@ -3,7 +3,6 @@ const campoSenha2 = document.getElementById('campo-senha2');
 const riscaSaldo = document.getElementById('esconde-saldo');
 const saldo = document.getElementById('saldo');
 function verSenha(olho) {
-    console.log("🚀 ~ file: mostraSenha.ts:8 ~ verSenha ~ olho.id:", olho.id);
     if (parseFloat(olho.id) == 1) {
         campoSenha1.type = "text";
         olho.src = "../img/olho-ver.png";

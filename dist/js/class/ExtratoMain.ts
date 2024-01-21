@@ -1,4 +1,3 @@
-import IUserBase from '../interfaces/IUserBase.js'
 import { InformacoesUsuario } from '../models/InformacoesUsuario.js'
 export class ExtratoMain {
     static posicaoArray = 0
