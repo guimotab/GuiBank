@@ -4,7 +4,7 @@ Para visualizar o projeto de maneira fácil, basta acessar o link <https://guiba
 ## Requisitos para rodar o projeto
 * NodeJs instalado ( [baixar](https://nodejs.org/en/download) )
 
-## Instação do Projeto
+## Instalação do Projeto
 Após baixar o repositório em sua máquina, basta usar os comandos na pasta raiz
 ```
 npm install
